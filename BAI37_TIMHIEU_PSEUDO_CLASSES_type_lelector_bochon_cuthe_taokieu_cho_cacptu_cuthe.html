@@ -1,0 +1,125 @@
+1/ PSEUDO CLASSES (LỚP GIẢ) P5 : TYPE SELECTOR (BỘ CHỌN KIỂU):
+1.1 ":first-of-type" : chọn thẻ con xuất hiện đầu tiên trong thẻ cha
+VD p:first-of-type : chọn các thẻ <p></p> xuất hiện đầu tiên trong thẻ cha
+<!-- CHÚ Ý: TA KO QUAN TÂM TRC NÓ CÓ NHỮNG THẺ NÀO, NÓ CHỈ TÌM THEO LOẠI THẺ TA YCAU VÀ THEO THỨ TỰ CỦA THẺ TRONG THẺ CHA
+<div>
+    <h1>tự học .cc </h1>  ->KỆ
+    <p>đoạn 1</p>  ->thẻ p con đầu tiên
+    <p>đoạn 2</p>
+    <p>đoạn 3</p>
+</div>
+-->
+<!-- ### file style.css ###  -->
+p:first-of-type {
+color : red;
+font-size: 30px;
+}
+1.2 ":last-of-type" : chọn thẻ con xuất hiện cuối cùng trong thẻ cha
+VD p:last-of-type : chọn các thẻ <p></p> xuất hiện cuối cùng trong thẻ cha
+<!-- CHÚ Ý: TA KO QUAN TÂM TRC NÓ CÓ NHỮNG THẺ NÀO, NÓ CHỈ TÌM THEO LOẠI THẺ TA YCAU VÀ THEO THỨ TỰ CỦA THẺ TRONG THẺ CHA
+<div>
+    
+    <p>đoạn 1</p>  
+    <p>đoạn 2</p>
+    <p>đoạn 3</p> ->thẻ p con cuối cùng 
+    <h1>tự học .cc </h1>  ->KỆ
+
+</div>
+-->
+<!-- ### file style.css ###  -->
+p:last-of-type {
+color : red;
+font-size: 30px;
+}
+
+1.3 ":nth-of-type(n)" : chọn thẻ con xuất hiện thứ n từ trên xuống trong thẻ cha
+VD p:nth-of-type(n) : chọn các thẻ <p></p> xuất hiện thứ n từ trên xuống trong thẻ cha
+VD: p:nth-of-type(2) :chọn các thẻ <p></p> là thẻ con thú 2 từ trên xuống (đánh số 1,2,3...)
+<div>
+    <p>đoạn 1</p>
+    <p>đoạn 2</p>
+    <p>đoạn 3</p>
+</div>
+<!-- ### file style.css ###:  -->
+p:nth-of-type(2) {
+color : red;
+font-size: 30px;
+}
+==> ta sẽ chọn thẻ <p></p> thứ 2 từ trên xuống (ND là đoạn 2) sau đó tạo kiểu cho nó
+<!-- CHÚ Ý: NẾU THẺ P ĐÓ CÓ THẺ NÀO CHÈN TRC, THÌ TA KỆ NÓ, CHỈ QTAM THẺ P VÀ  đếm thẻ từ trên xuống 
+VD ntn:
+<div>
+    <h1>tự học .cc </h1>  
+    <h1>tự học .cc </h1>  
+    <p>đoạn 1</p>  -> thẻ p thứ 1
+    <p>đoạn 2</p> ->thẻ p thứ 2 
+    <p>đoạn 3</p>
+</div>
+***nếu truyền vượt số TT của thẻ-> ko AD đc css
+-->
+*** CHÚ Ý: NGOÀI TRUYỀN STT THẺ(CHO TỪNG THẺ) ta có thể truyền các cú pháp sau để AD css cho nhiều thẻ cùng lúc:
+-":nth-of-type(odd)" : nhảy theo n lẻ 1,3,5,7,...
+-":nth-of-type(even)" : nhảy theo n chẵn 2,4,6,8...
+-":nth-of-type(2n+1,4n,2n-1...) : nhảy theo step mong muốn (ta tự xây dựng quy luật)
+
+1.4 ":nth-last-of-type(n)" : chọn thẻ con xuất hiện thứ n từ dưới lên trong thẻ cha
+VD p:nth-last-of-type(n) : chọn các thẻ <p></p> xuất hiện thứ n từ dưới lên trong thẻ cha
+VD: p:nth-last-of-type(2) :chọn các thẻ <p></p> là thẻ con thú 2 từ dưới lên (đánh số 1,2,3...)
+<div>
+    <p>đoạn 1</p>
+    <p>đoạn 2</p>
+    <p>đoạn 3</p>
+</div>
+<!-- ### file style.css ###:  -->
+p:nth-last-of-type(2) {
+color : red;
+font-size: 30px;
+}
+==> ta sẽ chọn thẻ <p></p> thứ 2 từ dưới lên (ND là đoạn 2) sau đó tạo kiểu cho nó
+<!-- CHÚ Ý: NẾU THẺ P ĐÓ CÓ THẺ NÀO CHÈN TRC, THÌ TA KỆ NÓ, CHỈ QTAM THẺ P VÀ  đếm thẻ từ dưới lên 
+VD ntn:
+<div>
+ 
+    <p>đoạn 1</p>  
+    <p>đoạn 2</p> ->thẻ p thứ 2 
+    <p>đoạn 3</p> -> thẻ p thứ 1
+    <h1>tự học .cc </h1>  
+    <h1>tự học .cc </h1> 
+</div>
+***nếu truyền vượt số TT của thẻ-> ko AD đc css
+-->
+*** CHÚ Ý: NGOÀI TRUYỀN STT THẺ(CHO TỪNG THẺ) ta có thể truyền các cú pháp sau để AD css cho nhiều thẻ cùng lúc:
+-":nth-last-of-type(odd)" : nhảy theo n lẻ 1,3,5,7,...
+-":nth-last-of-type(even)" : nhảy theo n chẵn 2,4,6,8...
+-":nth-last-of-type(2n+1,4n,2n-1...) : nhảy theo step mong muốn (ta tự xây dựng quy luật)
+
+1.5 ":only-of-type" : chọn thẻ con xuất hiện duy nhất trong thẻ cha
+VD p:only-of-type : chọn các thẻ <p></p> xuất hiện duy nhất trong thẻ cha
+<div>
+    <p>ĐOẠN 1</p>
+    <p>ĐOẠN 2</p>
+    <p>ĐOẠN 3</p>
+    <p>ĐOẠN 4</p>
+    <p>ĐOẠN 5</p>
+</div>
+<div>
+    <p>đoạn 6</p> =>thẻ con duy nhát đc chọn
+</div>
+<!-- ### file style.css ### -->
+p:only-of-type {
+color:red;
+font-size:30px;
+}
+<!-- chú ý:
+<div>
+    <p>ĐOẠN 1</p>
+    <p>ĐOẠN 2</p>
+    <p>ĐOẠN 3</p>
+    <p>ĐOẠN 4</p>
+    <p>ĐOẠN 5</p>
+</div>
+<div>
+    <p>đoạn 6</p> =>vẫn là thẻ con duy nhát do thẻ còn lại của nó khác loại
+    <h1>đăng đẹp trai </h1>
+</div>
+-->

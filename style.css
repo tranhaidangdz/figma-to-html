@@ -1,0 +1,95 @@
+/* h1,
+p {
+    color: rgb(0, 4, 128);
+    font-style: italic;
+} */
+
+/* ta tạo đoạn code css này cho cả 2 thẻ h1 và p */
+/* ta chỉ cần thay đổi màu sắc, font trong 1 file ".css" này thì tất cả code css ở các file khác trỏ đến nó sẽ thay đổi theo*/
+
+/* "bài 23:"
+h1 {
+    màu chữ: gõ"color:màu xanh tím;"
+    color: blueviolet;
+
+    kiểu chữ: gõ"font-style:kiểu chũ in nghiêng;"
+    font-style: italic;
+    nét chữ(font) chữ: gõ"font-family: font chữ arial;"
+    font-family: Arial, Helvetica, sans-serif;
+    chuyển hoa thường: gõ"text-transform: viết hoa chữ cái đầu tiên của từ "
+    text-transform: uppercase;
+    căn đoạn văn: gõ"text-align: căn giữa trang;"
+    text-align: center;
+    cỡ chữ: gõ"font-size: 40px ;"
+    font-size: 17px;
+} */
+
+/* "bài 24:" */
+/* h2 {
+    opacity: 50%;
+}
+
+h1,
+h3 {
+    opacity: 0.2;
+    background-color: blue; */
+/* ta tạo nền của chữ cho tất cả thẻ h3  */
+/* }
+
+img {
+    opacity: 70%;
+}
+
+a {
+    opacity: 0.2;
+}
+
+body {
+    background-image: url(./img/ảnh\ hình\ nền\ web.avif);
+} */
+
+
+
+
+/* bài 44: css margin tạo avatar đè nhau */
+/* div {
+    width: 200px;
+    height: 200px;
+    border: 30px solid blue;
+    margin-left: -8px; */
+/* ta thấy viền hơi dày, thêm -8px để viền mỏng hơn 
+    ==>đây chính là demo cho "margin âm" */
+/* ta tạo kiểu cho class"avatar" :3 cái ảnh */
+.avatar {
+    width: 120px;
+    height: 120px;
+    /* dùng border-radius để bo góc ảnh cong hơn:truyền 50% để bo ảnh vuông thành tròn  */
+    border-radius: 50%;
+    border: 1px solid gray;
+    /* tạo kiểu viền cho  ptu ảnh  */
+
+    /* ta dùng margin-left để lùi các ptu sang bên trái, nhưng xảy ra tình huống cả 3 ảnh cùng lùi->ảnh đầu tiên bị mất góc.
+    ==>ta chỉ lùi 2 ảnh sau, còn ảnh đầu giữ nguyên 
+    */
+    margin-left: -37px;
+}
+
+/* ta muốn ptu đầu giữ nguyên ko lùi=> bộ chọn margin-left: 0px;
+--> ta dùng lớp giả  :first-child để chỉ tác động lên thẻ đầu tiên có class"avatar"
+*/
+.avatar:first-child {
+    margin-left: 0%;
+}
+
+/* 1 VẤN ĐỀ NỮA : TA SẼ VẼ MÀU NỀN CHO KHỐI div CÓ class"avatar" */
+div {
+    background-color: rgb(239, 239, 84);
+}
+
+/* ta muốn cho 3 cái ảnh lùi vào giữa=> thêm padding(đệm), hoặc border(viền)
+-lưu ý ta sẽ tác động vào 3 ptu 1 lúc nên tác động vào thẻ div, còn nếu .avatar thì là tác động vào từng thẻ con rồi
+*/
+div {
+    padding: 40px 80px;
+    display: inline-block; //bo lấy ptu,, ko cho nó chiếm hết 1 dòng 
+}

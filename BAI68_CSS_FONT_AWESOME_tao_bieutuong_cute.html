@@ -1,0 +1,46 @@
+1/ Font awesome (phông o săm: kích thước tuyệt vời) : thêm các icon vào trang web
+-đàu tiên ta tìm "font-awesome sdn" ->vào trang "sdnjs" copy đoạn code
+"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" dán vào thẻ link
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+==> như vậy sau đó ta thêm các icon vào thoải mái, lưu ý đg dẫn đầu tiên có đuôi "all.min" sẽ là đầy đủ nhất
+-tìm "font awesome.com " -> chọn "icon" ->tìm kiếm các icon liên quan đến chủ đề của mk
+VD: mk đang cần tìm icon cho chủ đè home, facebook, youtube
+-chọn vào "free" để lấy các icon miễn phí ->bấm vào hình icon đó
+. ta có thể chỉnh nét vẽ, chỉnh animation cho icon đó
+.copy đoạn code dưới animation đó dán vào đây là đc
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style7.css">
+    <title>bài 68: font-awesome: thêm icon cho trang web</title>
+    <style>
+        li {
+            list-style: none;
+            margin-top: 5px;
+        }
+
+        /* thay đổi màu cho các icon: ta thấy các icon đã đc đặt sẵn class, ta chỉ cần gọi tên class đó và thay đổi màu cho nó là dc */
+        .fa-solid {
+            color: black;
+        }
+
+        .fa-brands {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li><i class="fa-solid fa-house fa-beat"></i> Home</li>
+        <li><i class="fa-brands fa-facebook"></i> Facebook</li>
+        <li><i class="fa-brands fa-facebook"></i> Youtube</li>
+        <!-- để xóa 3 dấu chấm của thẻ ul>li , ta dùng "list-style:none;" -->
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+1/ CSS BOX MODEL (mô hình hộp) P1 -TÌM HIỂU CSS PADDING(đệm):
+-box model: trình duyệt sẽ coi mỗi ptu css là 1 cái hộp chữ nhật (từ đó nó chia vùng để quán lí và trang trí)
+-cấu trúc 1 hộp gồm 4 phần (tính từ trong lõi ra ngoài):
+.nội dung(truyền chiều rộng và dài vào :width ,height) :là hình ảnh, video, text...
+.padding(đệm):khoảng đệm giữa nội dung và viền (ko có ND)
+.border(viền):viền của ptu css(nét liền, nét đứt...)
+.margin(lề): khoảng cách của ptu này vs các ptu liền kề khác
+=> CHÚ Ý: kích thước cao* rộng của 1 phần tử (ko bao gồm margin:lề) = content+padding+border (ND+đệm+viền)
+<!-- 
+2/ cài tiện ích để nhìn thấy mô hình hộp này dễ dàng hơn:
+-vào chrome tìm "extension chrome" -> tìm tiện ích "pesticide for chrome"
+=> tiện ích này phác thảo từng thành phần để thấy rõ hơn vị trí các khối trên trang web khi ta xem page source của trang  
+-ta vào trang web, bấm vào hình con bọ là nó hiện ra các mô hình hộp trên trang đó 
+-->
+-cú pháp viết trong file style.css :
+"padding: 20px;" (khoảng đệm cho 4 phía của hcn dày 20px)
+-nó sẽ làm dày 4 phía của phần tử html, ngoài ra ta còn các padding-property(các gtri khác của bộ đệm)
++, padding-top : dãn phía trên
++, padding-bottom: dãn phía dưới
++, padding-left: dãn bên trái
++, padding-right: dãn bên trên
+-ta nhấn F12 để xem đc hcn đó ta đang căn chỉnh theo hướng nào
+<!-- NGOÀI RA TA CÓ CÁCH VIẾT KHÁC, KO CẦN VIẾT CẢ 4 DÒNG ĐỂ CĂN 4 PHÍA, mà ta có thể viết trên 1 dòng căn đc nhiều phía: -->
+.padding: 20px; : căn cả 4 phía(truyền vào mỗi 1 kích thước)
+.padding: 20px 10px; : cái đầu sẽ là căn cho bên trên&dưới, cái sau là cho trái&phải (1padding có 2 kích thước)
+.padding: 20px 10px 40px; : cái đầu là trên, ở giữa là cho trái&phải, cái cuối là cho dưới (1padding có 3 kích thước)
+.padding: 20px 10px 40px 50px; : lần lượt cho các phía "trên" ,"phải", "dưới" ,"trái" (ta có thể nhớ nó xoay the chiều
+kim đồng hồ) (1 padding có 4 kích thước)
+==> thay vì dùng thêm 4 loại "padding-" kia ta chỉ cần nhớ 1 padding và cách ta truyền kích cỡ cho từng phía
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style5.css">
+    <title>bài 40: box model : tìm hiểu về padding (bộ đệm)</title>
+</head>
+
+<body>
+    <div>tuhoc.cc</div>
+</body>
+
+</html>

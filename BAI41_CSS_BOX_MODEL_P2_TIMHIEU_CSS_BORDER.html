@@ -1,0 +1,62 @@
+1/ CSS BOX MODEL (MÔ HÌNH HỘP) P2 - css border(viền) :
+-border : viền của mô hình hộp
+1.1cú pháp viết tắt
+_____________________________________________
+border: 10px solid blue;
+(tên bộ: độ_rộng_viền kiểu_viền màu_viền)
+_____________________________________________
+<!-- ***kiểu viền:
+-dash(đát-sh: dấu gạch) : đường nét đứt
+-dotted :viền là các dấu chấm (dot)
+-double: viền 2 đường song song liền nhau
+-groove(g rú-v :rãnh ): viền 3D
+-ridge(rít-gi-ch:cọng rơm): viền 3D có sống lồi lên ở giữa
+-inset: viền 3D nổi lên ở trong viền
+-outset: viền 3D nổi lên ở ngoài viền
+=> đây là 1 số thuộc tính viền thay cho solid(viền rắn) -->
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style5.css">
+    <title>bài 40: box model : tìm hiểu về padding (bộ đệm)</title>
+</head>
+
+<body>
+    <div>tuhoc.cc</div>
+</body>
+
+</html>
+
+<!-- *** các property(gtri) khác của border khi ta muốn vẽ từng cạnh:
+border-top: 10px solid red;
+border-bottom: 10px solid red;
+border-right: 10px solid red;
+border-left: 10px solid red;
+-->
+-1.2cú pháp viết đầy đủ:
+border-width: 10px 20px 30px 40px; //độ rộng viền, set chiều rộng giống quy tắc padding(đệm) đã học
+border-style: solid; //kiểu viền
+border-color: blue; //màu sắc viền
+
+###chú ý: thậm chí có thể áp dụng riêng rẽ kiểu, màu cho từng viền nếu ta sd CT border(viền)đầy đủ:
+border-width: 10px 20px 30px 40px ;
+border-style: solid dash double dotted;
+border-color: blue yellow red gray ;
+==> từ trái sang theo quy tắc :"TRÊN" "PHẢI" "DƯỚI" "TRÁI"
+
+1.3 border-radius(bo góc viền): tạo đường cong ở 4 góc cho viền
+-border-radius: 30px; //bo cả 4 hướng
+-border-radius: 30px 50px; //cái đầu tiên(trên trái, dưới phải) cái thứ 2(trên phải, dưới trái)
+-border-radius: 30px 50px 70px; //đầu tiên (trên trái) , ở giữa(trên phải,dưới trái) sau cùng(dưới phải)
+-border-radius: 30px 50px 70px 80px; //trên trái->trên phải->dưới phải ->dưới trái(chiều kim đồng hồ)
+
+<!-- *** các property(gtri) khác của border-radius khi ta muốn bo góc từng cạnh:
+border-top-left-radius: góc trên bên trái
+border-top-right-radius: trên phải
+border-bottom-right-radius: dưới phải
+border-bottom-left-radius: dưới trái
+==>chiều kim đồng hồ, top-left làm gốc 
+-->

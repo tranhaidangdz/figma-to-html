@@ -1,0 +1,52 @@
+<!-- -ta gõ notification badge(huy hiệu thống báo): VD mail của ta hiện ra bao nhiêu tin nhắn , thống báo chưa đọc, đó chính
+là 1 khối nhỏ nằm ở góc trên khối to,chỉ định các con số
+- ta sẽ chèn 1 cái ảnh, sau đó trang trí 1 con số ở góc trên
+-ta lấy icon gmail trên font awesome, thêm con số 99 thông báo ở góc trên bên phải icon này -->
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        .noti {
+            margin: 5rem;
+            font-size: 10rem;
+            color: coral;
+            /* tăng kích cỡ và tô màu cho cả ptu */
+        }
+
+        .mes-number {
+            font-size: 2rem;
+            padding: 0.5rem;
+            /* chỉnh lại kích cỡ số thông báo và trang trí cho thông báo*/
+            color: white;
+            background-color: red;
+            border-radius: 60%;
+
+            position: absolute;
+            left: 220px;
+            /* ta muốn đưa số lg thông báo lên góc trên bên phải, ta để "absolute" để nó tách lên lớp trên
+            -sau đó ta truyền gtri vào left,top,bottom,right để căn chỉnh thông báo vào góc của icon
+            -nếu ptu cha noti ta truyền vào "relative", khi đó ptu absolute sẽ lấy gốc là ptu relative.ta cũng truyền vào gtri các kcach thôi
+            .nếu truyền  >0: :sang phải và xuống dưới
+            .nếu truyền <0: sang trái và lên trên 
+            */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="noti">
+        <!-- hộp chứa cả icon lẫn số thông báo -->
+        <i class="fa-solid fa-envelope"></i>
+        <!-- icon -->
+        <span class="mes-number">99</span>
+        <!-- con số 99  -->
+    </div>
+</body>
+
+</html>

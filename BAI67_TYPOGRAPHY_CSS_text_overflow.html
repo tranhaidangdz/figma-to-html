@@ -1,0 +1,49 @@
+1/ THUỘC TÍNH TEXT-OVERFLOW: xử lí văn bản bị tràn trong 1 box chứa
+-như ta đã đc sd "overflow" để xử lí đoạn văn bản tràn ra ngoài box(hộp chứa), giờ ta ko muốn hiển thi hết đoạn ND dài
+đó mà ta hiện ... cho nội dung còn lại, ta dùng "text-overflow:"
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style7.css">
+    <title>Document</title>
+    <style>
+        h1 {
+            width: 300px;
+            /* tạo ghạn cho đoạn văn thẻ h1 */
+            white-space: nowrap;
+            /* ko cho xuống dòng, viết trên 1 câu, như vậy phần dài quá sẽ bị tràn  */
+            background-color: pink;
+            overflow: hidden;
+            /* phần tràn ra ta xử lí ẩn nó đi */
+            text-overflow: ellipsis;
+            /* hiển thị dấu 3 chấm ... sau đoạn ND chứa vừa trong hộp */
+        }
+
+        /* *** HAY: CHỌN SỐ DÒNG ĐỂ ẨN ĐI PHẦN TỬ ,THÊM DẤU "...": */
+        h2 {
+            background-color: aquamarine;
+            overflow: hidden;
+            /* phần tràn ra ta xử lí ẩn nó đi */
+            -webkit-line-clamp: 3;
+            /* ta chọn số dòng giữ lại, còn lại sẽ để chế độ ẩn khi ta thu hẹp lề, còn kéo ra thì dấu ... sẽ mất  */
+            -webkit-box-orient: vertical;
+            /* ta chọn theo chiều dọc => như vậy nó chỉ giữ lại 2 hàng theo chiều dọc  */
+            display: -webkit-box;
+            /*khi ta co dãn lề thì ptu sẽ dãn nở theo đó và ẩn hiện ND linh hoạt(miễn nó vẫn giữ tiêu chí để lại 2 dòng) */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
+    <h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod impedit, temporibus animi odit dolores quae eius.
+        Voluptatem vero iure eum odio quidem in placeat autem obcaecati porro, quasi vitae at.
+        Placeat est voluptas consequatur assumenda ad libero excepturi, voluptatum, obcaecati adipisci esse saepe non,
+        aperiam nisi ratione soluta modi amet nulla quasi quis eius rem? Reiciendis et id blanditiis eos.</h2>
+</body>
+
+</html>

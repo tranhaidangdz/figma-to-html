@@ -1,0 +1,79 @@
+1/ CLIP-PATH: tạo cùng cắt ,ND trong vùng cắt sẽ đc hiển thị ,ND ngoài vùng cắt sẽ bị ẩn đi
+-ta có 3 loại:
+circle() :căt hình tròn
+inset():cắt hình chữ nhật
+polygon():cắt hình đa giác
+*quy ước: gốc bức ảnh nằm ở góc trên bên trái
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BÀI 79: CLIP-PATH</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-image: url(./img/anhgaibai79.png);
+            background-size: cover;
+            /* để cắt khung bức ảnh thành hình tròn ta dùng clip-path:circle(); (tác động trực tiếp vào bức ảnh)
+            hoặc ta có thể dùng border-radius để bo viền phần tử hộp(sẽ bo luôn hộp bức ảnh )
+            */
+            /* border-radius: 50%; */
+            clip-path: circle(80px);
+            /* ta có thể truyền vào bán kính của hình tròn đó =1 gtri tuyệt đối hoặc % */
+            clip-path: circle(50%);
+            /* 
+            -tính toán bán kính hình tròn:
+            radius = 50% *max(width,height), % này sẽ là % của kích thước lớn hơn 
+            VD: chiều rộng lớn hơn =500% => bán kính đg tròn lấy gtri từ width=250px
+            */
+            clip-path: circle(50% at 60% 70%);
+            /* nếu ta muốn dịch tâm đg tròn sang bên phải và xuống dưới, ta truyền vào % từ 0-100%
+            nhưng như thế dg tròn sẽ bị méo,do nó chỉ cắt 1 phần của ảnh, phần còn lại vẫn là HCN
+            */
+        }
+
+        .box {
+            /* 1/ CẮT HÌNH CHỮ NHẬT: ta dùng thuộc tính inset(truyền vào các gtri) 
+             clip-path: inset(20px);  //cắt đều 4 góc 
+            clip-path:inset(20px 40px);  //cái đầu:cắt  trên+dưới ; tiếp theo:cắt  trái+phải
+            clip-path:inset(20px 40px 60px);  //cái đầu tiên:cắt  trên , cái t3:cắt dưới, ở giữa:cắt trái phải
+            clip-path:inset(20px 40px 60px 80px);  //lần lượt theo chiều kim đồng hồ: trên phải dưới trái 
+            =>quy ước các kích thước giống "padding"
+            */
+            /* gõ tắt :" clp=clip-path" */
+            clip-path: inset(20px);
+            clip-path: inset(20px 40px);
+            clip-path: inset(20px 40px 60px);
+            clip-path: inset(20px 40px 60px 80px);
+
+            /* 2/  nếu chúng ta muốn bo góc bức ảnh, ta thêm thuộc tính round gtri sau nó
+            clip-path: inset(20px round 10px);  // bo cả 4 góc
+            clip-path: inset(20px 40px round 10px 20px); //(bắt đầu từ góc trên trái) : trên trái+dưới phải(góc đối diện vs nó) , tiếp theo là trên phải+dưới trái
+            clip-path: inset(20px 40px 60px round 10px 20px 30px);  //cái đầu là bo trên trên trái, thứ2 là bo trên phải+dưới trái, t3 là bo dưới phải
+            clip-path: inset(20px 40px 60px 80px round 10px 20px 30px 40px);  //theo kim đồng hồ: bát đầu từ góc trên trái 
+        */
+            clip-path: inset(20px round 10px);
+            clip-path: inset(20px 40px round 10px 20px);
+            clip-path: inset(20px 40px 60px round 10px 20px 30px);
+            clip-path: inset(20px 40px 60px 80px round 10px 20px 30px 40px);
+        }
+
+        .box {
+            /* 3/CẮT HÌNH ĐA GIÁC
+            -CÚ PHÁP: clip-path:polygon(x y,x y,x y...);
+            =>muốn cắt bao nhiêu góc ta truyền vào bấy nhiêu cặp tọa độ điểm (x y), sau đó ta điều chỉnh các tọa độ này 
+            */
+            clip-path: polygon(0 0, 100% 0, 50% 20%, 0 100%);
+            /* ta cắt hình tứ giác: góc trên bên trái(góc đầu tiên, sau đó theo chiều kim đồng hồ căt các góc còn lại) */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+1/VARIABLE(biến ):
+-khi 1 gtri css dùng đi dùng lại nhiều lần, ta có thể gán biến cho nó để tái sd
+<div class="content">
+    <div class="box1">Box 1</div>
+    <div class="box2">Box 2</div>
+    <div class="box3">Box 3</div>
+</div>
+
+<style>
+    .box1 {
+        height: 100px;
+        background-color: red;
+        margin-bottom: 10px;
+    }
+
+    .box2 {
+        height: 100px;
+        background-color: red;
+        margin-bottom: 10px;
+    }
+
+    .box3 {
+        height: 100px;
+        background-color: red;
+        margin-bottom: 10px;
+    }
+
+    /* 3box này đều có màu nền đỏ,cao 100px,cách dưới 10px. khi muốn sửa màu khác ta phải sửa cả 3 nơi 
+    -ta sẽ tạo ra các biến chứa sẵn gtri CSS ,sau đó chỉ cần gọi lại gtri này là đc
+    */
+    /* khai báo :root or trong các thẻ HTML sẽ AD cho toàn trang  */
+    :root {
+        /* biến đc khởi tạo trong lớp giả root 
+-CÚ PHÁP: --TENBIEN: GTRI;
+*/
+        --box-height: 100px;
+        --mau-nen: rgb(17, 240, 32);
+    }
+
+    /* sau đó ta gọi lại biến trong thuộc tính var để sd:
+    -cú pháp: var(--tenbien);
+    */
+    .box1 {
+        height: var(--box-height);
+        /* chieu cao =100px */
+        background: var(--mau-nen);
+        /* mau nen = xanh la */
+    }
+
+    .box2 {
+        height: var(--box-height);
+        background: var(--mau-nen);
+    }
+
+    /* như vậy khi muốn thay đổi gtri độ dài hoặc màu thì ta ko cần thay trong từng box mà chỉ cần thay gtri của biến trong root */
+    /* LƯU Ý: 1/biến chỉ đc sd trong phạm vi từ khi khởi tạo trở xuống (ko sd đc trc khi khởi tạo)
+    2/ta có thể tác động lên thẻ cha(kèm thẻ con trong nó do tính kế thừa), hoặc tác động vào mỗi thẻ con 
+    
+    
+    3/ gtri backup(đằng sau) của biến:
+    .content{
+        --mau-nen:red;
+    }
+    .box{
+        height:100px;
+        background-color:var(--mau-nen,blue);
+        =>màu nền bth sẽ là màu đỏ, nhưng ta có thể dự phòng gtri màu nền sau đó trong TH màu đỏ ko đc hiển thị
+    }
+    */
+</style>

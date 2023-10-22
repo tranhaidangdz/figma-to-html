@@ -1,0 +1,59 @@
+<!-- vd ta có tiêu đề các mục của 1 trang, nhưng ta chưa chia phần, nếu chia phải đánh số thủ công:
+-3 thẻ h2 là phần 1,phần2,phần 3. trong mỗi thẻ lại gồm 3 tiêu đề con h3 là : 1.1,1.2,1.3
+-->
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>bai84- CSSCounters-tuhoc.cc</title>
+    <style>
+        .box {
+            counter-reset: section;
+            /* tạo 1 biến đếm,reset nó =0 */
+        }
+
+        h2 {
+            /* tăng biến đếm lên 1 đơn vị mỗi khi gặp thẻ h2*/
+            counter-increment: section;
+        }
+
+        h2::before {
+            /* thêm ND vào trc thẻ h2: ta thêm "phần" số thứ tự vừa đếm ":" */
+            content: "Phan" counter(section) ":";
+            /* lần lượt ta sẽ đc
+            Phần 1:
+            Phần 2: 
+            Phần 3:
+            */
+            color: red;
+            /* tạo màu cho STT tiêu đề */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h1>Nội dung cơ bản khóa học: </h1>
+
+        <h2>HTML/CSS Tutorials</h2>
+        <h3>HTML</h3>
+        <h3>CSS</h3>
+        <h3>W3.CSS</h3>
+
+        <h2>Scripting Tutorials</h2>
+        <h3>Javascript</h3>
+        <h3>JQuery</h3>
+        <h3>React</h3>
+
+        <h2>Programming Tutorials</h2>
+        <h3>Python</h3>
+        <h3>Java</h3>
+        <h3>C++</h3>
+    </div>
+</body>
+
+
+</html>

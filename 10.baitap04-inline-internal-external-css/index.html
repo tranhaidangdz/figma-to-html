@@ -1,0 +1,37 @@
+<!-- ta sẽ code và so sánh kq với file finish và answer  -->
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập HTML04 </title>
+    <!-- dùng css internal cho tên thầy hiệu trưởng :thẻ h3 -->
+    <style>
+        h2 {
+            color: blue;
+        }
+    </style>
+    <!-- dùng css external cho tên Giáo viên c++: thẻ h3 (trỏ đến file "style.css" đã có sẵn thuộc tính màu "green"trong đó)
+    -nếu ta trỏ đến tên file"style2.css" ko đc thì khả năng có 2 file trùng tên, ta sẽ dùng "đg dẫn tuyệt đối trỏ chính xác đến file đó luôn"
+    -->
+    <link rel="stylesheet" href="./css/style2.css">
+</head>
+
+<body>
+    <a href="http://tuhoc.cc/">Bài tập HTML04</a>
+    <!-- 1.Dùng css inline Cho tiêu đề sau có color: red-->
+    <h1 style="color:red;">Danh sách giáo viên tiêu biểu tại tuhoc.cc</h1>
+
+    <!-- 2.Dùng internal css  Cho tên thầy hiệu trưởng màu blue color: blue-->
+    <h2>Thầy hiệu trưởng Học Viện tuhoc.cc: Chân Tử Đan</h2>
+    <img src="./img/hieutruong.jpg" alt="hiệu trưởng Học Viện tuhoc.cc" width="300">
+
+    <!-- 3.Dùng external css Cho tên giáo viên C++, giáo viên front end màu: color: green -->
+    <h3>Giáo viên frontend: An Phong</h3>
+    <img src="./img/giao-vien-frontend.jpg" alt="Giáo viên frontend: An Phong" width="300">
+    <h3>Giáo viên C++: Tom Cruise"</h3>
+    <img src="./img/giao-vien-c.jpg" alt="Giáo viên C++: Tom Cruise" width="300">
+</body>
+
+</html>

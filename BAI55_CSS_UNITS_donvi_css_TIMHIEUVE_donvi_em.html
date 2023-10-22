@@ -1,0 +1,96 @@
+1/ ĐƠN VỊ TƯƠNG ĐỐI-em:
+-KH: "em"
+VD: 2em : kích thước mới gấp 2 lần font chữ hiện tại(có kế thừa)
+*browser font size default: thông thường là 16px
+*** TH1: thẻ cha và thẻ con ko có font-size
+==> nó lấy font-size của root(thẻ gốc html)
+<!-- 
+<body>
+    <div class="parent">
+        <div class="child">đơn vị độ dài tương đối:em</div>
+    </div>
+</body>
+
+###file style.css:
+child {
+width:10em; //ban đầu thẻ div.parent chưa có kích thước nào cả, nó lấy kích thước mặc định là 16px
+height:10em; //ta gán kích thước dài+rộng thẻ div.child là gấp 10 lần thẻ cha
+background-color:violet;
+} 
+-->
+
+*** TH2:thẻ cha có font-size tuyệt đối: thẻ cọn đc kế thừa từ thẻ cha
+<!-- 
+VD thẻ cha có kích thước trc:
+
+<body>
+    <div class="parent">
+        <div class="child">đơn vị độ dài tương đối:em</div>
+    </div>
+</body>
+.parent {
+font-size: 20px;
+}
+.child {
+width:10em;
+height:20em;
+background-color:violet;
+}
+==>do "font-size"có tính kế thừa nên thẻ cha ban đầu=10px=thẻ con, như vậy sau khi truyền 10em cho thẻ con thì nó x10
+lần lên -->
+
+*** TH3:cả thẻ cha và thẻ con đều đặt font-size: ưu tiên font-size hiện tại của chính nó
+<!--
+ .parent {
+font-size:20px;
+}
+.child {
+font-size:10px; //nó ko lấy font-size từ thẻ cha nữa mà lấy của chính nó
+width:10em;
+height:10em;
+background-color:red;
+} 
+-->
+
+*** TH4: thẻ cha cũng có font-size tương đối:
+->thẻ cha lấy kích thước mặc định từ trình duyệt(16px) nhân vs kích thước tương đối
+->thẻ con kế thừa kích thước đó từ thẻ cha
+<!-- 
+.parent {
+font-size:2em;  //mặc định là 16px*2=32px (đây là cỡ chữ)
+}
+
+.child {
+width:10em;  //thẻ con kế thừa 32px*10=320 (kích cỡ ptu)
+height:10em;  //còn nó vẫn kế thừa font chữ = 32px của cái trên thuii
+background-color:red;
+} 
+ -->
+### THỨ TỰ ƯU TIÊN :đơn vị tương đối em:
+->ưu tiên 1: lấy font-size chính ptu đó
+->ưu tiên 2: phụ thuộc vào font-size thẻ cha
+->ưu tiên 3:phụ thuộc vào font-size root(mặc định của trình duyệt là 16px)
+==>do font-size có tính "kế thừa"nên các thẻ con xếp tầng sẽ kế thừa từ thẻ cha
+VD luôn:
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style7.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="child">em1
+            <div class="child">em2
+                <div class="child">em3</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

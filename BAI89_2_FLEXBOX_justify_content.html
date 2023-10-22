@@ -1,0 +1,32 @@
+1/ FLEX-BOX:thuộc tính justify-content
+-LƯU Ý các thuộc tính này chia ra loại tác động là thẻ cha và thẻ con. khi ta dùng thuọc tính thẻ cha tác động vào thẻ
+con nó sẽ ko hoạt động và ngược lại
+-khi ta để "display:flex;" cho thẻ cha. theo mặc định sẽ sinh ra trục "main axis: nằm trang" và "cross axis:trục dọc"
+
+<!-- *** tác động vào thẻ cha (class "container") :
+.justify-content:
+.align-items:
+.flex-wrap:
+.align-content:
+.flex-direction:
+.flex-flow:
+*** tác động vào thẻ con :
+.align-self:
+.flex-grow:
+.flex-shrink:
+.flex-basic:
+.order:
+.flex:
+-->
+1/ justify-content : dùng để căn phần tử theo trục main axis (phàn sau ta sẽ học xoay trục ngang thành dọc, thì
+justify-content sẽ thành căn cho trục dọc)
+<!--
+-ta có 6 mốc để căn justify-content:
+j
+justify-content:flex-start(sát lề trái: đây là điểm bắt đầu của hàng ngang):các ptu xếp từ trái ->phải (mặc định của flex)
+justify-content:flex-end(sát lề phải: đây là điểm cuối của hàng ngang):các ptu xếp từ phải ->trái
+justify-content:center: các ptu nằm chính giữa thẻ cha, cách đều 2 bên lề
+justify-content:space-between: 2 ptu 2 bên dính sát lề trái và lề phải, các ptu ở giữa sẽ tự cách đều nhau
+justify-content:space-around: khoảng trắng xung quanh các ptu là đều nhau(như vậy 2 ptu cạnh nhau sẽ có kcach >gấp đôi kcach của ptu với lề do nó bị cộng dồn 2 bên)
+justify-content:space-evenly: khoảng trắng xung quanh các ptu là đều nhau(kể cả khoảng cách với lề)
+-->

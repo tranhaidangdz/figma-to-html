@@ -1,0 +1,31 @@
+1/POINTER-EVENT(sự kiện chuột): kiểm soát hoạt động của chuột lên các ptu html
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .img_demo {
+            max-width: 300px;
+            pointer-events: none;
+            /* khi ta truyền vào gtri none, ng khác sẽ ko lưu đc ảnh từ trang web của ta nữa(mất đi cái save image as)
+            -tuy nhiên nếu chọn "inspect" ->xem ảnh thì vẫn lấy đc link ảnh, dẫn đến trang web có ảnh và ta tải đc nó về 
+            */
+            pointer-events: auto;
+            /* cho phép lấy ảnh  */
+            /* CHÚ Ý: khi ta dùng pointer-event:none; cho ptu nào, VD thẻ a , thì khi ta click vào sẽ ko tương tác đc link nữa  */
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="box">
+        <img class="img_demo" src="./img/anhnen1.avif" alt="">anh demo</img>
+    </div>
+</body>
+
+</html>

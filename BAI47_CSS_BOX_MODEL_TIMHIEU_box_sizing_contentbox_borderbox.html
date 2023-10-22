@@ -1,0 +1,48 @@
+<!--
+ 1/ tìm hiểu về box-sizing(sái dìng -định cỡ):ta dùng để chỉnh kích cỡ của ptu hộp
+-nó có 2 gtri: content-box (nội dung hộp: đây là gtri mặc định) và border-box(viền hộp)
+-> trong thực tế, ta sd border-box thường xuyên hơn để kích thước khớp với thiết kế, tránh phải tính toán lại phần nội
+dung 
+-->
+<h2>nội dung trên</h2>
+<div class="box box1"></div>
+<h2>nội dung dưới</h2>
+<div class="box box2"></div>
+
+###file style.css:
+.box {
+width:100px;
+height:150px;
+padding:20px;
+border: 10px solid red;
+margin-bottom: 10px;
+<!-- thuộc tính box-sizing mặc định -->
+box-sizing :content-box; //div 1 sẽ nhận kích thước 100x150 là kích thước của content
+}
+.box2 {
+box-sizing:border-box; //div 2 sẽ nhận kích thước 100x150 cho cả ptu
+}
+<!-- 
+-ĐIỂM KHÁC NHAU:
++,content-box: width,height là kích thước của content bên trong (nó sẽ dãn nở từ trong ra ngoài )+padding+border nữa ==>kích thước ptu lớn hơn 
++,border-box: width,height là kích thước của ptu (gồm của content+padding+border),nó sẽ trừ đi kích thước padding,border để ra kích thước content .sau này ta có mở rộng padding và border thì content sẽ teo lại còn kích cỡ ptu vẫn vậy 
+ -->
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style6.css">
+    <title>bài 47: CSS box-sizing</title>
+</head>
+
+<body>
+    <h2>nội dung trên</h2>
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+    <h2>nội dung dưới</h2>
+</body>
+
+</html>

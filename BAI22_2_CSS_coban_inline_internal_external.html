@@ -1,0 +1,140 @@
+<!-- bài trc ta dùng CSS inline(nội tuyến: thay đổi màu săc trong 1 dòng), khi muốn thay đổi nhiều dòng ta lại phải làm
+nhiều lần rất mất công
+
+2.2 INTERNAL CSS(css nội bộ): là cách viết code CSS nằm trong cặp thẻ <style> </style> luôn,sau đó gọi tên các thẻ và gắn css cho nó 
+-cú pháp : -->
+_______________________________________
+<style>
+    tên thẻ html {
+        //viết thuộc tính css vào đây
+    }
+</style>
+_______________________________________
+-VD:
+
+<head>
+    <style>
+        h1 {
+            color: blueviolet; //màu sắc 
+            font-style: italic; //font chữ in nghiêng (nhớ chấm phẩy sau mỗi ý này)
+        }
+    </style>
+</head>
+<!-- +,ta thấy thuộc tính style sẽ tác động lên toàn bộ thẻ h1 vs các gtri đc viết trong cặp ngoặc nhọn {}
+-ưu điểm:code tách biệt vs ptu, có thể áp dụng với toàn trang (VD như AD với toàn bộ thẻ h1)
+-nhược điểm:vẫn khó qly khi dự án lớn, quá nhiều mã CSS sẽ làm tệp HTML trở nên cồng kềnh -->
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        h1 {
+            color: brown;
+            font-style: italic;
+        }
+
+        /* ta đang quy định màu cho toàn bộ thẻ h1 */
+        /* ở dưới ta có 3 thẻ p, giờ ta sẽ quy định màu cho 3 thẻ p đó thành"blue"luôn */
+        p {
+            color: blue;
+            font-style: oblique;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- ta sẽ thêm 3 thẻ a link đến trang"home"=bài này, "contact"=file contact.html,"about"=file about.html -->
+
+    <a href="">home</a>
+    <a href="./contact.html">contact</a>
+    <a href="./about.html">about</a>
+    <h1>tự học chấm xê xê</h1>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+</body>
+
+</html>
+
+<!-- *** CHÚ Ý HAY ***
+- ta đã cài emmet để gõ nhanh: vd gõ "a*3+enter" để tạo ra 3 thẻ a, nhưng nó lại là 3 thẻ 
+trên cùng 1 dòng chứ ko ngắt thành 3 dòng mới.
+-ta sẽ lên chrome tìm "vs code emmet inline new line" -> copy đoạn code 
+"emmet.syntaxProfiles": {
+
+  "html": {
+    "inline_break": 1
+  },
+},
+trong trang đó, sau đó dán vào terminal cài đặt của vs code
+=>gõ "a*3" :
+<a href=""></a>
+<a href=""></a>
+<a href=""></a>
+
+-->
+-TA CÓ 1 VẤN ĐỀ Ở ĐÂY: vd 1 trang web có link đến nhiều trang(ở đây ta có home, contact, about)
+trang home (bài 22_2) đã có CSS, mà ta muốn trang about.html, contact.html có CSS giống thế thì ta phải copy toàn bộ
+CSS ở home dán lần lượt vào contact và about
+==>muốn AD đoạn code CSS đó cho toàn bộ file HTML trong trang web, tránh việc phải copy CSS ra tất cả file này ta sẽ
+dùng
+2.3 EXTERNAL css(CSS bên ngoài):
+-là cách viết code CSS thành 1 tệp ".css" và quản lí riêng. sau đó ta sẽ code trong tệp".html" rồi link đến tệp ".css"
+là ta sẽ có tát cả các thuộc tính CSS trong đó
+
+VD: đầu tiên ta tạo tệp .css "style.css", sau đó viết các code css theo cách internal(nhưng ko bỏ trong thẻ <style>
+</style>) trong file đó:
+file #style.css
+h1{
+color:blueviolet;
+font-style:italic;
+}
+
+//cần khai báo trong tệp HTML để link đến tệp CSS:
+
+<head>
+    <meta charset="UTF-8">
+    <link href="style.css" rel="stylesheet" /> //ta thêm dòng này vào 2 file "contact" và "about", 2 file đó cx sẽ đọc
+    từ file ".css" và lấy code trong đó
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>website của bộ tự học</title>
+</head>
+
+<!-- 
++, <link href="style.css" rel="stylesheet" />: dòng này để ta link từ file .html đến "style.css"để lấy code trong đó
++, ta gõ dòng này bằng cách "link:css+enter",nếu ta chưa tạo file "style.css" thì ta CTRL+ bấm vào link nó sẽ tạo file luôn 
++, rel="stylesheet" : thông báo cho trình duyệt tải tệp CSS đc liên kết về và áp dụng các thuộc tính ,lệnh đó và trang
+web hiện tại -->
+
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+
+
+</head>
+
+<body>
+    <!-- ta sẽ thêm 3 thẻ a link đến trang"home"=bài này, "contact"=file contact.html,"about"=file about.html -->
+
+    <a href="">home</a>
+    <a href="./contact.html">contact</a>
+    <a href="./about.html">about</a>
+    <h1>tự học chấm xê xê</h1>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+</body>
+
+</html>

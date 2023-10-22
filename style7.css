@@ -1,0 +1,117 @@
+/* bài 55: đơn vị em */
+/* .parent {
+    font-size: 10px;
+}
+
+.child {
+    font-size: 2em;
+    width: 2em;
+    height: 2em;
+    background-color: pink;
+
+} */
+
+/* ->ta đc cấu trúc xếp tầng : do ban đầu thẻ cha là 10px(cỡ chữ)
+=>khi xuống các khối con: "em1" sẽ có cỡ chữ 2em=20px, width=height=20px (cỡ phần tử)
+=>"em2" kích thước gấp đôi=2 em1=40px
+=>"em3"=2*em2=80px */
+/* 
+h1 { */
+/* font-size: 40px; */
+/* font-size: 4rem;
+}
+
+p { */
+/* font-size: 23px; */
+/* font-size: 2.3rem;
+}
+
+.box { */
+/* width: 200px;
+    height: 150px; 
+    đổi về rem 
+    */
+/* width: 20rem;
+    height: 15rem;
+    background-color: coral;
+}
+
+html {
+    font-size: 62.5%;
+} */
+
+/* giờ nếu ta muốn tăng tất cả kích thước lên 10%. ta sẽ phải sửa từng cái, VD: 40px*10%=44px
+-tuy nhiên khi đổi sang px nó sẽ có nhược điểm: VD 1 ng bị cận muốn vào cài đặt trình duyệt tăng cỡ chữ lên(nhưng do px là cỡ chữ mặc định nên ko thẻ thay đổi đc)
+, ta phải đổi px về rem để các kích thươc ptu sẽ dựa vào kích thước mặc định của trình duyệt 
+-tuy nhiên 1rem=16px nên khi đổi từ px->rem ta phải chia 16(số xấu) thay vào đó ta sửa tle 1 rem=10px, sau chỉ cần chia 10 là ra số rem 
+-ta đã có con số 62.5% tức là tỉ lệ quy đổi giữa px và rem là: 1rem=10px
+*/
+
+/* bài 61:FONT-WEIGHT VÀ LINE-HEIGHT */
+/* body {
+    font-family: 'Roboto', sans-serif;
+}
+
+p {
+    font-weight: 700; */
+/* ta có thể chỉnh độ đậm chữ bằng các con số */
+/* font-weight: bold; */
+/* hoặc để chữ "bold" để im đậm lên 1 cấp so vs độ đậm ban đầu */
+/* font-weight: lighter; */
+/* ta để "lighter" để nó nhat hơn 1 cấp so vs độ đậm ban đầu  */
+/* }
+
+p {
+    font-size: 10px;
+    line-height: 1.5; */
+/* tăng khoảng cách dòng =1.5 lần kcach dòng mặc định của trình duyệt ,hoặc nếu trc đó ta set font-size thì line-height này sẽ dựa vào đó để dãn cách */
+/* line-height: 150%; */
+/* tăng khoảng cách dòng =150% kcach dòng mặc định của trình duyệt ,hoặc nếu trc đó ta set font-size thì line-height này sẽ dựa vào đó để dãn cách */
+/* ta ko nên để kcach dòng =24px,4px... nói chung bằng 1 gtri cố định, vì như thế khi ta tăng kích cỡ khoảng cách dòng vẫn cố định thế mà ko tự dãn nở. ta lại mất công sửa  */
+/* } */
+/* 
+bài 65: text-shadow và overflow: 
+h1 {
+    margin: 40px;
+    text-shadow: 20px -15px 10px rgb(96 96 96);
+}
+
+.box {
+    width: 300px;
+    height: 200px;
+    background-color: yellow;
+    khi ta để kích thước ptu qua nhỏ ta sẽ bị tràn văn bản ra ngoài ptu hộp đó 
+    overflow: hidden;
+    overflow: visible;
+    overflow: scroll;
+    overflow: auto;
+} */
+/* bài 67: xử lí đoạn văn bị tràn bằng dấu 3 chấm ...
+.box {
+    width: 300px;
+    height: 300px;
+    background-color: aquamarine;
+    overflow: scroll;
+    overscroll-behavior: auto;
+    overscroll-behavior: contain;
+}
+
+//width
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+//Track
+::-webkit-scrollbar-track {
+    background: #0f8422;
+}
+
+//Handle
+::-webkit-scrollbar-thumb {
+    background: #a31010;
+}
+
+//Handle on hover
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+} */

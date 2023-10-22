@@ -1,0 +1,66 @@
+<!-- 
+    1/Z-INDEX: (muc luc z):dùng để xác định xem ptu nào nằm cao hơn ptu nào,ptu thấp ở dưới có thể bị che khuất
+.z-index đc sd khi các ptu có cùng vị trí(position) như: relative,absolute,fixed
+.các ptu có vị trí static(vị trí mặc định) sẽ ko bị ảnh hưởng bởi thuộc tính z-index 
+-trong các khối đó ta để thuộc tính
+z-index:1;   //đưa khối đó lên vị trí 1
+z-index:2;   //đưa khối đó lên vị trí 2
+z-index:4;   //đưa khối đó lên vị trí 4
+-->
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>z-index</title>
+    <style>
+        .box1 {
+            width: 300px;
+            height: 300px;
+            background-color: red;
+
+        }
+
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(20, 135, 12);
+            z-index: 1;
+            /* đưa khối 2 lên đầu, nhu vậy box2 sẽ nằm trên box3 và che đi box3 nhỏ hơn */
+        }
+
+        .box3 {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(0, 166, 255);
+        }
+
+        /*ta viết css cho từng khối box,màu sắc,kích thước...
+        ở dưới thì ta căn giữa cho cả 3 box(viết cho class "box")
+        */
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* lưu ý: cách căn giữa ND vào giữa khối chỉ AD cho trạng thái "flex" */
+            color: white;
+            position: absolute;
+            /* ở trạng thái absolute: các ptu sẽ tách thành các lớp khác nhau,tách khỏi vị trí ban đầu và nó đang chồng lên nhau :
+            ptu nào viết sau thì nó sẽ nằm bên trên cùng (box3),giờ ta sẽ dùng "z-index" để điều chỉnh thứ tự của 3 khối xem khối nào nằm bên trên 
+            */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="box box1">khối 1</div>
+        <div class="box box2">khối 2</div>
+        <div class="box box3">khối 3</div>
+        <!-- CÁCH ĐỔI CHỖ 2 DÒNG : TRỎ VÀO DÒNG ĐÓ RỒI ALT+MŨI TÊN ĐI XUỐNG(đổi chỗ vs dòng dưới) hoặc ALT+mũi tên đi lên(đổi chỗ vs dòng trên ) -->
+    </div>
+</body>
+
+</html>

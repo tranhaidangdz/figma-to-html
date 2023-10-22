@@ -1,0 +1,45 @@
+1/ BACKGROUND-COLOR:
+-mặc định BACKGROUND-COLOR là "transparent :trong suốt"
+.box {
+width:250px;
+height:300px;
+<!-- ta dùng thuộc tính "background-color" và chọn các gtri màu khác nhau -->
+background-color:transparent; //trong suốt
+background-color:red; //C1: (điền luôn tên màu bằng tiếng anh )
+background-color:rgb(20,20,155) //C2: dùng kênh màu rgb
+background-color:#ccc //C3: dùng hệ màu hex
+background-color:current color; //dùng màu chữ hiện tại (đã có trong hộp trc đó) để làm màu nền
+->tức là ta để màu chữ là màu gì thì màu nền lấy từ màu đó
+}
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bai69:background-color</title>
+    <style>
+        .body {
+            background-color: rgb(66, 72, 198);
+        }
+
+        .box {
+            color: yellow;
+            width: 250px;
+            height: 250px;
+            background-color: red;
+            background-color: rgb(96 96 96);
+            background-color: rgba(96 96 96 0.7);
+            background-color: #ccc;
+            background-color: currentColor; //nó sẽ lấy màu chữ là màu vàng ở trên để đặt màu nền 
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>
+<!-- ** CHÚ Ý: PHẦN MÀU NỀN background-color sẽ đồ vào toàn bộ phần tính kích thước ptu (tức là bao gồm cả padding, margin,content) -->

@@ -1,0 +1,89 @@
+1/ CSS MARGIN COLLAPSE (sự sụp đổ viền css):
+-margin collapse: là hiện tượng chồng lặp thuộc tính margin khi 2 ptu liền kề cùng đc thiết lập margin vs ptu còn lại
+theo chiều dọc
+
+<body>
+    <div class="box box1">
+        tuhoc.cc 1
+    </div>
+    <div class="box box2">
+        tuhoc.cc 2
+    </div>
+</body>
+
+###file style.css:
+.box { //thuộc tính css dành cho cả 2 thẻ div(do chung class"box")
+width:200px;
+height:200px;
+border : 10px solid red;
+}
+.box1 {
+margin-bottom:50px; // thẻ div trên(class"box1") sẽ căn viền dưới
+}
+.box2 {
+margin-top:70px; // thẻ div dưới(class"box2") sẽ căn viền trên
+}
+==>2 thẻ này liền kề nhau và tác động margin đến nhau theo chiều dọc, ta sẽ lấy margin lớn hơn làm margin chung (2 cái
+margin đè lên nhau)
+==> 2 thẻ sẽ cách nhau 70px
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style6.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box box1">tuhoc.cc 1</div>
+    <div class="box box2">tuhoc.cc 2</div>
+</body>
+
+</html>
+
+2. còn nếu là css margin collapse theo chiều ngang,thì ko xảy ra hiện tượng margin chồng nhau , mà kcach giữa 2 ptu sẽ
+bằng tổng 2 margin cộng lại
+###file style.css:
+.box { //thuộc tính css dành cho cả 2 thẻ div(do chung class"box")
+width:200px;
+height:200px;
+border : 10px solid red;
+}
+.box1 {
+margin-right:50px; // thẻ div trên(class"box1") sẽ căn viền dưới
+}
+.box2 {
+margin-left:70px; // thẻ div dưới(class"box2") sẽ căn viền trên
+}
+3. CÁCH KHẮC PHỤC MARGIN COLLAPSE (khi ta căn margin theo chiều dọc):
+-cách đơn giản: chỉ căn 1 trong 2 ptu (từ trên xuống dưới or từ dưới lên trên)
+-cách 2: thêm thuộc tính "display:flex;" và "flex-direction:colum;" và thẻ cha của 2 thẻ div(thường là thẻ body)
+
+<!--
+<body>
+    display:flex;
+    flex-direction: colum;
+</body> 
+-->
+==> như vậy nó ko chồng 2 margin lên nhau mà nó sẽ lấy tổng 2 margin=50+70=120px
+
+4/ TH2: margin collapse xảy ra vs ptu có mối quan hệ cha-con:
+<div class="box_parent">
+    <h2 class="box_child">thẻ h2</h2>
+</div>
+### file style.css:
+.box_parent {
+back-ground-color: blue;
+height: 70px;
+}
+.box_child {
+width:200px;
+back-ground-color: red;
+margin-top: 70px;
+}
+==>do thẻ h2 nằm trong div nên khi ta dãn thẻ h2 thì thẻ div cũng bị dãn ra theo(Hiện tg margin collapse đối vs thẻ
+cha-con)
+-kích thước nào lớn hơn thì sẽ quyết định cái còn lại

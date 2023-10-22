@@ -1,0 +1,70 @@
+<!-- 1/ CSS LAYOUT-DISPLAY (trình bày-trưng bày):
+-tất cả các thẻ html đều có thuộc tính display(chọn chế độ hiển thị ptu), trong đó gồm 3gtri:
+block,inline,inline-block
+-trong đó thuộc tính mặc định là inline & block
+
+1.1 block element:các thẻ ở trang thái mặc định, luôn chiếm 100% chiều rộng của thẻ cha bất kể nội dung dài hay ngắn
+(chiếm hết trên 1 dòng và khi ta gắn thêm 1 thẻ thì nó sẽ bắt đầu trên 1 dòng mới)
+VD: thẻ div,p,h1-h6,ul,ol ==> các thẻ thuộc dạng "block-level element" -->
+
+<body>
+    <h1>tuhoc.</h1>
+    <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, nisi?</h2>
+    <h2>Lorem ipsum dolor sit amet consectetur l<p>adipisicing</p> elit. Quaerat, nisi?</h2>
+
+    <h3>Lorem ipsum dolor <div>sit amet</div> consectetur adipisicing elit. Quaerat, nisi?</h3>
+</body>
+<!-- khi ta thêm loại thẻ block element thì nó sẽ ngắt luôn từ đó thành 1 dòng mới -->
+1.2 inline element: hộp có kích thước phụ thuộc vào ND ptu bên trong nó (hộp chỉ bao quanh kích cỡ ptu của ta, và giới
+hạn trong 1 dòng:chỉ mở rộng đc theo chiều ngang )
+VD: thẻ a,strong,em,button...(khi ta thêm thẻ vào 1 dòng, nó ko bắt đầu 1 dòng mới mà nó vẫn ở trong phạm vi ND ta nhập)
+
+<body>
+    <h1>tuhoc.</h1>
+    <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, nisi?</h2>
+    <h2>Lorem ipsum dolor sit amet consectetur <strong>adipisicing</strong> elit. Quaerat, nisi?</h2>
+
+    <h3>Lorem ipsum dolor <em>sit amet</em> consectetur adipisicing elit. Quaerat, nisi?</h3>
+</body>
+<!-- ko bắt đầu 1 dòng mới, nó chỉ có tác dụng lên cac ptu có trong ND thẻ -->
+
+<!-- 
+    ** CHÚ Ý: 1 số thuộc tính CSS không áp dụng đc với inline element :
+- do ptu có thuộc tính inline(nó bị ghan trong 1 dòng): chỉ mở rộng chiều ngang đc chứ ko mở rộng đc chiều dọc
+VD:
+<div>
+    <h1>tự học lập trình web</h1>
+    <h1>tự học <strong>lập trình</strong> web</h1>
+    <h1>tự học lập trình web</h1>
+</div>
+
+### file style.css:
+strong {
+padding:30px; //mở rộng cả 4 phía, nhưng ko mở rộng đc trên&dưới
+back-ground-color:red;
+}
+
+1.phần padding : top , bottom
+2.margin top,bottom
+3.width, height,min-width(rộng tối thiểu), min-height(cao tối thiểu)
+==> inline element ko AD đc các thuộc tính trên để tránh phá vỡ cáu trúc dòng 
+ -->
+
+1.3 inline-block: là sự kết hợp của 2 loại thẻ inline-block: nó bao quanh ND ptu, nhưng ko bị ghan trong 1 dòng giống
+như inline(có thể mở rộng cả chiều dọc+ngang)
+-ta thêm thuộc tính "display: inline-block;" , như vậy các thuộc tính css sẽ áp dụng cho các thẻ inline, và theo chiều
+dọc đc
+VD:
+.line2 {
+width:150px;
+height:150px;
+back-ground-color: blue;
+display: inline-block;
+
+}
+.line2 {
+padding:10px;
+back-ground-color: blue;
+display: inline-block;
+
+}

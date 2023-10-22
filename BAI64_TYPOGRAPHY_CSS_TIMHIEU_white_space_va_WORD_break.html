@@ -1,0 +1,32 @@
+1/ WHITE-SPACE: khoảng trắng : quy định về khoảng trắng khi code
+* khoảng trắng mặc định khi ta code:
+-thẻ
+<pre></pre> luôn giữ nguyên định dạng code
+-trong code có nhiều khoảng trắng =>tự động chuyển 1 khoảng trắng
+-nhiều dấu xuống dòng =>chuyển thành 1 khoảng trắng
+-nội dung quá dài, chạm tới lề => xuống dòng
+
+-nếu ta muốn tùy chỉnh khoảng trắng theo ý của mình:
+.white-space: normal; //trạng thái mặc định
+.white-space: nowrap; //ko xuống dòng(kể cả chạm tới lề ==> nó viết đoạn văn trên 1 dòng)
+.white-space: pre; //giữ nguyên định dạng văn bản, giống như ta dùng thẻ pre
+.white-space: pre-line; //giữ định dạng văn bản theo line(enter)
+<!-- 
+>>tất cả khoảng trắng thừa mỗi dòng trong ND văn bản sẽ bị xóa (các dấu cách trong mỗi dòng bị xóa)
+>>dòng mới(xuống dòng) đc giữ nguyên (các dòng là các khoảng trắng thì đc giữ nguyên)
+-->
+.white-space: pre-wrap; //giữ nguyên định dạng code
+<!-- 
+    >>tất cả dấu cách thừa trong ND văn bản sẽ đc giữ nguyên
+    >>dòng mới(xuống dòng đc giữ nguyên)  
+    >>khi gặp lề nó sẽ tự động ngắt xuống dòng mới
+    ->nó khá giống thẻ <pre> là đều giữ nguyên định dạng code, tuy nhiên thẻ pre hết 1 câu nó mới xuống dòng, còn "pre-wrap"
+        phụ thuộc vào độ rộng lề, cứ gặp lề là xuống dòng.  
+ -->
+2/ WORD-BREAK: ngắt từ :
+-khi 1 từ quá dài, người dùng nhập liền nhau thì có thể gây vỡ giao diện(từ đó sẽ dài hơn lề) vì text ko tự động ngắt
+dòng
+VD: <p>hfhiuhiwheiwhishdddddddddddddậiauqiuoeuqeeeeeeeeeeeeeeeeeeauhfuahiiwq</p>
+(do nó ko có khoảng trắng giữa các từ và các kí tự nên nó ko thể tự xác định để ngắt dòng)
+
+==>ta dùng thuộc tính "word-break: break-all;" để bẻ xuống dòng (dù từ đó có dài đến mấy thì gặp lề nó cũng sẽ ngắt)

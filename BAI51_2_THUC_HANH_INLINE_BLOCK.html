@@ -1,0 +1,46 @@
+<!-- hôm nay ta sẽ làm nút bấm, khi ta di chuột qua nó đổi màu (sd hover), còn khi ta bấm vào nó chuyển đến link khác  -->
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style6.css">
+    <title>bài 51_2_thực hành tạo nút bấm</title>
+</head>
+
+<body>
+    <a href="http://google.com">click 1</a>
+    <a href="http://google.com">click 2</a>
+</body>
+
+</html>
+
+<!-- ta muốn bỏ gạch chân của đường link(do đó là default css nó tự có)
+=>ta dùng "text-decoration: bỏ chọn underline đi "
+-->
+<!-- 
+### file style.css:
+a {
+text-decoration: none; //bỏ gạch chân mặc định của đg link đi
+background-color: pink; //thêm màu nền để ta thấy rõ ptu đó
+border-radius: 999px; //bo viền cong 4 góc, tạo thành nút hình ovan ;ta để kích cỡ lớn như thế để nếu lỡ ND dài thì nó
+vẫn đủ chứa ptu đó
+color: black; //chữ đen
+display: inline-block;  //ta để thuộc tính này để ptu ko bị ghan bất cứ hướng nào
+width:100px;   //dù ta tăng kích cỡ pru thì nó vẫn chứa đủ trong nút đó 
+padding: 8px 16px;  //tăng kích cỡ ptu bằng cách tăng vùng đệm 
+text-align:center;  //căn ND vào giữa nút 
+} 
+-->
+<!-- 
+    /* ta sẽ tạo TH di chuột qua nút đó, ta cho nút đó đổi màu : */
+a:hover {
+    background-color: black;
+    color: rgb(219, 136, 151);
+    /* mẹo để đổi màu nút đẹp: ta sẽ dùng màu nền của nút chưa đổi màu=màu chữ khi di chuột
+    màu chữ của nút = màu nền sau khi đổi màu 
+    */
+}
+ -->

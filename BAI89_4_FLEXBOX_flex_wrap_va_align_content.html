@@ -1,0 +1,20 @@
+1.1flex-wrap: chọn chế độ xuống dòng hay ko xuống dòng cho các ptu
+*** CHÚ Ý: flex-wrap là thuộc tính dành cho thẻ cha "container" nên ta ko viết trong các thẻ con mà viết trong thẻ bao
+lấy các thẻ đó
+<!-- 
+    flex-wrap:nowrap;  //thuộc tính mặc định, các ptu khi để chế độ "display:flex" sẽ nằm trên cùng 1 hàng dù bị tràn
+    flex-wrap:wrap;   //khi chạm đến lề các ptu sẽ tự bẻ xuống dòng
+    flex-wrap:wrap-reverse;  //các ptu đảo ngược thứ tự trong 1 dòng + khi chạm đến lề nó sẽ tự xuống hàng 
+ -->
+1.2/align-item: căn chỉnh các ptu theo chiều dọc (khi có nhiều hàng)
+<!-- 
+    align-content:flex-start; //điểm bắt đầu của các ptu là lề trên(hàng trên cùng sát lề trên )
+    align-content:flex-end; //điểm bắt đầu của các ptu là lề dưới (hàng dưới cùng sát lề dưới)
+    align-content:center;  //các ptu (các dòng nằm giữa trang) theo trục cross
+    align-content:stretch;  //mặc định, các ptu sẽ dãn ra và lấp hết chiều dọc 
+    align-content:space-between; //các hàng cách đều nhau, hàng trên và hàng dưới dính sát 2 lề 
+    align-content:space-evenly; //kcach giứa các ptu và lề là như nhau, 2 ptu cạnh nhau sẽ có kcach = 2 lần kcach của ptu với lề 
+    
+    *** PHÂN BIỆT "align-item" và "align-content" : tuy chúng đều dùng để căn vị trí, khoảng cách các ptu theo chiều dọc
+    nhưng align-item chỉ căn đc cho 1 hàng duy nhất, còn align content căn cho nhiều hàng 
+ -->

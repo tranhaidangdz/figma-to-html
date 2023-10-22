@@ -1,0 +1,34 @@
+1/BACKGROUND-SIZE: DÙNG ĐỂ ĐIỀU CHỈNH KÍCH CỠ CỦA ẢNH NỀN
+
+<body>
+    <div class="box"></div>
+</body>
+### file style.css:
+<style>
+    .box {
+        width: 500px;
+        height: 400px;
+        background-image: url(./anhlacay.png);
+        border: 5px solid red;
+        /* ta có 1 khung chứa và ta truyền ảnh nền vào => ảnh nền mặc định kích thước 1:1 
+        -ảnh chỉ chứa trong hộp ta đã đặt nên có xảy ra mất góc ảnh , để khắc phục ta dùng "-webkit-background-composite: ;"
+        */
+        background-size: contain;
+        /* gtri contain(khờn trên :bao gồm):  
+        -ảnh vừa khung hình, giữ nguyên tỉ lệ ảnh (nó sẽ co nhỏ bức ảnh lại )
+        -ko bị mất ảnh, nếu còn khoảng trắng, ảnh sẽ bị lặp lại
+        */
+        background-size: cover;
+        /* gtri cover(kha vờ: che phủ):
+        -ảnh sẽ vừa khớp khung hình 
+        -giữ nguyên tỷ lệ ảnh(ko bị méo)
+        -có thể mất 1 phần hình ảnh, ko bị lặp hình (do nó dãn ra để lấp vừa hộp chứa)
+        */
+        /* -ngoài dùng 2 gtri có sẵn ta có thể truyền vào các gtri là các đơn vị để điều chỉnh kích thước ảnh nền */
+        background-size: 100%; //có 1 đối số => chiều rộng ảnh = 100% chiều rộng hộp chứa (nếu có 1 đối số thì đó là chiều rộng )
+        background-size: 50% 60%; //có 3 đối số => chiều rộng ảnh = 50% chiều cao hộp, chiều cao ảnh = 60% chiều rộng hộp (nếu có 2 đối số thì đọc chiều rộng trc) 
+        background-size: 200px; //chiều rộng của ảnh =200px
+        background-size: 200px 100px; //chiều rộng ảnh =200px, chiều cao ảnh =100px
+        background-repeat: no-repeat; //ảnh nền ko lặp lại , chỉ lặp 1 lần duy nhất 
+    }
+</style>

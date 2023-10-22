@@ -1,0 +1,67 @@
+- khi ta lên chrome tìm 1 trang web nào đó, tên trang web sẽ hiện ra kèm biểu tượng nhỏ bên trái tên trang web, và khi
+ta vào 1 trang web thì tên trang và biểu tg đó cx hiện lên thanh tab của trình duyệt, đó đgl favicon(biểu tượng yêu
+thích hoặc logo trang web)
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- để thêm thẻ favicon ta thêm vào khối head: "link:favicon+enter" , thuộc tính href="favicon.ico" là để ta gắn link ảnh vào để tạo favicon-->
+    <link rel="shortcut icon" href="link đến ảnh làm Favicon" type="image/x-icon">
+
+    <!-- cách xem favicon của trang web: favicon sẽ có đuôi .io
+    - ta vào trang, chuột phải+"inspect" hoặc CTRL+U để xem code
+    - CTRL+F tìm ".io" ta tìm đc link ảnh favicon trang web đó
+    -->
+    <title>bài 25: FAVICON-biểu tượng yêu thích</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+***CHÚ Ý: thường trình duyệt sẽ hiển thị favicon kích thước 16x16, nếu ta chèn bức ảnh lớn quá sẽ gây lãng phí
+-còn trên đt nếu ta lưu trang web để tạo lối tắt truy cập nó sẽ lấy favicon để làm biểu tg ứng dụng, nêú ta để nguyên
+bản 16x16 thì nó lại bé quá
+-trang web tạo favicon online: lên chrome tìm "make favicon online" vào trang "favicon-generator.org"
++,chọn tệp, chèn ảnh mk vào -> create favicon -> tải xuống ( nó sẽ chứa đa dạng kích thước để nếu cái này ko tương thích
+thì còn cái kia)
++, chứa ảnh đó trong 1 cái file nào đó, sau đó copy đoạn code vào thay cho dòng :
+"
+<link rel="shortcut icon" href="link ảnh đẻ làm FAVICOn" type="image/x-icon">"
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <title>bài 25: biểu tượng yêu thích </title>
+</head>
+
+<body>
+
+</body>
+
+</html>

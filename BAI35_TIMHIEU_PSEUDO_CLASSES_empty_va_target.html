@@ -1,0 +1,116 @@
+3/ TÌM HIỂU PSEUDO-CLASSES (lớp giả) P3: lớp giả":empty( trống vắng)" và lớp giả ":target(mục tiêu)"
+
+3.1 lớp giả ":empty" dùng để chọn các thẻ "ko có ND bên trong"
+VD: div:empty đây là cú pháp chọn các thẻ <div>"không có ND bên trong"
+    <div></div> là 1 thẻ phi ngữ nghĩa, chỉ có tác dụng gom nhóm các ptu html lại để dễ quản lý và tạo kiểu cho các ptu
+    đó
+    VD2:
+
+    <body>
+        <div class="div_1"></div> //thẻ div ko có ND bên trong
+        <div class="div_2"></div>
+        <div class="div_1">đăng đẹp trai</div> //thẻ đã có ND bên trong -> ko chịu tác dụng của ":empty" nữa
+
+    </body>
+    ### file style1.css:
+    div_1:empty {
+    color:blue;
+    width:250px;
+    hight:300px;
+    }
+    <!-- ==>jhi thẻ <div> trống => chịu tác động của lớp giả :empty,nó sẽ tạo 1 mảng hcn màu xanh dương lên ctrinh web của ta 
+    -nếu thẻ div có ND gì bên trong thì thẻ empty ko thể tác động 
+    -ta sẽ viết thêm 1 đoạn để xét TH thẻ div đc viết ND:
+    -->
+    div_1 {
+    color:red;
+    width:250px;
+    hight:300px;
+    }
+    ==>nếu thẻ div ko trống (rơi vào TH "ko có lớp giả :empty" thì nó sẽ đổi màu hcn thành đỏ)
+    <!-- <!DOCTYPE html>
+    <html lang="vi">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./style1.css">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <p>dòng thứ n</p>
+        <p>dòng thứ n</p>
+        <p>dòng thứ n</p>
+        <a href="http://tuhoc.cc" class="click me" target="_blank">click vào em đi</a> <br>
+        <a href="http://vietnamnet.vn/" class="click me" target="_blank">click vào em đi 2</a>
+        <div class="div_elm"></div>
+    </body>
+
+    </html> -->
+    3.2 lớp giả ":target"
+    VD: #home:target chọn thẻ id="home" và nếu trên URL(đg dẫn) có hash( #tenid chính là hash đó) tương ứng thì nó sẽ
+    tạo kiểu cho ptu có id=home cho đường dẫn đó
+    (vd đường dẫn: http://domain.com/#home )
+
+
+    <!DOCTYPE html>
+    <html lang="vi">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./style1.css">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <p>dòng thứ n</p>
+        <p>dòng thứ n</p>
+        <p>dòng thứ n</p>
+        <a href="http://tuhoc.cc" class="click me" target="_blank">click vào em đi</a> <br>
+        <a href="http://vietnamnet.vn/" class="click me" target="_blank">click vào em đi 2</a>
+        <div class="div_elm"></div>
+        <h1>nỗ lực phi thường</h1>
+        <!-- ul>li*3>a{chuyển đến mở bài} :tạo ra ds ko có thứ tự, bên trong có 3 thẻ li con, mỗi thẻ lại chứa link a với nội dung ... -->
+        <ul>
+            <li>
+                <a href="#mobai">chuyển đến mở bài</a>
+                <!-- ta truyền cái ID= hash vào đg dẫn của thẻ a, khi đó trong đg dẫn có hash và  -->
+            </li>
+
+            <li>
+                <a href="#thanbai">chuyển đến thân bài</a>
+            </li>
+
+            <li>
+                <a href="#ketbai">chuyển đến kết bài</a>
+            </li>
+        </ul>
+        <!-- tạo ra 1 thẻ h2 có id tên mobai với nội dung là mở bài:
+        h2#mobai{mở bai} +enter
+        -->
+        <h2 id="mobai">mở bài</h2>
+        <!-- tạo ra thẻ p vs đoạn văn ngẫu nhiên để mô tả mở bài: -->
+        <p>Lorem ipsum dolor sit amet consectetur.
+            Voluptas quam sit dolorem adipisci fugiat?
+            Mollitia molestiae illo illum quaerat numquam?
+            Perferendis dolor soluta modi neque molestiae.
+        </p>
+
+        <h2 id="thanbai">thân bài</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing.
+            Ullam repudiandae, laborum culpa debitis voluptas aspernatur.
+            Architecto dolores, facilis itaque quod nulla neque.
+            Vel, maiores accusamus? Provident quo officiis ipsam.
+            Nemo veniam laborum, consectetur molestias dolorum quidem!
+            Expedita veniam impedit neque porro dolorum nisi?
+            Quia facilis, quod enim doloribus architecto rerum.</p>
+
+        <h2 id="ketbai">kết bài</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing.
+            Magnam maxime obcaecati laboriosam atque totam iste.
+            Laudantium debitis dicta cupiditate eveniet dolore consequuntur!</p>
+    </body>
+
+    </html>

@@ -1,0 +1,71 @@
+1/ COMBINATOR SELECTOR (BỘ CHỌN TỔ HỢP) P3:
+-sd dấu cách(khoảng trắng) " " và dấu lớn hơn ">" để ngăn cách giữa các ptu
+
+1.1 space selector (bộ chọn dấu cách): sd khoảng trắng để ngăn cách các ptu khi gọi trong file style.css:
+<!-- -CÚ PHÁP :
+___________________________________________
+element1 element2 (phần tử1 dấu cách phần tử2)|  : phần tử 1 có rất nhiều ptu con, trong đó ta lựa chọn ptu 2 là con ptu 1 và sẽ đc css tác động
+___________________________________________
+VD: div p : css tác dụng lên tất cả thẻ p nằm bên trong(là con)của thẻ div
+.loi_chuc p : css chỉ tác dụng lên thẻ p có class "loi_chuc" -->
+
+<body>
+    <h1>tuổi trẻ</h1>
+    <!-- dùng emmet gõ tắt "h2.demo" ->tạo thẻ h2 có class là demo  -->
+    <h2 class="demo">tiền không có</h2>
+    <h3 class="demo demo2">quan hệ chưa có</h3>
+    <!-- dùng emmet gõ tắt "h3#dong_4" ->tạo thẻ h3 có ID là dong_4 -->
+    <h3 id="dong_4">đến cả tự tin cũng không có</h3>
+    <h3>vậy bạn có cái gì?</h3>
+    <div>
+        <p>đoạn văn 1</p>
+        <p>đoạn văn 2</p>
+        <p>đoạn văn 3</p>
+    </div>
+    <!-- div.loichuc>p*2{chương $} ==> tạo thẻ div có class"loichuc", bên trong có 2 thẻ p "chương" từ 1-2 -->
+    <div class="loichuc">
+        <p>chương 1</p>
+        <p>chương 2</p>
+    </div>
+</body>
+
+### file style.css :
+div p{
+<!-- tác động vào toàn bộ thẻ p nằm trong thẻ div -->
+color:blue;
+}
+
+.loichuc p{
+<!-- toàn bộ thẻ p nằm trong class"loichuc" sẽ có cỡ chữ 30 px -->
+font-size :30px;
+}
+
+1.2 > selector (bộ chọn dấu lớn hơn) : sd khoảng trắng để ngăn cách các ptu khi gọi trong file style.css:
+-CÚ PHÁP :
+____________________________
+element>element (ptu > ptu) | vd: div>p : css tác dụng lên tát cả các thẻ p là "con trực tiếp" của thẻ div
+_____________________________
+<!-- thẻ con trực tiếp của 1 thẻ: ta có thẻ div có rất nhiều thẻ p con, nhưng chỉ những thẻ p cấp 1(thẻ con thứ 1 của thẻ div) mới đgl con trực tiếp -->
+<div>
+    <p>tôi đang học tại tự học chấm cc </p>
+</div>
+<div>
+    <p>chúc các thím học tốt</p>
+    <!-- -> thẻ p cấp 1(con trực tiếp, nó chỉ thụt vào 1 tab) -->
+    <block>
+        <p>hôm nay sẽ tốt hơn hôm qua</p>
+        <!-- ->kp con trực tiếp (do nó thụt vào 2 tab, vừa là con thẻ div vừa là con thẻ block) -->
+    </block>
+</div>
+
+
+### file style.css :
+div p{
+color:red;
+}
+<!-- ==> bộ chọn dấu cách này nó hiểu là tất cả thẻ p con của thẻ div sẽ đc tô màu đỏ -->
+
+div>p{
+color:red;
+}
+<!-- ==> bộ chọn dấu lớn hơn nó hiểu là chỉ thẻ p là con cấp 1 của thẻ div thì mới đc tô màu đỏ -->

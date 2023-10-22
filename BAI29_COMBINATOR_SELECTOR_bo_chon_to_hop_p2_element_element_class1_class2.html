@@ -1,0 +1,96 @@
+1/ COMBINATOR SELECTOR (BỘ CHỌN TỔ HỢP) P2:
+-hôm nay ta học 2 bộ chọn mới : SELECTOR "element,element" (bộ chọn dấu phẩy để liệt kê các ptu) và SELECTOR
+"class1.class2"
+(bộ chọn class1.class2)
+
+1.1 bộ chọn dấu phẩy : element1 , element2 (tên thẻ 1,tên thẻ 2) hoặc (ptu 1,ptu2 )
+-cú pháp :
+____________________________________________________________
+tên thẻ bth, #tên id, .tên class {
+<!-- thuộc tính css muốn cho nó tác động lên các thẻ -->
+}
+_____________________________________________________________
+
+VD: div, p {
+color:red;
+}
+<!-- chọn tất cả các thẻ div,p trong ctrinh và gán css cho nó -->
+
+<body>
+    <h1>tuổi trẻ</h1>
+    <h2 class="demo">tiền không có</h2>
+    <h3 class="demo">quan hệ chưa có</h3>
+    <h3 id="dong_4">đến cả tự tin cũng không có</h3>
+    <h3>vậy bạn có cái gì?</h3>
+</body>
+### file style.css :
+
+h1, // tên thẻ bth -> khi gọi trong css thì ta ghi như bth
+.demo, //bộ chọn class -> cú pháp gọi ".ten class"
+#dong_4{ / /bộ chọn ID -> cú pháp gọi "#tenID đặt cho dòng đó"
+color:red;
+}
+<!-- ===> TÚM LẠI CÓ THỂ GÁN THUỘC TÍNH CSS CHO RẤT NHIỀU PTU , và mỗi ptu cách nhau bởi dấu phẩy ","  là đc-->
+
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style4.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1 class="demo">tiêu đề</h1>
+    <!-- cú pháp : h2*5{tiêu đề nhỏ thứ $}  để tạo ra 5 tiêu đề nhỏ trong thẻ h2 theo thứ tự từ 1->5 -->
+    <h2 class="demo">tiêu đề nhỏ thứ 1</h2>
+    <h2 id="title">tiêu đề nhỏ thứ 2</h2>
+    <h2>tiêu đề nhỏ thứ 3</h2>
+    <h2>tiêu đề nhỏ thứ 4</h2>
+    <h2>tiêu đề nhỏ thứ 5</h2>
+    <!-- tạo ra 3 thẻ p từ "đoạn văn" chạy từ 1->3: -->
+    <p>đoạn văn 1</p>
+    <p>đoạn văn 2</p>
+    <p>đoạn văn 3</p>
+    <ul>
+        <li>nội dung 1</li>
+        <li>nội dung 2</li>
+        <li>nội dung 3</li>
+    </ul>
+    <!-- bài tập : ta chuyển toàn bộ thẻ có class"demo" và toàn bộ thẻ p về chữ đỏ , toàn bộ thẻ ul thành chữ xanh-->
+
+</body>
+
+</html>
+
+1.2 bộ chọn CLASS1.CLASS2:
+-CÚ PHÁP:
+___________________________________-
+.tênclass1.tenclass2 {
+
+<!-- thuộc tính css -->
+}
+____________________________________
+VD:
+
+<body>
+    <h1>tuổi trẻ</h1>
+    <h2 class="demo">tiền không có</h2>
+    <h3 class="demo demo2">quan hệ chưa có</h3>
+    <h3 id="dong_4">đến cả tự tin cũng không có</h3>
+    <h3>vậy bạn có cái gì?</h3>
+</body>
+###file style.css :
+
+.demo1.demo2{
+color:red;
+}
+<!-- 
+    tức là ta có thẻ h2,h3 đều mang tên class "demo", nếu ta gọi .demo thì nó sẽ tác động lên cả 2 thẻ, mà ta muốn css tác động lên h3->ta gọi tên 2 class".demo.demo2"(do h3 có 2 tên class) 
+    -> chỉ thẻ h3 mang tên cả 2 class thì mới đc gọi (vậy nên ta sẽ đặt nhiều class cho 1 thẻ nào đó để nó đc gọi riêng )
+
+-->

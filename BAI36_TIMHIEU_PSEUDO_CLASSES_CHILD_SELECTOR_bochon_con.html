@@ -1,0 +1,139 @@
+1/ PSEUDO CLASSES (LỚP GIẢ) P4: child selector(bộ chọn con):
+1.1 ":first-child" thẻ con đầu tiên
+VD: p:first-child : chọn các thẻ <p></p> là thẻ con đầu tiên
+<div>
+    <p>đoạn 1</p>
+    <p>đoạn 2</p>
+    <p>đoạn 3</p>
+</div>
+<!-- ### file style.css ###:  -->
+p:first-child {
+color : red;
+font-size: 30px;
+}
+==> ta sẽ chọn thẻ <p></p> đầu tiên (ND là đoạn 1) sau đó tạo kiểu cho nó
+<!-- CHÚ Ý: NẾU THẺ P ĐÓ KP THẺ ĐẦU TIÊN(CÓ 1 THẺ Ở TRC) THÌ NÓ KO AD ĐC CSS
+VD ntn:
+<div>
+    <h1>tự học .cc </h1>  ->ko AD đc css 
+    <p>đoạn 1</p>
+    <p>đoạn 2</p>
+    <p>đoạn 3</p>
+</div>
+@@@ nếu ta ".demo" nó hiểu là tạo 1 thẻ div vs class="demo" (ko có thẻ gì trc .demo thì nó hiểu là thẻ div)
+VD: .demo>p*3{đoạn $} : tạo ra 3 thẻ p với đoạn 1->3, tát cả cho vào thẻ div với class="demo"
+-->
+
+1.2 ":last-child" thẻ con cuối cùng
+VD: p:last-child : chọn các thẻ <p></p> là thẻ con cuối cùng
+<div>
+    <p>đoạn 1</p>
+    <p>đoạn 2</p>
+    <p>đoạn 3</p>
+</div>
+<!-- ### file style.css ###:  -->
+p:last-child {
+color : red;
+font-size: 30px;
+}
+==> ta sẽ chọn thẻ <p></p> cuối cùng (ND là đoạn 3) sau đó tạo kiểu cho nó
+<!-- CHÚ Ý: NẾU THẺ P ĐÓ KP THẺ cuối cùng(CÓ 1 THẺ Ở SAU NÓ) THÌ NÓ KO AD ĐC CSS
+VD ntn:
+<div>
+    <p>đoạn 1</p>
+    <p>đoạn 2</p>
+    <p>đoạn 3</p>
+     <h1>tự học .cc </h1>  ->ko AD đc css 
+</div>
+-->
+1.3 ":nth-child(n)" thẻ con thứ n từ trên xuống
+VD: p:nth-child(2) :chọn các thẻ <p></p> là thẻ con thú 2 từ trên xuống (đánh số 1,2,3...)
+<div>
+    <p>đoạn 1</p>
+    <p>đoạn 2</p>
+    <p>đoạn 3</p>
+</div>
+<!-- ### file style.css ###:  -->
+p:nth-child(2) {
+color : red;
+font-size: 30px;
+}
+==> ta sẽ chọn thẻ <p></p> thứ 2 từ trên xuống (ND là đoạn 2) sau đó tạo kiểu cho nó
+<!-- CHÚ Ý: NẾU THẺ P ĐÓ CÓ THẺ NÀO CHÈN TRC, THÌ NÓ VẪN CỨ đếm thẻ từ trên xuống 
+VD ntn:
+<div>
+    <h1>tự học .cc </h1>  
+    <h1>tự học .cc </h1>  
+    <p>đoạn 1</p>  -> thẻ p thứ 3, nếu muốn chọn ta phải truyền số 3 vào(do trc nó có 2 thẻ khác )
+    <p>đoạn 2</p>
+    <p>đoạn 3</p>
+</div>
+***nếu truyền vượt số TT của thẻ-> ko AD đc css
+-->
+*** CHÚ Ý: NGOÀI TRUYỀN STT THẺ(CHO TỪNG THẺ) ta có thể truyền các cú pháp sau để AD css cho nhiều thẻ cùng lúc:
+-":nth-child(odd)" : nhảy theo n lẻ 1,3,5,7,...
+-":nth-child(even)" : nhảy theo n chẵn 2,4,6,8...
+-":nth-child(2n+1,4n,2n-1...) : nhảy theo step mong muốn (ta tự xây dựng quy luật)
+
+
+1.4 ":nth-last-child(n)" thẻ con thứ n từ dưới lên
+VD: p:nth-last-child(2) :chọn các thẻ <p></p> là thẻ con thú 2 từ dưới lên
+<div>
+    <p>đoạn 1</p>
+    <p>đoạn 2</p>
+    <p>đoạn 3</p>
+</div>
+<!-- ### file style.css ###:  -->
+p:nth-last-child(2) {
+color : red;
+font-size: 30px;
+}
+==> ta sẽ chọn thẻ <p></p> thứ 2 từ dưới lên (ND là đoạn 2) sau đó tạo kiểu cho nó
+
+<!-- CHÚ Ý: NẾU THẺ P ĐÓ CÓ THẺ NÀO CHÈN TRC, THÌ NÓ VẪN CỨ đếm thẻ từ dưới lên 
+VD ntn:
+<div>
+  
+    <p>đoạn 1</p>  
+    <p>đoạn 2</p>
+    <p>đoạn 3</p>  -> thẻ p thứ 3, nếu muốn chọn ta phải truyền số 3 vào(do trc nó có 2 thẻ khác )
+      <h1>tự học .cc </h1>  
+    <h1>tự học .cc </h1>  
+</div>
+***nếu truyền vượt số TT của thẻ-> ko AD đc css
+-->
+*** CHÚ Ý: NGOÀI TRUYỀN STT THẺ(CHO TỪNG THẺ) ta có thể truyền các cú pháp sau để AD css cho nhiều thẻ cùng lúc:
+-":nth-child(odd)" : nhảy theo n lẻ 1,3,5,7,...
+-":nth-child(even)" : nhảy theo n chẵn 2,4,6,8...
+-":nth-child(2n+1,4n,2n-1...) : nhảy theo step mong muốn (ta tự xây dựng quy luật)
+
+1.5 ":only-child" thẻ con duy nhất
+VD: p:only-child :chọn các thẻ <p></p> là thẻ con duy nhất của 1 thẻ khác
+<div>
+    <p>ĐOẠN 1</p>
+    <p>ĐOẠN 2</p>
+    <p>ĐOẠN 3</p>
+    <p>ĐOẠN 4</p>
+    <p>ĐOẠN 5</p>
+</div>
+<div>
+    <p>đoạn 6</p> =>thẻ con duy nhát đc chọn
+</div>
+<!-- ### file style.css ### -->
+p:only-child {
+color:red;
+font-size:30px;
+}
+<!-- chú ý:
+<div>
+    <p>ĐOẠN 1</p>
+    <p>ĐOẠN 2</p>
+    <p>ĐOẠN 3</p>
+    <p>ĐOẠN 4</p>
+    <p>ĐOẠN 5</p>
+</div>
+<div>
+    <p>đoạn 6</p> =>kp thẻ con duy nhát do nó còn 1 thẻ cùng cấp 
+    <h1>đăng đẹp trai </h1>
+</div>
+-->

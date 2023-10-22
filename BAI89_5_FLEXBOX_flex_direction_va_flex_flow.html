@@ -1,0 +1,68 @@
+1/ flex-direction(chiều uốn cong): dùng để xoay hướng trục main axis(trục ngang) và cross axis(trục dọc)
+
+<!-- 
+    flex-direction:row;  //mặc định (ko để cx đc), trục main nằm ngang, trục cross nằm dọc,các ptu hướng từ trái->phải
+    flex-direction:row-reverse;  //các ptu sẽ bắt đầu từ hướng nguọc lại,từ phải->trái (vẫn giữ nguyên thứ tự các ptu:nó chỉ đổi chiều của hàng chứ ko đổi chiều các ptu )
+    -khi ta đảo chiều direction thì các thuộc tính sau bị ảnh hưởng:
+    "justify-content": flex-start và flex-end bị đảo chiều
+ -->
+
+1.2/ flex-direction:
+<!-- 
+flex-direction:column; //đảo trục main axis thành trục dọc (chiều end-> start vẫn giữ nguyên :bên trên và bên trái và
+start, bên dưới và bên phải là end)
+flex-direction:column-reverse; // đảo luôn chiều end->start 
+-->
+-khi ta xoay trục thì 2 thuộc tính "justify-content" (căn theo chiều ngang) và "align-item"(căn theo chiều dọc) sẽ bị
+ảnh hưởng
+.tức là các gtri thuộc tính vẫn tác động như vậy nhưng chiều sẽ dảo lại, giờ thì justify-content là căn theo chiều dọc,
+align-item là căn chiều ngang
+
+1.3/ flex-flow(dòng chảy linh hoạt): đây là cú pháp viết tắt của 2 thuộc tính flex-wrap và flex-direction
+flex-flow: flex-wrap flex-direction
+<!-- 
+    VD ta viết 2 thuộc tính:
+    flex-wrap: wrap; // bọc: khi các ptu chạm đến lề mà còn ít chỗ, nó tự dộng xuống hàng mới
+    flex-direction: row-reverse; //đảo ngược chiều flex-end và flex-start 
+ -->
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex-flow va flex-direction</title>
+    <style>
+        .box {
+            background-color: blue;
+            width: 30%;
+            border: 1px solid;
+        }
+
+        .container {
+            display: flex;
+            /* các ptu nằm cùng nhau trên 1 dòng */
+            background-color: cyan;
+            flex-wrap: wrap;
+            /* ta để thuộc tính "gói" để khi gặp lề nó tự động xuống dòng  */
+            flex-direction: row-reverse;
+            /* đảo ngược điểm bắt đầu của hàng (thứ tự các ptu trong hàng ko đổi) */
+            flex-flow: wrap row-reverse;
+            /* viết tắt cả 2gtri trên 1 dòng */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box box1">block 1</div>
+        <div class="box box2">block 2</div>
+        <div class="box box3">block 3</div>
+        <div class="box box4">block 4</div>
+        <div class="box box5">block 5</div>
+        <div class="box box6">block 6</div>
+    </div>
+</body>
+
+</html>

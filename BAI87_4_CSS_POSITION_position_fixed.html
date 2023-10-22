@@ -1,0 +1,122 @@
+<!-- 1/ POSITION:FIXED(cố định): nó sẽ cố định ptu theo khung nhìn (viewport) của trình duyệt web -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel=" stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .mes-bottom a {
+            font-size: 2rem;
+            color: rgb(246, 97, 70);
+            position: fixed;
+            /* ta để icon đó cố định trên trang, dù có cuộn trang lên xuống thì icon đó vẫn ở đó  */
+            bottom: 40px;
+            right: 20px;
+            /* ta vẫn có thể điều chỉnh vị trí icon đó  */
+        }
+
+        .box {
+            background-color: #696868;
+            position: fixed;
+            /* cố định nav-bar trên trang :khối div sẽ bị thu hẹp lại*/
+            /* HAY: MẸO CHO KHỐI NAV CHIẾM HẾT LỀ TRÁI VÀ LỀ PHẢI:  */
+            top: 0;
+            left: 0;
+            right: 0;
+            /* ta để khoảng cách lề trái và lề phải =0. khối box sẽ chiếm hết lề 2 bên 
+            (lưu ý cách này chỉ AD khi ta ko đặt chiều rộng width cho ptu )
+            */
+            /* inset:20px 0 200px 0;  //ta có thể dùng inset để gõ tắt khoảng cách: theo thứ tự "trên" "phải" "dưới" "trái" */
+
+        }
+
+        .box li {
+            /* tác động vào các thẻ li con, để inline-block để nó ko chiếm hết 1 dòng ,các thẻ li sẽ nằm trên cùng 1 dòng  */
+            display: inline-block;
+
+        }
+
+        .box a {
+            color: white;
+            text-decoration: none;
+            /* xoa gạch chân */
+            padding: 20px;
+            /* khoảng cách giữa các thẻ a */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mes-bottom">
+        <a href="http://tuhoc.cc">
+            <i class="fa-solid fa-message"></i>
+            <!-- ta có biểu tg messenger, khi click vào nó sẽ nhảy sang trang tuhoc.cc -->
+        </a>
+    </div>
+
+    <!-- tạo thanh navigation bar(thanh điều hướng) -->
+    <!-- gõ tắt emmet: .box>ul>li*3>a{menu item $}:  tạo 1 khối div có class"box", chứa 3 thẻ li , trong mỗi li là thẻ a với ND "menu item1" -->
+    <div class="box">
+        <ul>
+            <li>
+                <a href="">menu item 1</a>
+            </li>
+            <li>
+                <a href="">menu item 2</a>
+            </li>
+            <li>
+                <a href="">menu item 3</a>
+            </li>
+        </ul>
+    </div>
+
+    <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam nobis autem vel quos molestias quasi eum, sit
+        aliquam animi ea nisi praesentium cum. Quo error est possimus totam voluptate modi!</h1>
+    <p>tuhoc</p>
+    <p>tuhoc</p>
+    <p>tuhoc</p>
+    <p>tuhoc</p>
+    <p>tuhoc</p>
+    <p>tuhoc</p>
+    <p>tuhoc</p>
+    <p>tuhoc</p>
+    <p>tuhoc</p>
+    <p>tuhoc</p>
+    <p>tuhoc</p>
+    <p>tuhoc</p>
+    <p>tuhoc</p>
+    <p>tuhoc</p>
+    <p>tuhoc</p>
+    <p>tuhoc</p>
+    <p>tuhoc</p>
+    <p>tuhoc</p>
+    <p>tuhoc</p>
+    <p>tuhoc</p>
+    <p>tuhoc</p>
+    <p>tuhoc</p>
+    <p>tuhoc</p>
+    <p>tuhoc</p>
+    <p>tuhoc</p>
+    <p>tuhoc</p>
+    <p>tuhoc</p>
+    <p>tuhoc</p>
+    <p>tuhoc</p>
+    <p>tuhoc</p>
+    <p>tuhoc</p>
+    <p>tuhoc</p>
+    <p>tuhoc</p>
+    <p>tuhoc</p>
+    <p>tuhoc</p>
+    <p>tuhoc</p>
+    <p>tuhoc</p>
+    <p>tuhoc</p>
+    <p>tuhoc</p>
+    <p>tuhoc</p>
+</body>
+
+</html>

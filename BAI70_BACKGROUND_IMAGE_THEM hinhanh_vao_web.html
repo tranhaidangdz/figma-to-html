@@ -1,0 +1,37 @@
+1/background-image: chèn ảnh nền cho trang web:
+
+<body>
+    <div class="box"></div>
+</body>
+<style>
+    .box {
+        height: 100vh;
+        /* chiều cao viewport height: tức là lấy bằng 100% chiều cao khung nhìn của trình duyệt  */
+        /* background-image: url(./img/bai45anh3.jpg); */
+
+
+        /* ở trạng thái mặc định, hình nền sẽ lặp vô hạn đến khi chiếm hết kích thước thẻ chứa nó 
+        =>do class"box" thuộc thẻ div(thẻ block, nó sẽ chiếm hết chiều ngang của thẻ cha nó là thẻ body)
+        -gõ tắt "bgi = background-image"
+        */
+        /* CHỌN CHẾ ĐỘ LẶP LẠI ẢNH NỀN:background-repeat  */
+        background-image: no-repeat;
+        /* ko lặp lại, chỉ lặp 1 lần */
+        background-image: repeat-x;
+        /* lặp lại vô số lần theo chiều ngang, còn chiều dọc chỉ có 1 lần */
+        background-image: repeat-y;
+        /* lặp lại vô số lần theo chiều dọc, chiều ngang chỉ có 1 lần */
+        background-image: repeat;
+
+        /* lặp lại vô số lần theo chiều ngang và chiều dọc đến khi hết lề  */
+        /* ***MẸO :
+-TA MUỐN LẶP lại các ảnh thì nên dùng ảnh có bố cục đối xứng tât cả các chiều(ảnh họa tiết , vân...), ko nên dùng bức ảnh vì nó lặp thành vô số bức ảnh sẽ xấu 
+-nếu ta có nhiều bức ảnh làm ảnh nền: ảnh nào xếp trc sẽ nằm đè lên ảnh nền xếp sau
+*/
+        background-image: url(./anhlacay.png), url(./img/bai45anh2.jpg);
+        /* vì cả 2 ảnh đều là đuôi "jpg" nên ảnh ở trc sẽ đè lên ảnh sau nó .ta sẽ lưu 1 ảnh đuôi "png": lên mạng tìm "lá cây png"
+        . chọn công cụ -> chọn màu: trong suốt (ảnh png ko có nền, ta nhìn nền của nó sẽ có dạng các ô caro)
+        .như vậy nếu muốn 2 ảnh lồng nhau ta sẽ để ảnh ".png" trc ảnh ".jpg", ảnh png chỉ có đối tg mà ko có nền nên nó sẽ ko đè lên ảnh sau nó 
+        */
+    }
+</style>

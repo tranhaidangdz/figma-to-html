@@ -1,0 +1,88 @@
+-trên 1 trang web lớn có rất nhiều ptu, nếu ta cứ sd các selector(bộ chọn) cơ bản như tag name, ID, class thì ta phải
+code
+rất nhiều lần
+=>ta có bộ chọn kết hợp giúp gom nhóm các ptu html lại và ta sẽ tác động css lên các ptu đó ->giúp code gọn hơn
+
+1/ selector * (bộ chọn sao *): chọn tất cả các element(ptu):
+-CÚ PHÁP TRONG file style.css:
+______________________________
+* {
+<!-- viết thuộc tính css vào đây -->
+}
+_______________________________
+
+<body>
+    <h1>tuổi trẻ</h1>
+    <h2 class="demo">tiền không có</h2>
+    <h3 class="demo">quan hệ chưa có</h3>
+    <h3 id="dong_4">đến cả tự tin cũng không có</h3>
+    <h3>vậy bạn có cái gì?</h3>
+</body>
+
+### trong file style4.css:
+
+* {
+background-color: red;
+color: blue;
+}
+<!-- ta để dấu * {...} để tác động css vào tất cả các thẻ trong trang   -->
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style4.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>tiêu đề</h1>
+    <!-- cú pháp : h2*5{tiêu đề nhỏ thứ $}  để tạo ra 5 tiêu đề nhỏ trong thẻ h2 theo thứ tự từ 1->5 -->
+    <h2>tiêu đề nhỏ thứ 1</h2>
+    <h2>tiêu đề nhỏ thứ 2</h2>
+    <h2>tiêu đề nhỏ thứ 3</h2>
+    <h2>tiêu đề nhỏ thứ 4</h2>
+    <h2>tiêu đề nhỏ thứ 5</h2>
+    <!-- tạo ra 3 thẻ p từ "đoạn văn" chạy từ 1->3: -->
+    <p>đoạn văn 1</p>
+    <p>đoạn văn 2</p>
+    <p>đoạn văn 3</p>
+
+</body>
+
+</html>
+
+2/ selector Element.class: nó chỉ tác động lên các "tên thẻ.class đc chỉ định" để gán css mà thôi, chứ ko tác động toàn
+trang
+- CÚ PHÁP:
+____________________________________________
+tên thẻ.tên class đc chỉ định{
+<!-- viết các thuộc tính css vào đây -->
+}
+_____________________________________________
+VD: p.intro : tức là thuộc tính css sẽ tác động vào tất cả thẻ p đc gắn class "intro"
+
+<body>
+    <h1>tuổi trẻ</h1>
+    <h2 class="demo">tiền không có</h2>
+    <h3 class="demo">quan hệ chưa có</h3> //ta có class "demo" ở đây
+    <h3 id="dong_4">đến cả tự tin cũng không có</h3>
+    <h3>vậy bạn có cái gì?</h3>
+</body>
+
+-trong file style.css:
+
+h3.demo{
+color:red;
+list-style: none;
+}
+<!-- h3.demo : chọn tất cả các thẻ h3 có class là demo, gom lại và tác động thuộc tính css vào nó -->
+
+*** SO SÁNH GIỮA SELECTOR "CLASS" và selector "element.class"
+- selector class sẽ tác động css lên các thẻ khác nhau nhưng đc gắn chung 1 class. tuy nhiên sẽ có nhược điểm nếu 2 thẻ
+cùng tên class mà ta chỉ muốn tác động lên 1 thẻ
+=> ta sẽ dùng cú pháp "tenthe.tenclass đặt cho thẻ đó" để tác động cụ thể
+- nói chung bộ chọn "element.class" sẽ chi tiết hơn bộ chọn "class"

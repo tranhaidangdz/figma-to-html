@@ -1,0 +1,42 @@
+/* h1 {
+    color: blueviolet;
+    user-select: none;
+    thuộc tính user-select:none; tức là ko cho phép bôi đen text của web (đây là 1 thuộc tính ko hỗ trợ tất cả trình duyệt)
+    - ta sẽ vào trang auto prefix để thêm các tiền tố cho nó thích hợp vs tất cả trình duyệt ; VÀ TA ĐC KQ:
+   
+} */
+body {
+    background-color: cadetblue;
+    /* tạo màu cho nền */
+}
+
+h1 {
+    color: rgba(43, 226, 110, 0.61);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+p {
+    color: blue;
+}
+
+h3 {
+    color: aqua;
+}
+
+#dong2 {
+    /* cú pháp gọi tên bô chọn id: "#tên id dòng đó" */
+    color: rgba(135, 39, 63, 0.58);
+}
+
+.demo {
+    /* cú pháp gọi tên bộ chọn class ".tên class" */
+    color: red;
+}
+
+.item_ul {
+    list-style: none;
+    /* thuộc tính này giúp bỏ dấu chấm đầu dòng của 1danh sách  */
+}

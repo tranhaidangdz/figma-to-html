@@ -1,0 +1,72 @@
+1/ TEXT-SHADOW: đổ bóng văn bản
+-CÚ PHÁP:
+------------------------------------------------
+text-shadow: 1px 1px 1px màu sắc
+-----------------------------------------------
+>>kích cỡ đầu tiên là lệch về bên phải ...px
+>>kích cỡ thứ 2 là lệch về bên dưới ... px
+>>kích cỡ thứ 3 là độ mờ của bóng
+>>cuối cùng là màu săc cho chữ, ta có thể dùng màu "rgb" hoặc "rgba"(nếu ta ko truyền vào độ mờ thì ta dùng rgba)
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style7.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>TUHOC.CC</h1>
+    <div class="box">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt dolores impedit officia itaque, similique
+            nesciunt veritatis asperiores, doloremque harum aperiam voluptatibus iure maiores! Ducimus ex, nostrum
+            aliquam voluptas autem architecto.
+            Praesentium saepe nemo mollitia quia similique est aperiam maiores repellat veniam, possimus natus error
+            sequi minus unde cum, facere eius quos. Inventore eius quas quasi voluptatum error sint amet? Est.
+            Hic dignissimos, reprehenderit sint nesciunt adipisci, nostrum voluptas incidunt eos modi fugiat quidem quis
+            repudiandae in iste veniam, officiis consequatur saepe molestias quam quisquam labore deserunt sapiente
+            nihil doloremque! Cum.
+            Voluptas veritatis rem possimus distinctio temporibus voluptatum ea recusandae quasi illo doloribus,
+            molestiae eaque asperiores, eos tempora quo consectetur quibusdam inventore! Eos ipsa deserunt nobis
+            aspernatur explicabo autem voluptas quod?</p>
+    </div>
+</body>
+
+</html>
+
+***CHÚ Ý: nếu ta truyền vào các gtri âm thì nó sẽ lùi về bên trái, lùi lên trên...
+<!-- 
+h1 {
+margin: 40px;
+text-shadow: 20px -15px 10px rgb(96 96 96);
+} 
+-->
+-ta tìm "text shadow" , vào trang web "cssgenerator.org"; ở đây ta sẽ tùy chỉnh bóng và độ mờ, màu sắc bóng
+sau đó ta copy các thông số đó và code trong HTML
+
+2/THUỘC TÍNH OVERFLOW:
+-VD ta có 1 box bao bọc thẻ p, và thẻ p chứa 1 đoạn văn rất dài. khi ta chỉnh kích cỡ ptu bao bọc thẻ p, đoạn văn quá
+dài sẽ bị tràn ra ngoài ==>ta dùng overflow để xử lí text bị tràn
+<!-- 
+    overflow:visible;  //thuộc tính mặc định, nó sẽ hiển thị ND kể cả khi tràn box chứa
+    overflow:hidden;  //ẩn đi ND tràn ra ngoài
+    overflow:scroll;  //tạo thanh cuộn: luôn hiển thị cùng thanh cuốn(ở bên cạnh văn bản để ta có thể xem hết văn bản đó ):hiển thị thanh cuốn ở cả 2 chiều ngang+dọc
+    overflow:auto;  // sẽ có 2 TH:
+    . nếu ND ngắn, ko có thanh scroll bar  
+    . nếu ND tràn box chứa => có thanh scroll bar kể ta kéo :chiều nào bị tràn thì nó mới hiển thị thanh cuốn ở chiều đó 
+ -->
+
+
+.box {
+width: 300px;
+height: 200px;
+background-color: yellow;
+/* khi ta để kích thước ptu qua nhỏ ta sẽ bị tràn văn bản ra ngoài ptu hộp đó */
+/* overflow: hidden; */
+/* overflow: visible; */
+/* overflow: scroll; */
+overflow: auto;
+}

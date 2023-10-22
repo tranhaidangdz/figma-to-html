@@ -1,0 +1,68 @@
+1/ TÌM HIỂU FONT-WEIGHT (ĐỘ ĐẬM CHỮ) VÀ LINE-HEIGHT(KHOẢNG CÁCH GIỮA CÁC DÒNG TRONG 1 ĐOẠN VĂN):
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style7.css">
+    <title>BAI61 TUHOC.CC</title>
+</head>
+
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut incidunt facere sunt fugiat enim minima. Beatae,
+        laudantium sapiente laboriosam, asperiores cum soluta nihil quo quasi explicabo perspiciatis vitae in amet.
+        Alias omnis ea facere dolorem odio laboriosam vitae, eos exercitationem labore nulla ullam doloribus optio
+        aperiam iusto excepturi? Numquam ea iste commodi recusandae temporibus culpa exercitationem deserunt ab
+        perferendis voluptatibus!
+        Facere accusantium adipisci hic voluptas culpa soluta, ipsum molestias similique esse beatae nam! Quis dolores
+        nisi iure, quo dolorum quam sint autem, corrupti praesentium enim quos beatae minus corporis a!
+        Non, quisquam rerum facere ratione optio minima sunt quasi debitis veritatis doloribus expedita laboriosam.
+        Porro excepturi similique, delectus iure obcaecati totam repudiandae recusandae sed veritatis vel? Architecto
+        magnam veritatis a!
+        Magnam sapiente harum similique, possimus nostrum quisquam recusandae reiciendis perspiciatis dolore tempore
+        illum ut? Unde reprehenderit nostrum dolor aut. Modi quis animi mollitia rerum suscipit debitis labore
+        praesentium numquam corrupti.
+        Ea alias a laboriosam rem quisquam iusto repellat doloremque facere. Quidem consectetur assumenda natus
+        delectus! Officia est, similique officiis enim, aliquam mollitia dolor at omnis temporibus veritatis
+        necessitatibus nihil non.</p>
+</body>
+
+</html>
+1/ĐỘ ĐẬM CỦA NÉT CHỮ: FONT-WEIGHT
+<!-- p {
+    font-weight: 700;
+    /* ta có thể chỉnh độ đậm chữ bằng các con số */
+    font-weight: bold;
+    /* hoặc để chữ "bold" để im đậm lên 1 cấp so vs độ đậm ban đầu */
+    font-weight: lighter;
+    /* ta để "lighter" để nó nhat hơn 1 cấp so vs độ đậm ban đầu  */
+} -->
+
+2/CHIỀU CAO DÒNG : LINE-HEIGHT
+<!-- 
+    
+p {
+    font-size: 10px;
+    line-height: 1.5;
+    /* tăng khoảng cách dòng =1.5 lần kcach dòng mặc định của trình duyệt ,hoặc nếu trc đó ta set font-size thì line-height này sẽ dựa vào đó để dãn cách */
+    line-height: 150%;
+    /* tăng khoảng cách dòng =150% kcach dòng mặc định của trình duyệt ,hoặc nếu trc đó ta set font-size thì line-height này sẽ dựa vào đó để dãn cách */
+    /* ta ko nên để kcach dòng =24px,4px... nói chung bằng 1 gtri cố định, vì như thế khi ta tăng kích cỡ khoảng cách dòng vẫn cố định thế mà ko tự dãn nở. ta lại mất công sửa  */
+}
+ -->
+
+3/MẸO CĂN VĂN BẢN VÀO GIỮA Ô NHỜ LINE-HEIGHT:
+-nếu thẻ h1 có chiều cao 120px:
+h1{
+height:120px; //nội dung đang ở sát mép trên của ptu
+background-color:blue;
+<!-- ta có thể thêm line-height = chiều cao ptu. lúc này nội dung sẽ đc căn vào giữa -->
+line-height:120px;
+}

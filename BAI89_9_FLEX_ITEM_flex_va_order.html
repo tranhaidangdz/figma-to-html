@@ -1,0 +1,26 @@
+<!-- 
+1/flex:
+-đây là cách viết tắt của 3 thuộc tính:
+-------------------------------------------
+flex:flex-grow flex-shrink flex-basis;
+-------------------------------------------
+flex-grow: chia tỉ lệ các ptu chiếm theo trọng số chiều ngang (truyền vào các gtri 0, 1,2,3,...)
+0: mặc định, các ptu có chiều rộng như ta set ban đầu
+1,2,3,... chia hàng ngang thành tổng(VD ở đây là 6 phần bằng nhau), mỗi ptu sẽ chiếm 1 phần, 2 phần ,3 phần trong đó
+
+flex-shrink: xác định khả năng co lại của các item con khi ta thu hẹp chiều rộng(ta phải để chiều rộng là %, nếu để kích
+thước cứng thì nó ko co lại đc):
+0: ko bị co lại
+1:mặc định, giữ nguyên khả năng co lại
+2,3,...: số càng to ptu đó co lại càng nhanh
+flex-basis: set chiều rộng các item con theo chiều ngang (phụ thuộc flex-direction nữa) 
+-->
+
+*** ĐỘ ƯU TIÊN KÍCH THƯỚC:
+1.min-width/max-width: ưu tiên set chiều rộng cho ptu bằng cái này đầu tiên
+2.flex-basis: set chiều rộng cho ptu con khi để display:flex
+3.width: cũng như flex-basis nhưng độ ưu tiên nhỏ hơn
+4.container width: chiều rộng của thẻ cha
+
+*** chú ý: nếu "max-width>flex-basis" ==>flex basis đc ưu tiên
+*** chú ý: nếu "max-width<flex-basis"==>max-width đc ưu tiên

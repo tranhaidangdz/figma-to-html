@@ -1,0 +1,52 @@
+1/ CSS UNITS(ĐƠN VỊ CSS):
+1.1 đơn vị tương đối: phần trăm %
+-VD: width:12%; //độ rộng = 12% so vs ptu cha,phụ thuộc kích thước ptu ban đầu
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        box1
+        <div class="box_child"> box con </div>
+    </div>
+</body>
+
+</html>
+
+### file style.css:
+
+.box {
+background-color:blue;
+width:70%; //class"box" này thuộc thẻ div, mà div có display mặc định là block==>loại thẻ block level element (chiếm hết
+1 dòng ngang)
+->lệnh này nó sẽ chiếm 70% của 1 dòng
+}
+
+.box_child {
+background-color:yellow;
+width:50%; //do box_child nằm trong box nên đây sẽ là thẻ con. ta để width="50%" tức là 50% của 70% của 1 dòng
+
+}
+
+<!-- ***CHÚ Ý:
+-nếu thẻ cha ko có kích thước thì thẻ con sẽ dựa vào kích thước mặc định của trình duyệt.VD font-size mặc định sẽ có kích thước 16px;(sau đó thẻ con sẽ thay đổi theo % kích thước thẻ cha)
+-1 số thuộc tính css áp dụng cả "px" và "%":
+font-size
+line-height
+margin
+border
+padding
+width
+height
+min-width, min-height
+max-width, max-height
+...
+-->

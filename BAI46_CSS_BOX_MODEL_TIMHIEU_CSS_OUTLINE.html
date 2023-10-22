@@ -1,0 +1,20 @@
+1/ CSS BOX MODEL-OUTLINE(đg kẻ ngoài):
+- ta đã làm quen mô hình "box model" gồm 4 lớp: content, padding, border, margin
+-hôm nay ta tìm hiểu OUTLINE: là đg viền bao quanh mép ngoài cùng của đối tg, nó ko làm tăng kích thước ptu
+-đơn giản nó là 1 vùng bao bên ngoài, chiêm cả vào phần margin (tính từ mép border hất ra,đè lên margin)
+
+<div class="box1">tuhoc.</div>
+### file style.css:
+.box1 {
+width:200px;
+height:200px;
+border:10px solid red;
+outline:20px solid blue;
+}
+<!-- CHÚ Ý: outline ko Áp dụng vẽ theo nhiều chiều đc như border(chỉ căn đc cho cả 4 hướng cùng lúc)  -->
+-ta có thêm thuộc tính "outline-offset": giúp dãn cách giữa border và outline
+VD: outline-offset:20px; //cách viền border 1 khoảng 20px
+<!-- CÂU HỎI: NẾU PTU CỦA TA "KO CÓ BORDER" thì outline sẽ đc tính từ đâu?? 
+-ta có thẻ hiểu outline là đg kẻ ngoài cùng của 1 ptu box-model. nên nếu ko có border nó sẽ tính từ padding
+-nếu ko có padding nó sẽ tính từ mép content 
+-->

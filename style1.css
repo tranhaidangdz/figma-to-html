@@ -1,0 +1,95 @@
+/* bài 35: lớp giả :empty và lớp giả :target */
+/* .div_elm:empty {
+    width: 200px;
+    height: 200px; */
+/* cách gõ chiều dài và chiều rộng nhanh : 
+    -gõ w200: tương đương vs width:200px;
+    -gõ h250: tương đương vs hight:250px;
+    */
+/* background-color: blue;
+} */
+
+/* viết nội dung cho class="div_elm" khi nó ko chịu tác dụng của :target (tức là khi trong thẻ div có ND) */
+/* .div_elm {
+    width: 200px;
+    height: 200px;
+    background-color: red;
+} */
+
+/* bài 36: child selector: bộ chọn con  */
+
+/* bài 38 : độ ưu tiên các thẻ  */
+/* * {
+    color: red;
+}
+
+h1 {
+    color: blue !important;
+}
+
+#theh1 {
+    color: orange;
+}
+
+.demo {
+    color: coral;
+} */
+
+/* ==> theo thứ tự từ trên xuống dưới là thứ tự ưu tiên cao dần, nhưng nếu ta thêm "!important" sau cái nào thì cái đó đc ưu tiên nhất  */
+
+/* bài 42: css margin: */
+/* .box {
+    width: 250px;
+    height: 200px; */
+/* 2 dòng này là chiều rộng, chiều cao ptu, hay nói cách khác là kích cỡ của ND lõi trong CSS model box  */
+/* background-color: rgb(179, 0, 255); */
+/* padding: 10px; */
+/* gõ tắt "p10" là nó hiện gợi ý gõ padding 10px: căn 4 phía bộ đệm 10px */
+/* border: 10px solid blue;
+    margin: 15px 20px;
+} */
+/* .box {
+    width: 100px;
+    height: 100px;
+    padding: 20px;
+    background-color: red;
+}
+
+.box1 {
+    border: 10px solid blue;
+}
+
+.box2 {
+    border: 10px solid green;
+}
+
+.box3 {
+    border: 10px solid gray;
+} */
+
+/* bài 43: thực hành căn giữa trang vs CSS margin: */
+body {
+    background-image: url(./img/ảnh\ hình\ nền\ web.avif);
+    background-color: #ddd;
+}
+
+.container h1 {
+    /* dấu cách giữa 2 ptu: tác động vào tất cả ptu con h1 bên trong class"container" */
+    font-size: 40px;
+}
+
+.container p {
+    font-size: 24;
+    line-height: 1.4;
+    /* line-height : kcach giữa các dòng văn bản */
+}
+
+/* ĐỂ CĂN KHỐI DIV VÀO GIỮA TRANG(BAO GỒM CÁC  VĂN BẢN VÀ HÌNH ẢNH) TA TÁC ĐỘNG VÀO CLASS "container" */
+.container {
+    margin: 0 auto;
+    /* trên dưới =0(ko căn gì), trái phải để auto thì nó tự vào giữa trang */
+    width: 170px;
+    /* căn chiều rộng ptu đó, chiều cao tự căn chỉnh theo tỉ lệ  */
+    text-align: center;
+    /* dùng để căn chữ vào giữa */
+}

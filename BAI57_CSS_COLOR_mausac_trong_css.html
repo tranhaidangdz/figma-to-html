@@ -1,0 +1,64 @@
+<!-- 1/ HỆ MÀU RGB : RED-GREEN-BLUE (CHỈ 3 MÀU NÀY TẠO PHA ĐC VÔ SỐ MẢNG MÀU:có 16.7 tr màu: 255^3)
+-CÚ PHÁP:
+-------------------------
+rgb (red,green,blue) |
+-------------------------
+ta sẽ truyền gtri của màu red,green,blue vào, từ 0->255
+VD: -->
+rgb(255,0,0) : màu đỏ (do thông số xanh lá & xanh dương =0 nên toàn là màu đỏ)
+rgb(0,255,0) :màu xanh lá cây
+rgb(0,0,255) :màu xanh dương
+<!-- nếu cả 3 thông số =255=>màu trắng
+nếu cả 3 thông số =0=> màu đen 
+-->
+=>tuy nhiên khi ta sửa thông số màu để pha đc màu ta ưng ý thì ta sẽ phải sửa cả 3 thông số
+*** CHÚ Ý: ta có thể ko dùng dấu phẩy, chỉ cần cách ra khi nhập xong các thông số màu sắc
+<!-- 
+2/ HỆ MÀU RGBA: RED.GREEN-BLUE-ALPHA:
+-CÚ PHÁP:
+-------------------------
+rgb (red,green,blue,alpha) |
+-------------------------
+ta sẽ truyền gtri của màu red,green,blue vào, từ 0->255
+-trong đó alpha từ 0->1: gtri càng nhỏ thì càng trong suốt
+VD: -->
+rgb(255,0,0,0.6) : màu đỏ (do thông số xanh lá & xanh dương =0 nên toàn là màu đỏ)
+rgb(0,255,0,0.3) :màu xanh lá cây
+rgb(0,0,255,0.4) :màu xanh dương
+màu đã bị nhạt đi khi ta truyền alpha < 1 <!-- ***CHÚ Ý : khi ta viết màu rgba, ta ko cần dùng dấu phẩy khi viết 3 màu
+    đầu, nhưng cần dùng dấu sược / để ngăn cách giữa 3 màu và độ nhạt màu alpha -->
+
+    <!-- 3/ HỆ MÀU HEX(hexa:thập lục phân ):
+    *** 1 số hệ đếm cơ bản:
+    -hệ nhị phân: 0,1
+    -hệ thập phân:0,1,2,3,4,5,6,7,8,9
+    -hệ thập lục phân:0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f
+
+    -cách viết màu thập lục phân: -->
+    -------------------------------------------------------------------------
+    #ffggbb (2 cái đầu là màu đỏ,tiếp là xanh lá, 2 cái cuối là xanh dương) |
+    -------------------------------------------------------------------------
+    >>gtri mỗi kênh màu chạy từ 00-ff (còn rgb chạy từ 0-255)
+    ==>nó cũng có 16,7tr màu (16^6:do có 6 vị trí, mỗi vị trí có 16 màu)
+    VD: color: #ff00ff;
+    **ưu điểm: viết nhanh gọn, nếu ta có kênh màu mà có 2 kí tự giống nhau, ta chỉ cần viết 1 cái, nó vẫn hiểu
+    VD: #ff00ff ta viết thành #f0f vẫn như vậy
+    <!-- ngoài ra ta vẫn có thể dùng kênh màu alpha vào hệ màu hex
+    #ff00ff70
+    -->
+
+    4/ta lên chrome tìm "social media color" :là các màu mà các mxh hay dùng, rất đẹp đã đc pha sẵn
+    -hoăc "color name " để ta tự chọn màu
+    -color có tính chất kế thừa, ptu con sẽ kế thừa từ ptu cha
+
+    .box{
+    color:pink;
+    background-color: currentcolor; //ta muốn các thuộc tính trong khối css này lấy chung màu pink mà ko cần viết màu,
+    ta để "curentcolor"để nó lấy màu phía trên
+
+    }
+
+    .box_child {
+    background-color:curentcolor;
+    <!-- mặc dù ta ko truyền color cho thẻ con nhưng nó đc kế thừa màu "pink"từ thẻ cha và background-color lấy màu pink làm màu nền  -->
+    }

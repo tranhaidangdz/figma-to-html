@@ -1,0 +1,106 @@
+1/ CSS UNITS (ĐƠN VỊ CSS):
+-bài trc: đơn vị em: kích thước phụ thuộc vào kích thước "px"của chính nó, sau đó đến "px"của thẻ cha, rồi mới đến "px
+trình duyệt=16px"
+-đơn vị rem: kích thước lấy từ font-size mặc định của trình duyệt=16px
+VD: font-size:3rem; //kích thước gấp 3 lần font chữ root element=48px
+<!-- 
+    SO SÁNH "EM" VÀ "REM":
+*** em:
+.parent {
+    font-size:10px;
+}
+.child {
+    font-size:2em;
+    width:2em;
+    height:2em;
+    background-color:red;  
+}
+==> do bản thân nó ko có kích thước ban đầu nên nó kế thừa thẻ cha =10px
+==>3 class.child con sẽ tạo thành 3 hình vuông to dần, cỡ chữ cũng gấp đôi sau mỗi cấp
+*** rem:
+.parent {
+    font-size:10px;
+}
+.child {
+    font-size:2rem;
+    width:2rem;
+    height:2rem;
+    background-color:red;  
+}
+==>3 hình vuông bằng nhau, cỡ chữ bằng nhau=32px do dựa vào kích thước mặc định trình duyệt
+
+ -->
+-trong thực tế, rem đc sd rất nhiều vì nó cố định theo kích thước thẻ html mặc định là 16px, các thành phần khác của
+trang đều giữ nguyên tỉ lệ
+-ta có thể thay đổi kích thước mặc định và các thông số khác của thẻ html:
+### file style.css:
+html {
+font-size:20px; //gọi thẻ html và thay đổi cỡ chữ mặc định cho nó
+}
+
+2/QUY ĐỔI PX SANG REM:
+-ta có: 1rem=16px
+-mà khi tính toán ta cần quy đổi tle 1rem=10px
+=> 10/16*100% = 62.5%
+=> cần giảm font-size của HTML xuống 62.5% để 1rem=10px
+-tức là có những ptu có kích cỡ 40px,50px..(ko phải bội của 16px) nên khi đổi ra rem nó xấu,hơn nữa khi sửa ta phải sửa
+từng kích cỡ một mất tgian
+-ta sẽ sửa thẻ html thành 62.5%(10px) so với ban đầu 100%(=16px)
+
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style7.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>đổi từ px sang đơn vị rem</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+    <div class="box"></div>
+</body>
+
+</html>
+
+
+h1 {
+/* font-size: 40px; */
+font-size: 4rem;
+}
+
+p {
+/* font-size: 23px; */
+font-size: 2.3rem;
+}
+
+.box {
+/* width: 200px;
+height: 150px;
+đổi về rem
+*/
+width: 20rem;
+height: 15rem;
+background-color: coral;
+}
+
+html {
+font-size: 62.5%;
+}
+
+/* giờ nếu ta muốn tăng tất cả kích thước lên 10%. ta sẽ phải sửa từng cái, VD: 40px*10%=44px
+-tuy nhiên khi đổi sang px nó sẽ có nhược điểm: VD 1 ng bị cận muốn vào cài đặt trình duyệt tăng cỡ chữ lên(nhưng do px
+là cỡ chữ mặc định nên ko thẻ thay đổi đc)
+, ta phải đổi px về rem để các kích thươc ptu sẽ dựa vào kích thước mặc định của trình duyệt
+-tuy nhiên 1rem=16px nên khi đổi từ px->rem ta phải chia 16(số xấu) thay vào đó ta sửa tle 1 rem=10px, sau chỉ cần chia
+10 là ra số rem
+-ta đã có con số 62.5% tức là tỉ lệ quy đổi giữa px và rem là: 1rem=10px
+*/
+-khi muốn tăng tát cả kích thước lên 10% ta ko cần sửa từng dòng mà sửa HTML thuii, tăng từ 62.5% thành 72.5%

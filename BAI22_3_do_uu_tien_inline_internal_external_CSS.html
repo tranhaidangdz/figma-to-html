@@ -1,0 +1,44 @@
+<!-- -trong TH ta dùng cả inline, internal, external thì ta cần hiểu cách đặt CSS nào đc ưu tiên trc để đặt code vào trong đó
+4/ độ ưu tiên giữa 3 cách đặt CSS:
+-inline(css nội tuyến:viết trong 1 thẻ, 1 dòng) -> internal(css nội bộ: viết trong 1 thẻ nhưng AD toàn ctrinh )
+->external (css bên ngoài: viết riêng 1 file CSS ở ngoài và AD cho nhiều file html trỏ đến nó) -->
+
+<!-- VD:khi có 1 đoạn css nào đó đại trà, áp dụng cho nhiều đối tượng ->dùng external, internal, còn khi AD đoạn css đó đặc
+biệt cho 1 đối tượng nào đó( trong 1 dòng) thì ta dùng inline
+==>inline có độ ưu tiên đầu tiên, còn internal và external cái nào viết sau thì cái đó mạnh hơn(thằng viết sau sẽ ghi đè
+lên thằng trc) -->
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- ta viết css external trc, ta cho nó đọc đến file "style.css" -->
+
+    <style>
+        h1,
+        p {
+            color: red;
+            font-size: larger;
+            font-style: italic;
+        }
+    </style>
+    <!-- ta viết internal css ở sau nên nó sẽ đè lên cách ghi css external ,nếu ta viết dòng external ở dưới thì ctrinh sẽ AD theo cách của nó-->
+    <title>độ ưu tiên inline, internal,external</title>
+</head>
+
+<body>
+    <h1>Lorem, ipsum dolor.</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+    <!-- còn cách ghi "inline"có độ ưu tiên cao nhất thì ta sẽ ghi cụ thể vào 1 dòng, ctrinh sẽ ưu tiên thực 
+    hiện css cho dòng đó rồi mới đến các cách ghi khác  :
+    -ở đây ta có màu của dòng thứ 3 là cyan, font chữ bth kp chữ nghiêng 
+-->
+    <p style="color:cyan; font-style: normal;">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+</body>
+
+</html>

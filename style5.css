@@ -1,0 +1,39 @@
+/* div {
+    width: 100px;
+    height: 100px;
+    color: yellow; */
+/* màu chữ */
+/* background-color: red; */
+/* màu nền  */
+/* padding: 20px; */
+/* độ dày cho 4 phía của đệm, ta gõ tắt "p20" là đc */
+/* padding-top: 80px;
+    padding-left: 80px;
+    padding-right: 30px; */
+/* ta căn chữ tuhoc.cc vào giữa ô vuông đỏ  */
+/* bài 41: css border: */
+div {
+    width: 100px;
+    height: 100px;
+    color: yellow;
+    background-color: red;
+    /* padding: 20px;
+/* độ dày cho 4 phía của đệm, ta gõ tắt "p20" là đc */
+    padding-top: 80px;
+    padding-left: 80px;
+    padding-right: 30px;
+    /* border: 20px solid blue;
+    border: 20px dotted blue;
+    border: 20px double blue;
+    border: 20px ridge blue;
+    border-top: 20px inset blue; */
+    border-width: 15px;
+    border-style: double;
+    border-color: blueviolet;
+    /* mỗi viền 1 kiểu: */
+    border-width: 15px 15px;
+    border-style: inset groove outset groove;
+    border-color: rgb(0, 34, 255) rgb(40, 40, 211) rgb(0, 89, 255);
+    border-radius: 40px;
+    border-radius: 20px 80px;
+}

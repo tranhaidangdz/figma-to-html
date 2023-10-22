@@ -1,0 +1,63 @@
+1/ CSS prefix(tiếp đầu ngữ ,tiền tố css: thêm tiền tố vào trc 1 ptu nhằm thay đổi vai trò của ptu đó) :
+-khái quát: css có rất nhiều thuộc tính, và kp thuộc tính nào cũng hỗ trợ tất cả trình duyệt.
+VD ta có trình duyệt:
+-safari (apple)
+-chrome (google)
+-firefox (mozilla)
+-edge (microsoft)
+-opera (opera software)
+
+-khi gặp các thuộc tính ko đc hỗ trợ ở các trình duyệt, ta thêm prefix(tiền tố) để trình duyệt hỗ trợ nó
+<!-- để ktra prefix của 1 trình duyệt là gì, ta tìm "vendor prefix css", vào trang "geeksforgeeks" :
+Internet Explorer: -ms-
+Chrome: -webkit-
+Safari: -webkit-
+Firefox: -moz-
+iOS: -webkit-
+Android: -webkit-
+Opera: -o-
+Microsoft Edge:-ms-
+-->
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style3.css">
+    <title>HỌC PREFIX CSS</title>
+</head>
+
+<body>
+    <h1>tự học prefix css</h1>
+</body>
+
+</html>
+
+-nếu ta gặp các thuộc tính cần thêm prefix, ta ko thể gõ tay từng thuộc tính mà ta sẽ cài công cụ:
+-tìm chrome "auto prefix" : có thể copy css -> trang web sẽ tự thêm prefix cho những thuộc tính cần thêm
+-vào trang "github.io" : https://autoprefixer.github.io/
+(giống bài 17_html entities ta cũng dùng trang web code beauty để chuyển kí tự đặc biệt sang html entities)
+- ta sẽ gõ css trong file style3.css:
+h1{
+color:blueviolet;
+user-select: none;
+<!--    thuộc tính user-select:none; tức là ko cho phép bôi đen text của web (đây là 1 thuộc tính ko hỗ trợ tất cả trình duyệt)
+    - ta sẽ vào trang auto prefix để thêm các tiền tố cho nó thích hợp vs tất cả trình duyệt ; VÀ TA ĐC KQ:
+    -->
+}
+
+<!-- ==>kết quả:
+h1 {
+    color: blueviolet;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+-->
+
+2/ TĂNG CƯỜNG TƯƠNG THÍCH ĐA TRÌNH DUYỆT CHO WEBSITE- SD caniuse.com:
+-làm thế nào ta biết 1 thuộc tính mới gặp có cần thêm prefix để hỗ trợ tất cả trình duyệt ko?
+- vào trang "caniuse.com" , thêm thuộc tính, VD là "user-select" vào ô trống : can i use...?

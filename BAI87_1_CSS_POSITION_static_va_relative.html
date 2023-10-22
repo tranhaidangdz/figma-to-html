@@ -1,0 +1,23 @@
+1/ CSS POSITION:
+-cho phép điều chỉnh vị trí các ptu trên trang web
+1.1 position:static;
+-đây là gtri mặc định của position(ta ko để cũng đc)
+-các ptu HTML có vị trí mặc định trên trang khi chưa can thiệp bằng css
+<!-- HAY: CÁCH CĂN GIỮA 1 PTU:
+display:flex;
+justify-content:center; //căn giữa ND theo chiều ngang của ptu khối 
+align-item:center;  //căn giữa ND theo chiều dọc của ptu khối
+-->
+
+1.2 position:relative =>định vị so với 1 trí ban đầu 1 khoảng x
+<!-- 
+    position:relative;
+    left:100px; //cách lề trái 1 khoảng 100px 
+    right:100px; //cách lề phải 1 khoảng 100px
+    top:100px; //cách lề trên 1 khoảng 100px
+    bottom:100px; //cách lề dưới 1 khoảng 100px
+ -->
+-tuy nhiên, ko có kgian mới nào trong trang web đc tạo ra đẻ chứa ptu định vị đó. vì vậy ptu đc định vị sẽ đè lên các
+ptu khác trong trang web
+-khi 1 ptu đc dịch chuyển sang 1 vị trí khác trong trang thì ko gian ban đầu của ptu đó vẫn chiếm chỗ , các ptu khác ko
+lấp đc

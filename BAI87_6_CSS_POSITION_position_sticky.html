@@ -1,0 +1,301 @@
+<!-- 1/POSITION-STICKY(vị trí dính):
+-giúp ta định vị ptu dính lại theo thẻ cha gần nhất có thanh cuộn scroll-bar
+-nếu ta tạo thanh cuộn cho thẻ cha(dùng overflow khi ND quá dài)khi đó sẽ có thanh cuộn để ta kéo và đọc đc ND ,thuộc
+tính sticky sẽ dành cho các ptu con mà thẻ cha nó có thanh kéo scroll -->
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POSITION-STICKY</title>
+    <style>
+        .content {
+            width: 400px;
+            height: 500px;
+            overflow: auto;
+            /* mặc định nó cũng sẽ có thanh cuốn */
+            background-color: cyan;
+        }
+
+        .h2 {
+            background-color: yellow;
+            position: sticky;
+            top: 0;
+            /* các thẻ h2 màu vàng dính sát vào lề trên của thẻ cha nó(kcach so vs lề trên =0) */
+
+        }
+    </style>
+</head>
+<div class="content">
+    <!-- để chọn tất cả các từ khóa đc bôi đen, ta bôi đen từ đó,  CTRL+SHIFT+L -->
+    <ul>
+        <li>
+            <h2 class="h2">PHẦN 1</h2>
+
+            <ul>
+                <li>bài 1</li>
+                <li>bài 2</li>
+                <li>bài 3</li>
+                <li>bài 4</li>
+                <li>bài 5</li>
+                <li>bài 6</li>
+                <li>bài 7</li>
+                <li>bài 8</li>
+                <li>bài 9</li>
+                <li>bài 10</li>
+                <li>bài 11</li>
+                <li>bài 12</li>
+                <li>bài 13</li>
+                <li>bài 14</li>
+                <li>bài 15</li>
+                <li>bài 16</li>
+                <li>bài 17</li>
+                <li>bài 18</li>
+                <li>bài 19</li>
+                <li>bài 20</li>
+            </ul>
+        </li>
+        <li>
+            <h2 class="h2">PHẦN 2</h2>
+
+            <ul>
+                <li>bài 1</li>
+                <li>bài 2</li>
+                <li>bài 3</li>
+                <li>bài 4</li>
+                <li>bài 5</li>
+                <li>bài 6</li>
+                <li>bài 7</li>
+                <li>bài 8</li>
+                <li>bài 9</li>
+                <li>bài 10</li>
+                <li>bài 11</li>
+                <li>bài 12</li>
+                <li>bài 13</li>
+                <li>bài 14</li>
+                <li>bài 15</li>
+                <li>bài 16</li>
+                <li>bài 17</li>
+                <li>bài 18</li>
+                <li>bài 19</li>
+                <li>bài 20</li>
+            </ul>
+        </li>
+        <li>
+            <h2 class="h2">PHẦN 3</h2>
+
+            <ul>
+                <li>bài 1</li>
+                <li>bài 2</li>
+                <li>bài 3</li>
+                <li>bài 4</li>
+                <li>bài 5</li>
+                <li>bài 6</li>
+                <li>bài 7</li>
+                <li>bài 8</li>
+                <li>bài 9</li>
+                <li>bài 10</li>
+                <li>bài 11</li>
+                <li>bài 12</li>
+                <li>bài 13</li>
+                <li>bài 14</li>
+                <li>bài 15</li>
+                <li>bài 16</li>
+                <li>bài 17</li>
+                <li>bài 18</li>
+                <li>bài 19</li>
+                <li>bài 20</li>
+            </ul>
+        </li>
+        <li>
+            <h2 class="h2">PHẦN 4</h2>
+
+            <ul>
+                <li>bài 1</li>
+                <li>bài 2</li>
+                <li>bài 3</li>
+                <li>bài 4</li>
+                <li>bài 5</li>
+                <li>bài 6</li>
+                <li>bài 7</li>
+                <li>bài 8</li>
+                <li>bài 9</li>
+                <li>bài 10</li>
+                <li>bài 11</li>
+                <li>bài 12</li>
+                <li>bài 13</li>
+                <li>bài 14</li>
+                <li>bài 15</li>
+                <li>bài 16</li>
+                <li>bài 17</li>
+                <li>bài 18</li>
+                <li>bài 19</li>
+                <li>bài 20</li>
+            </ul>
+        </li>
+        <li>
+            <h2 class="h2">PHẦN 5</h2>
+
+            <ul>
+                <li>bài 1</li>
+                <li>bài 2</li>
+                <li>bài 3</li>
+                <li>bài 4</li>
+                <li>bài 5</li>
+                <li>bài 6</li>
+                <li>bài 7</li>
+                <li>bài 8</li>
+                <li>bài 9</li>
+                <li>bài 10</li>
+                <li>bài 11</li>
+                <li>bài 12</li>
+                <li>bài 13</li>
+                <li>bài 14</li>
+                <li>bài 15</li>
+                <li>bài 16</li>
+                <li>bài 17</li>
+                <li>bài 18</li>
+                <li>bài 19</li>
+                <li>bài 20</li>
+            </ul>
+        </li>
+        <li>
+            <h2 class="h2">PHẦN 6</h2>
+
+            <ul>
+                <li>bài 1</li>
+                <li>bài 2</li>
+                <li>bài 3</li>
+                <li>bài 4</li>
+                <li>bài 5</li>
+                <li>bài 6</li>
+                <li>bài 7</li>
+                <li>bài 8</li>
+                <li>bài 9</li>
+                <li>bài 10</li>
+                <li>bài 11</li>
+                <li>bài 12</li>
+                <li>bài 13</li>
+                <li>bài 14</li>
+                <li>bài 15</li>
+                <li>bài 16</li>
+                <li>bài 17</li>
+                <li>bài 18</li>
+                <li>bài 19</li>
+                <li>bài 20</li>
+            </ul>
+        </li>
+        <li>
+            <h2 class="h2">PHẦN 7</h2>
+
+            <ul>
+                <li>bài 1</li>
+                <li>bài 2</li>
+                <li>bài 3</li>
+                <li>bài 4</li>
+                <li>bài 5</li>
+                <li>bài 6</li>
+                <li>bài 7</li>
+                <li>bài 8</li>
+                <li>bài 9</li>
+                <li>bài 10</li>
+                <li>bài 11</li>
+                <li>bài 12</li>
+                <li>bài 13</li>
+                <li>bài 14</li>
+                <li>bài 15</li>
+                <li>bài 16</li>
+                <li>bài 17</li>
+                <li>bài 18</li>
+                <li>bài 19</li>
+                <li>bài 20</li>
+            </ul>
+        </li>
+        <li>
+            <h2 class="h2">PHẦN 8</h2>
+
+            <ul>
+                <li>bài 1</li>
+                <li>bài 2</li>
+                <li>bài 3</li>
+                <li>bài 4</li>
+                <li>bài 5</li>
+                <li>bài 6</li>
+                <li>bài 7</li>
+                <li>bài 8</li>
+                <li>bài 9</li>
+                <li>bài 10</li>
+                <li>bài 11</li>
+                <li>bài 12</li>
+                <li>bài 13</li>
+                <li>bài 14</li>
+                <li>bài 15</li>
+                <li>bài 16</li>
+                <li>bài 17</li>
+                <li>bài 18</li>
+                <li>bài 19</li>
+                <li>bài 20</li>
+            </ul>
+        </li>
+        <li>
+            <h2 class="h2">PHẦN 10</h2>
+
+            <ul>
+                <li>bài 1</li>
+                <li>bài 2</li>
+                <li>bài 3</li>
+                <li>bài 4</li>
+                <li>bài 5</li>
+                <li>bài 6</li>
+                <li>bài 7</li>
+                <li>bài 8</li>
+                <li>bài 9</li>
+                <li>bài 10</li>
+                <li>bài 11</li>
+                <li>bài 12</li>
+                <li>bài 13</li>
+                <li>bài 14</li>
+                <li>bài 15</li>
+                <li>bài 16</li>
+                <li>bài 17</li>
+                <li>bài 18</li>
+                <li>bài 19</li>
+                <li>bài 20</li>
+            </ul>
+        </li>
+        <li>
+            <h2>PHẦN 1</h2> PHAN 10
+
+            <ul>
+                <li>bài 1</li>
+                <li>bài 2</li>
+                <li>bài 3</li>
+                <li>bài 4</li>
+                <li>bài 5</li>
+                <li>bài 6</li>
+                <li>bài 7</li>
+                <li>bài 8</li>
+                <li>bài 9</li>
+                <li>bài 10</li>
+                <li>bài 11</li>
+                <li>bài 12</li>
+                <li>bài 13</li>
+                <li>bài 14</li>
+                <li>bài 15</li>
+                <li>bài 16</li>
+                <li>bài 17</li>
+                <li>bài 18</li>
+                <li>bài 19</li>
+                <li>bài 20</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<body>
+
+</body>
+
+</html>

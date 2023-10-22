@@ -1,0 +1,62 @@
+1/background-clip(kẹp nền ): quy định cùng đổ nền cho ptu, VD nó đổ từ border trở vào hay từ padding trỏ vào... thì nó
+mới hiện
+nền
+đó
+
+<body>
+    <div class="box"></div>
+</body>
+### file style.css:
+<style>
+    .box {
+        width: 200px;
+        height: 200px;
+        background-image: url(./img/bai45anh2.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        border: 50px dotted red;
+        padding: 50px;
+        /* trạng thái mặc định của background-clip: nó đổ từ viền vào, ảnh nền sẽ chiếm toàn bộ kích thước ptu :content +border+padding */
+        /* 
+        background-clip: border-box; //ảnh nền chiếm toàn bộ ptu (từ outline đổ vào trong)
+        background-clip: padding-box; //ảnh nền chiếm từ phần padding đổ vào 
+        background-clip: content-box; //ảnh nền chỉ chiếm trong phần nội dung ptu 
+        
+        */
+        background-clip: border-box;
+        background-clip: padding-box;
+        background-clip: content-box;
+    }
+</style>
+
+2/ sd background-clip: để đổ nền cho chữ
+background-clip:text; //đổ màu nền cho chữ, ko hiển thị phần trống ngoài chữ
+<h1><strong class="demo">ĐĂNG ĐẸP TRAI</strong></h1>
+<style>
+    .demo {
+        font-family: 'roboto', sans-serif;
+        color: transparent;
+        /* làm cho màu chữ trong suốt, như vậy chữ sẽ đc lấy màu từ background */
+
+        background-color: #4258d0;
+        background-image: linear-gradient(#4258d0 0%, #c850c0 46%, #ffcc70 100%);
+        /* tạo chuyển màu tuyến tính cho background  */
+        background-clip: text;
+        /* sử dụng ảnh nền đó cho text, nó nằm gọn trong các nét chữ chứ ko hiện ra ngòai nền  */
+        -webkit-background-clip: text;
+        /*  css prefix, giúp cho nhiều trình duyệt hiểu và áp dụng thuộc tính chuyển màu cho chữ  */
+
+
+        /* HAY: TA SD TỪ KHÓA "@supports(nhập thuộc tính vào )"
+         */
+        @supports(background-clip: text) or (-webkit-background-clip: text) {
+            background-color: #4258d0;
+            background-image: linear-gradient(#4258d0 0%, #c850c0 46%, #ffcc70 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+        }
+
+        ==>ta kiểm tra xem trình duyệt có hỗ trợ 2 thuộc tính trong ngoặc ko,
+        nếu có thì ta mới cho nó thực hiện lệnh
+    }
+</style>

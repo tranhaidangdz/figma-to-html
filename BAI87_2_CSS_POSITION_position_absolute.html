@@ -1,0 +1,55 @@
+<!-- 1/position ABSOLUTE(vị trí tuyệt đối):các ptu "thực sự đc đưa ra khỏi vị trí ban đầu"(khi ta dịch ptu đó ra ngoài thì phần
+ko gian ban đầu của ptu đó sẽ đc ptu khác lấp vào )
+***TH1: nếu ko có tổ tiên là "position:relative" thì ptu sẽ đc định vị theo top left corner webpage(góc trên bên trái
+của trang ) -->
+
+<div class="content">
+    <div class="box box1">khoi 1</div>
+    <div class="box box2">khoi 2</div>
+    <div class="box box3">khoi 3</div>
+</div>
+
+<style>
+    .box {
+        width: 100px;
+        height: 100px;
+        color: rgb(228, 216, 216);
+        /* can ND ptu vao giua khoi */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .content {
+        /* căn chỉnh cho ND của cả 3 khối div  */
+        background-color: cyan;
+        width: 200px;
+        margin: 40px;
+        /* khi box 2 ko có các ptu bạn, ptu tổ tiên đặt là "relative" thì ptu "absolute" đó lấy góc trên bên trái làm gốc để căn ,kcach sẽ cách góc này  */
+
+    }
+
+    .box2 {
+        background-color: blue;
+        position: absolute;
+        left: 0px;
+        /* cách lề trái và lề trên 0px */
+        top: 0px;
+        /* ta đưa box2 jvề góc trái trên cùng, vị trí cũ của box 2 sẽ đc box 3 đè lên */
+        /* tưởng tượng khi ta để "absolute "cho khối box2 thì khối box 2 đc đưa lên lớp trên cũng , tách với khối box1 và box3 ở dưới,khối box3 sẽ đẩy lên vị trí box 2 và bị box2 che lấp. sau đó ta di chuyển box2 thì box3 sẽ hiện ra  */
+    }
+
+    .box1 {
+        background-color: pink;
+
+    }
+
+    .box3 {
+        background-color: green;
+    }
+</style>
+
+2/TH2: nếu các ptu xung quanh, tổ tiên gần nhát của nó mang gtri "relative" thì ptu "absolute" sẽ dựa vào lề của ptu cha
+đó để căn
+-nếu ko có yếu tố này nó mới dựa vào góc trên trái để căn

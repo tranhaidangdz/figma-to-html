@@ -1,0 +1,17 @@
+input:checked~img {
+  /* nếu thư mục input đc tích vào thì tất cả các ptu img đồng cấp, liền sau nó sẽ bị tác động */
+  /* 1.nếu muốn ảnh đó biến mất khỏi giao diện và giải phóng cả vị trí,ko thể tương tác nữa ->dùng "display:none;" */
+  /* display: none; */
+  /* 2.nếu muốn biến khỏi giao diện, vẫn chiếm vị trí, nhưng ko tương tác đc -> visibility:hidden;  */
+  /* visibility: hidden; */
+  /* 3.nếu muốn biến khỏi giao diện, vẫn chiếm vị trí, vẫn tương tác đc -> opacity:0%; */
+  opacity: 0;
+
+}
+
+/* giờ ta sẽ thử css animation vào ảnh: do display ko hỗ trợ còn 2 cái kia vẫn có, nên ta sẽ thử và ss */
+img {
+  transition: 1.0s;
+  /* nếu có 1 tác động nào đó vào thẻ img thì 1.5s sau nó mới biến đổi chứ ko biến luôn  */
+  v
+}

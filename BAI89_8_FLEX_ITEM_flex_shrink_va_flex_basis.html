@@ -1,0 +1,71 @@
+<!-- 1/flex-shrink:(uốn cong-co lại): dùng để xác định khả năng co lại của ptu
+-VD ta có 1 container nhỏ, mà các ptu vượt quá chiều rộng của container đó, thì ta sẽ đặt thuộc tính flex-shrink để xác
+định khả năng co lại của các ptu con
+.flex-shrink:0(ko bị co lại)
+.flex-shrink:1(mặc định)
+.flex-shrink:2
+.flex-shrink:3
+...
+-khi ta để thuộc tính shrink "2" "3" thì nó sẽ co lại nhanh hơn các ptu để mặc định,truyền số càng to nó co càng nhanh -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex-shrink</title>
+    <style>
+        .container {
+            height: 150px;
+            display: flex;
+            background-color: cyan;
+            /* flex-wrap: wrap; */
+
+        }
+
+        .box {
+            background-color: blue;
+            border: 2px solid;
+            width: 30%;
+            /* khi ta để 30% thì 3 ptu box 1,2,3 sẽ chiếm 30% chiều ngang, dù ta thu hẹp hay mở rộng trang nó cũng chỉ chiếm 30% */
+            /* khi ta tăng thêm các item thì nó sẽ ko thể dúng chính xác 30% cho mỗi ptu đc nữa (do mặc định là các ptu nằm trên cùng 1 hàng), ta phải ngắt xuống dòng */
+            /* flex-wrap: wrap;  cái này dành cho thẻ cha container cơ, ko đc code vào khối các item*/
+
+        }
+
+        .box1,
+        .box2 {
+            flex-shrink: 0;
+            /* ta cho 2 box này chiếm 30%: ko bị co lại khi thu hẹp các, còn các ptu khác thì vẫn co lại, nó phải chia nhau bề rộng còn lại */
+        }
+
+        .box3 {
+            flex-shrink: 3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box box1">block 1</div>
+        <div class="box box2">block 2</div>
+        <div class="box box3">block 3</div>
+        <div class="box box3">block 4</div>
+        <div class="box box3">block 5</div>
+        <div class="box box3">block 6</div>
+    </div>
+</body>
+
+</html>
+
+2/flex-basis(uốn cong-nền tảng):điều chỉnh chiều rộng của các item(nằm ngang trùng chiều với main axis): nó tương đương
+với width của từng item
+-nếu ta dùng"flex-direction" xoay trục main axis và cross axis thì chiều rộng của ptu chuyển thành chiều cao
+
+flex-basis:30%; //chiều rộng mỗi ptu trên cùng 1 hàng là 30% (ăn theo trục ngang), nhưng khi xoay trục;
+
+flex-direction:column;
+flex-basis:30%; //nó hiểu mỗi ptu có chiều cao 30%
+-ta có thẻ dùng width để set chiều rộng các ptu (nhưng khi ta để ptu ở chế độ flex thì còn thêm thuộc tính này đế set
+chiều rộng nữa )

@@ -1,0 +1,51 @@
+1/BOX-SHADOW: ĐỔ BÓNG CHO PTU HỘP:
+-cú pháp:
+-------------------------------------------
+box-shadow:2px 2px 2px 2px rgb(96 96 96);
+-------------------------------------------
+>>đầu tiên là đổ bóng theo chiều ngang: nếu truyền vào dương=> sang phải, truyền âm=>sang trái(offset x:bắt buộc phải
+có)
+>>t2 là đổ bóng theo chiều dọc: truyền vào dương=>xuống dưới,truyền âm=>lên trên (offset y:bắt buộc phải có)
+>>t3 là độ mờ, độ lòe của bóng
+>>t4 là độ phủ rộng của bóng
+>>t5 là màu bóng
+<!-- 1 SỐ TRANG WEB TA THAM KHẢO ĐỂ ĐỔ BÓNG ĐẸP HƠN:
+-BOX-SHADOW.DEV: ta tùy chỉnh các thông số trên khi đc bóng ưng ý thì ta copy các thông số đó vào 
+-GETCSSCAN.COM: NÓ TẠO SẴN CÁC HIỆU ỨNG BÓNG ĐỔ, ta chọn mẫu ưng ý và click vào là nó tự động copy hết, sau đó ta dán vào dự án 
+-->
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 150px;
+            height: 150px;
+            margin: 100px;
+            background-color: pink;
+            box-shadow: 6px -6px 5px 3px rgb(69, 69, 160);
+            /* ta muốn bóng đổ chèn lên đối tg. ta thêm inset ở trc các gtri */
+            box-shadow: inset 6px -6px 5px 3px rgb(69, 69, 160);
+
+
+            /* đổ nhiều bóng: */
+            box-shadow: 160px 0 pink;
+            /* bóng t1 này có tọa độ x=160px ,y=0(tức là dịch sang phải 160px, ko dịch xuống dưới:ngang hàng vs ptu ) */
+            box-shadow: 160px 0 pink, 0 160px red;
+            /* bóng t2 này có tọa độ x=0,y=160px(dịch xuống dưới 160px,ko dịch sang phải=>nằm ngay dưới ptu ) */
+            box-shadow: 160px 0 pink, 0 160px red, 160px 160px yellow;
+            /* bóng t3 này có tọa độ x=160px,y= 160px :sang phải 160px và xuống dưới 160px: nằm đối diện góc chéo vs ptu */
+            border-radius: 15px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>

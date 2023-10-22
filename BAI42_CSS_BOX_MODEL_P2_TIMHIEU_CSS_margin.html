@@ -1,0 +1,65 @@
+1/ CSS BOX MODEL (MÔ HÌNH HỘP) P3: CSS MARGIN (LỀ=KCACH GIỮA CÁC PTU):
+-margin: dùng để xác định kcach giữa các ptu trên trang, nó ko can thiệp vào kích cỡ của 1 ptu
+VD ta có 2 ptu (2 thẻ div với class khác nhau):
+<div class="box1">
+    <h1>tuhoc.cc</h1>
+</div>
+<div class="box2">
+    <h1>tuhoc.cc 2</h1>
+</div>
+
+### file style.css:
+.box1,
+.box2 {
+width:200px;
+height:250px;
+color:red;
+back-ground-color: red;
+margin: 20px; //kcach giữa 2 ptu box1, box2 là 20px.
+
+}
+<!-- <!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style1.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">khối 1</div>
+    <div class="box">khối 2</div>
+</body>
+
+</html> -->
+1.2 margin(lề) ta cũng có thể thay đổi kích thước theo từng chiều giống padding:
+margin-top:10px;
+margin-right:20px;
+margin-bottom:30px;
+margin-left:40px;
+
+hoặc: ta truyền vào kích thước từng chiều trên 1 dòng:
+margin: 20px;
+margin: 20px 30px;
+margin: 20px 30px 40px;
+margin: 20px 30px 30px 50px;
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style1.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+    <div class="box box3"></div>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!-- 1/BACKDROP-FILTER(lọc bối cảnh): giúp tùy chọn chế độ nền
+-tìm "backdrop-filter" ->vào trang "mozilla" có các gtri của thuộc tính "backdrop-filter": -->
+<!-- 
+    backdrop-filter:blur(2px); (bờ lơ: độ nhòe nền, ta tăng dần px lên)
+    backdrop-filter:invert(80%); (ín vợc:đảo ngược màu,tạo màu nổi bật so vs nền ,ta truyền vào % đảo )
+    backdrop-filter:sepia(90%); (sế pìa:màu nâu đỏ,tạo gam màu hoài cổ, xưa cũ, ta tăng dần % lên )
+    backdrop-filter:brightness(60%); (độ sáng: ta chỉnh hạ xuống để nó tối dần)
+    backdrop-filter:contrast(40%); (khon trạt-s: độ tương phản)
+    backdrop-filter:drop-shadow(4px 4px 10px blue); (đổ bóng: cái đầu tiên là bóng lệch sang trái, cái thứ 2 là bóng lệch dưới, cái t3 là độ rộng bóng, cuối cùng là màu bóng)
+    backdrop-filter:grayscale(30%);  (g ráy s kèo:thang độ xám): chỉnh độ xám cho nền
+    backdrop-filter:hue-rotate(120deg); //híu râu thệt(xoay sắc) :đổi màu sắc khác
+    backdrop-filter:invert(70%);  //đảo ngược
+    backdrop-filter:opacity(40%);  //độ mờ 
+    backdrop-filter:saturate(30%);  //sá trù rệt-t : độ bão hòa màu(làm nó đậm lên )
+ -->
+<!-- ***CHÚ Ý: BACKDROP-FILTER ko hỗ trợ 100% các trình duyệt =>cần thêm prefix cho các trình duyệt -->
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>backdrop-filter:lọc bối cảnh</title>
+    <style>
+        body {
+            background-image: url(./img/bai45anh2.jpg);
+            background-size: cover;
+
+        }
+
+        .box {
+
+            margin-top: 20px;
+            height: 100px;
+            background-color: rgb(220, 155, 131);
+            /* tạo 1 khối box và gắn ảnh nền cho nó 
+            -ta dùng các thuộc tính backdrop-filter: chọn các thuộc tính để làm mờ ảnh nền 
+            */
+            /* backdrop-filter: blur(6px) contrast(20%); */
+            /* ta có thể ghi chèn các thuộc tính trên cùng 1 dòng(cách nhau bởi dấu cách ) */
+            /* -webkit-backdrop-filter: blur(6px) contrast(20%); */
+            /* để thuộc tính đc trình duyệt nhận diện , ta thêm prefix này vào */
+
+            /* KTRA XEM TRÌNH DUYỆT CÓ HỖ TRỢ THUỘC TÍNH TRÊN HAY ko? */
+            @supports(backdrop-filter: blur(6px) contrast(20%))or (-webkit-backdrop-filter: blur(6px) contrast(20%)) {
+                .box {
+                    background-color: rgb(220, 155, 131);
+                    backdrop-filter: blur(6px) contrast(20%);
+                    -webkit-backdrop-filter: blur(6px) contrast(20%);
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>

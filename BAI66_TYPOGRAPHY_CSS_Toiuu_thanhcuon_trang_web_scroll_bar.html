@@ -1,0 +1,184 @@
+<!-- 
+    tối ưu hóa thanh cuộn trong thuộc tính overflow: khi ND bị tràn ra ngoài box ta sẽ dùng "overflow "để xử lí
+    và trong thuộc tính auto, scroll có thanh cuộn. giờ ta sẽ tối ưu hóa thanh cuộn này 
+ -->
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style7.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>tuhoc.cc</h1>
+    <div class="box">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus dicta quia illum temporibus, officia
+            asperiores officiis dolor nobis atque explicabo dolore natus. Similique, voluptates. Iste consequatur sit
+            quibusdam blanditiis maxime!
+            Deleniti inventore voluptatum quod libero harum ipsam nisi corrupti eius quas, id, nesciunt voluptatibus rem
+            facilis quam, perspiciatis doloribus. Quia quaerat possimus veniam unde! Reiciendis iure distinctio quaerat
+            autem maxime.
+            Corrupti quam hic accusamus nobis laboriosam nostrum quibusdam voluptas, natus animi aspernatur minima
+            voluptate sed. Eligendi, non ut? Fugiat quisquam et officiis suscipit? Nam, ad necessitatibus quia obcaecati
+            soluta molestiae!
+            Error mollitia qui provident placeat tenetur, autem iure perspiciatis accusamus! Dolor debitis minus, amet
+            corrupti culpa voluptates doloribus accusantium, delectus quod nulla quidem obcaecati, reiciendis possimus
+            et rerum expedita molestias.
+            Ducimus maxime accusantium architecto, inventore, nemo ab voluptates ullam optio illum tempora dignissimos
+            totam molestiae! Obcaecati asperiores fuga beatae voluptates ipsa fugit harum velit sed ducimus magnam, nisi
+            corrupti maxime!
+            Exercitationem placeat quo sunt ullam dolorem nesciunt doloribus libero nihil! Suscipit pariatur labore
+            harum totam maxime doloremque modi iure omnis debitis quisquam aperiam quod, ratione consequatur quo natus
+            facilis similique.
+            Illum excepturi obcaecati tempore recusandae ducimus cumque optio fuga quae magnam ipsam nulla repellat
+            suscipit aliquam consequuntur neque maxime vero iste aut, molestias eos, officiis eaque? Iste saepe pariatur
+            eos.
+            Praesentium quibusdam at autem maiores. Obcaecati ab veniam, ullam aliquid temporibus exercitationem, odit
+            maiores placeat nisi hic quos laudantium dicta quam. Deleniti non placeat saepe amet animi! Odit,
+            aspernatur. Consequatur!
+            Dolorem eaque, aliquam reprehenderit libero ea accusantium mollitia repellendus exercitationem illo nostrum
+            asperiores quasi adipisci alias rem fugit dolorum aperiam autem nemo doloremque sit a eius. Pariatur
+            sapiente voluptate eveniet?
+            Corrupti vitae veniam veritatis nemo esse voluptate. Rerum temporibus, eius fugit iusto odit omnis, atque
+            expedita culpa deserunt ea saepe dolorum. Repellendus eveniet laborum consectetur possimus veniam deleniti
+            magni quia.
+            Praesentium repudiandae et maxime illo, molestias iure delectus molestiae eum mollitia necessitatibus!
+            Laudantium exercitationem dolor sequi ullam, harum, cum saepe mollitia, obcaecati nemo repudiandae
+            accusantium sed reiciendis architecto excepturi vel!
+            At maiores earum sequi voluptates iusto nulla deleniti, sint suscipit expedita illo eum temporibus pariatur,
+            omnis accusamus saepe beatae blanditiis aspernatur dignissimos! Maiores ea aut officiis dolores cupiditate.
+            Amet, praesentium?
+            Optio cupiditate recusandae soluta eos adipisci voluptas cum minima quos aperiam. Est possimus recusandae
+            architecto unde maxime, quisquam, quidem voluptatum dicta voluptate excepturi rem sit asperiores eos, quae
+            quasi sed.
+            Dignissimos ipsum aliquam, ab provident veritatis ratione, iste ex, cumque eligendi necessitatibus quos quo
+            facere magnam assumenda adipisci! Illo suscipit porro quis quae nobis distinctio facilis accusamus eius
+            impedit maxime!
+            Explicabo earum debitis id quo porro reiciendis harum voluptas dignissimos magnam iste voluptatem voluptatum
+            et iusto commodi cum, accusantium voluptatibus soluta, repellendus quaerat eligendi ad numquam natus
+            delectus? Amet, aliquam.
+            Optio non rerum earum enim atque, animi aut laborum praesentium facilis reprehenderit distinctio, placeat
+            suscipit nisi laboriosam possimus quae nulla illum sed autem? Corrupti impedit odio incidunt nemo saepe
+            quas?
+            Mollitia pariatur asperiores soluta est eaque cupiditate deserunt voluptatum in sed fugiat. Possimus minima
+            minus id officia recusandae iste suscipit excepturi voluptatem. Fugit minus aliquid eaque, perferendis
+            delectus eum reiciendis.
+            Magnam architecto necessitatibus praesentium in non quo. Illo maxime, saepe nam voluptate dolor pariatur
+            deleniti minus eum sint est inventore omnis neque consequuntur reiciendis voluptas. Necessitatibus ad odit
+            nulla sequi.
+            Inventore eligendi adipisci qui, quae, suscipit tempore dolorum impedit at iure culpa maxime ut consequatur
+            odit optio officiis, voluptate labore nihil aut voluptas harum quis fugiat cumque? Eos, reprehenderit harum!
+            Assumenda beatae quidem, voluptatem dicta accusamus dolore et cum illum libero voluptate earum culpa,
+            dolores sunt nulla nesciunt delectus consequuntur aliquam eligendi. Laudantium dolorum ipsa corrupti odio
+            consectetur architecto rerum.</p>
+    </div>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur voluptatum nam distinctio laboriosam, quae
+        sint temporibus sed ducimus magnam harum voluptate ut ipsa repellendus veniam, esse cupiditate, doloremque nulla
+        exercitationem.
+        Culpa accusantium reiciendis ducimus eaque consequatur et animi, facilis iste soluta placeat. Cumque totam quia
+        dolorem quasi ex, fugit perspiciatis qui labore velit sed consectetur sint tenetur dolores fugiat obcaecati?
+        Aspernatur porro sed libero accusantium quo quam laborum delectus, natus dolorum aliquid veniam ullam hic
+        laboriosam velit sunt beatae atque eligendi tenetur non fugit, est reprehenderit optio! Quaerat, ut deserunt.
+        Debitis, officia dolor rerum veniam nostrum quasi officiis fuga nisi blanditiis consequuntur ea soluta
+        laudantium voluptatum mollitia! Rerum aut dolorum modi, accusantium, adipisci, accusamus animi suscipit alias
+        quae odio excepturi!
+        Molestias, quasi. Quidem optio reiciendis ab ullam, minima velit neque accusantium iure, suscipit, porro
+        distinctio mollitia ducimus voluptatem illo architecto cupiditate molestiae nulla nihil. Veritatis ipsam eveniet
+        saepe dicta eligendi!
+        Eius minus magnam tempore quidem fugit iusto perspiciatis ut molestias cum, accusamus recusandae, dolorum iure
+        consectetur voluptate earum eum. Voluptate quo, molestiae eveniet provident ipsa hic amet ipsam reiciendis! At!
+        Omnis impedit nulla eum maiores nemo numquam temporibus magnam molestias ratione earum dolores deserunt illum
+        cum at perspiciatis tenetur in quae eaque quaerat fugit, natus quos nisi. Laboriosam, perferendis quidem.
+        Rerum pariatur quidem natus cumque quisquam tempora veritatis est? Adipisci, ut officia cum debitis ullam
+        commodi quo nam hic eius aliquam nihil quod sequi modi aut amet! Sequi, repudiandae possimus.
+        Quidem asperiores cupiditate dolorum, unde eum iste nostrum? Cumque quae reiciendis minus facilis voluptas vero
+        suscipit a numquam, repellendus, porro ducimus reprehenderit dolores, voluptates quas possimus ipsam? Eveniet,
+        debitis quia!
+        Explicabo dolorem harum excepturi at, labore nobis quo quod eligendi obcaecati corrupti quos. Vel nam qui, nulla
+        necessitatibus sapiente possimus voluptatum reprehenderit eligendi dolores animi ea voluptates debitis
+        temporibus quos.
+        Veniam pariatur animi doloribus. Reprehenderit blanditiis, fugit voluptatum mollitia aliquam nisi inventore
+        laborum dignissimos velit, ipsam dicta fuga dolorem, itaque consequatur? Impedit praesentium debitis
+        consequuntur quam ad odit expedita aliquam?
+        Dicta doloribus aspernatur vero esse unde, illo consequatur necessitatibus aliquid id, deleniti odit deserunt
+        maiores possimus corporis. Voluptatum magnam modi officiis aut odit! Sequi id rerum vel alias vitae rem!
+        Error qui quia dolores, ut cumque ratione sequi consequuntur inventore veritatis nesciunt, eveniet consectetur
+        dolorum in ea corporis porro veniam. Necessitatibus sed harum id sint voluptatibus libero porro, modi minima.
+        Consequatur labore deleniti aliquid. Harum hic libero eos recusandae ratione praesentium nesciunt ut quos, quam
+        consequatur doloribus laboriosam esse repellat distinctio deleniti voluptas accusantium corporis, modi unde
+        perspiciatis necessitatibus at!
+        Exercitationem autem quis in tenetur eum. Atque nisi eligendi exercitationem modi non totam qui ab voluptatum
+        eveniet? Quisquam illum quas officiis aspernatur reiciendis velit fugiat iusto, magni accusamus voluptatem?
+        Illum.
+        Error officiis quibusdam temporibus mollitia cum nam, aperiam id dolor sed eos eaque quae reiciendis magni
+        impedit ipsum a ut enim deserunt. Architecto mollitia minus asperiores dolor, cupiditate quasi aperiam!
+        Est repellat iusto ad minus maiores fuga veniam ut, corrupti reiciendis laborum, explicabo harum debitis quidem
+        labore eum hic fugiat vero nemo culpa nulla repudiandae deserunt animi? Ipsam, nobis natus?
+        Magni odio saepe ex voluptas repudiandae quia. Similique dicta vel expedita odio excepturi fuga corrupti,
+        possimus, ipsam molestiae, tenetur facilis error autem nesciunt dignissimos repellat nam? Dignissimos, rem?
+        Odit, necessitatibus!
+        Repellat impedit magni at quasi amet minima ullam esse illo aspernatur ea quas, illum delectus voluptatem
+        cupiditate ut necessitatibus consequuntur quis! Nobis autem corrupti aliquam. Pariatur quia velit est veritatis?
+        Provident laudantium consectetur ducimus veritatis qui eum cupiditate repellat doloremque beatae! Itaque,
+        tempora, quam facilis atque eligendi cupiditate incidunt ea ut officia eaque beatae soluta quibusdam,
+        consectetur perspiciatis voluptatum! Hic?
+
+    </p>
+</body>
+
+</html>
+
+1/ THUỘC TÍNH OVERSCROLL-BEHAVIOR: cách hành xử của trình duyệt đối với thanh cuộn
+-gsu ta đã tạo ra 2 đoạn văn, đoạn trên có thuộc tính "scroll" ta muốn khi ta kéo hết đoạn văn bên trong scroll thì nó
+sẽ kéo tiếp đoạn văn bên ngoài
+==>ta thêm "overscroll-behavior:auto;"
+-nếu ta muốn khi lăn chuột đoạn văn bản trong hộp, khi lăn hết nó ko nhảy xuống lăn đoạn bên dưới, ta dùng
+"overscroll-behavior:contain;"
+<!-- 
+.box {
+width: 300px;
+height: 300px;
+background-color: aquamarine;
+overflow: scroll;
+overscroll-behavior: auto;
+overscroll-behavior: contain;  //khi lăn hết nó ko nhảy xuống lăn đoạn văn bên dưới 
+} 
+-->
+
+2/CUSTOM SCROLLS BAR (trang trí cho thanh cuộn):
+-ta tìm "custom scroll bar" ->vào w3school , lấy đoạn code có sẵn lưu lại :
+/* width */
+::-webkit-scrollbar { //chiều rộng thanh kéo
+width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+background: #f1f1f1; //màu nền của hộp chứa thanh kéo
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb { //khi ta chạm vào thanh kéo và kéo thì nó sẽ đổi màu
+background: #888;
+border-radius:5px; //bo viền thanh kéo
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+background: #555; //khi ta chỉ chuột vào thanh kéo nó sẽ đổi màu
+}
+
+<!-- 
+    -muốn các thuộc tính này Áp dụng cho thẻ nào ta sẽ gõ tên thẻ, class, ID đó sau dấu :: 
+    p::-webkit-scrollbar-track {
+background: #f1f1f1; //màu nền của hộp chứa thanh kéo
+}
+hoặc 
+.demo::-webkit-scrollbar-thumb:hover {
+background: #555; //khi ta chỉ chuột vào thanh kéo nó sẽ đổi màu
+}
+ -->

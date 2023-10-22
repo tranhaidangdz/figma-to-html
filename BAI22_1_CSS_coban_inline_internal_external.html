@@ -1,0 +1,53 @@
+<!-- 1/ TỔNG QUAN CSS: 
+-như ta đã biết có 3 công nghệ cơ bản để lập trình web: HTML,CSS,JAVASCRIPT 
+-CSS(cascading style sheets): . là 1 ngôn ngữ đc sd để tìm và định dạng lại các phần tử đc tạo ra bởi ngôn ngữ đánh dấu siêu văn bản(HTML) 
+. HTML tạo ra các đoạn văn bản, các tiêu đề...thì CSS giúp ta thêm các style(kiểu chữ, màu, font chữ, đổi bố cục) vào các ptu HTML 
+
+2/ VỊ TRÍ ĐẶT CSS: 
+- inline(nội tuyến) : <tag style="css" />
+-internal(CSS nội bộ) :<style>css</style>
+- external (CSS bên ngoài) : <link href="style.css"/> -->
+<!-- 2.1 inline(CSS nội tuyến) là cách viết mã CSS ngay trong ptu co bản HTML
+/* VD:
+<h1 style="color: blue violet;"> TUHOC.CC </h1>
+
+-ta có thể thêm thuộc tính style vào các thẻ của HTML:
++,h1 : thẻ điều chỉnh kích thước tiêu đề trong HTML
++,style : thuộc tính CSS
++,color : gọi là 1 property(tài sản: đại loại nó là 1 gtri to trong thuộc tính, trong nó lại có 1 đống gtri con)
++,blue violet :value : gtri con của property (ở đây là 1 màu sắc con bên trong trường màu sắc "color") */
+
+-CÚ PHÁP :
+_______________________________________________________________________________________
+<thẻ html style=" gtri to của thuộc tính style: gtri con trong đó; "></thẻ đóng html> |
+______________________________________________________________________________________| -->
+<!-- ***NHƯỢC ĐIỂM:
+ -khó thay đổi, mỗi lần thay đổi phải thay đổi từng dòng riêng lẻ
+ -không tái sd đc
+ -khó quản lý
+ -khó tách biệt cấu trúc 
+
+ thực hành luôn :in màu cho thẻ h1 với ND "tuhoc.cc-kênh tự học số 1 việt nam" 
+- 1 chú ý nữa là ta nên để đuôi file CSS là .html luôn, vì khi ta bấm SHIFT+1+ENTER
+thì nó sẽ tạo khung ctrinh html cho ta luôn  -->
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 style="color:blueviolet;">tuhoc.cc-kênh tự học số 1 việt nam</h1>
+    <!-- VD2 ta tạo 1 đoạn văn bản trong thẻ p(paragraph) và thêm màu cho các chữ đó -->
+    <p style="color:blue;">Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
+    <p style="color:rgba(255, 0, 153, 0.386);">Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
+    <p style="color:rgb(102, 255, 0);">Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
+
+    <!-- *** ta có thể đánh tên các màu cơ bản ta biết bằng tiếng anh vào, hoặc ta chọn vào ô vuông màu, nó sẽ cho ta tự custom màu  -->
+</body>
+
+</html>

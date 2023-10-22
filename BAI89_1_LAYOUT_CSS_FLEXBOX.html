@@ -1,0 +1,82 @@
+1/FLEXBOX(hộp linh hoạt):
+-float layout đã cũ,và với các trang web phức tạp hiện nay rất khó sd
+.float:left để đưa ptu ra khỏi luồng và sang bên trái
+.float:right để đưa ptu ra khỏi luồng và sang bên phải
+.những ptu ko muốn tác động float thì ta phải để clear để xóa thuộc tính float đi
+
+2/ CÁCH SD FLEXBOX:
+-các thẻ block sẽ chiếm hết chiều ngang 1 dòng
+-thẻ inline sẽ bao lấy ko gian xung quanh ptu, và chỉ chiếm trên 1 dòng
+
+<div class="container">
+    <h2>...</h2> //thẻ block
+    <span>...</span> //thẻ inline
+    <p>...</p> //thẻ block
+    <img src="" alt=""> //thẻ inline
+</div>
+
+-tùy từng loại thẻ, nó sẽ chiếm 1 dòng or chiếm xq phần tử, ta sẽ bao hết chúng vào 1 khối div , sau đó để display:flex;
+cho khối đó. Các ptu bên trong sẽ đc nằm ngang trên cùng 1 hàng (sắp sếp lại)
+-"display:flex;" có 2 trục (2 đg nét đứt)
+.trục ngang:main axis
+.trục dọc:cross axis
+-ta sd 2 trục này để điều khiến các ptu đến vị trí nào đó trong trang web
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLEXBOX</title>
+    <style>
+        * {
+            font-size: 1.5rem;
+            /* rem: đơn vị cố định của thẻ root của trình duyệt =16px */
+        }
+
+        .container {
+            /* display: flex; */
+            /* ta bao các ptu bằng 1 khối to ,sau đó để flex, như vậy các ptu sẽ nằm trên cùng 1 hàng */
+            background-color: cyan;
+            /* khối container(thuộc tính flex): nó chiếm hết 1 dòng(giống như block vậy) */
+            display: inline-flex;
+            /* nó như inline-block +flex. các ptu con vừa nằm trên cùng 1 hàng ngang , vừa chỉ chiếm lấy  kích thước ptu xung quanh */
+            gap: 40px;
+            /* kcach giữa các ptu con ,khi kéo dãn trang web thì khoảng cách này luôn ko đổi,chỉ có kích thước ptu con bị thu hẹp thôi */
+        }
+
+        .box {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box box1">block 1</div>
+        <div class="box box2">block 2</div>
+        <div class="box box3">block 3</div>
+        <div class="box box4">block 4</div>
+        <div class="box box5">block 5</div>
+    </div>
+</body>
+
+</html>
+
+3/ CÁC NHÓM THUỘC TÍNH FLEX( tác động cả các thẻ con và thẻ cha):
+<!-- *** tác động vào thẻ cha (class "container") :
+.justify-content:
+.align-items:
+.flex-wrap:
+.align-content:
+.flex-direction:
+.flex-flow:
+*** tác động vào thẻ con :
+.align-self:
+.flex-grow:
+.flex-shrink:
+.flex-basic:
+.order:
+.flex:
+-->

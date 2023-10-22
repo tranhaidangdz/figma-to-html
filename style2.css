@@ -1,0 +1,55 @@
+/* [href] {
+    color: red;
+} */
+
+/* tất cả các thẻ a và p có thuộc tính href bên trong thì sẽ đc tô chữ đỏ */
+
+/* p[href] {
+    color: blueviolet;
+} */
+
+/* chỉ thẻ p, có thuộc tính href mới đc tô chữ tím xanh */
+
+/* bài 32.2 bộ chọn thuộc tính phần 2 */
+/* [title~="pic"][title~="abcde"] {
+    color: red;
+}
+
+[title*="pic"] {
+    color: blueviolet;
+} */
+
+/* [title |="pic"] {
+    color: red;
+} */
+
+/* bài 34: lớp giả :link và :visited */
+a:link,
+#line_2:link,
+.line_3:link {
+    color: blue;
+    /* ban đầu các thẻ, ID, class chưa đc click ta để chung 1 màu xanh  */
+
+}
+
+a:visited {
+    color: orange;
+    font-size: 30px;
+    /* các thẻ p sau khi click sẽ thành màu cam và chữ to lên */
+}
+
+#line_2:visited {
+    color: red;
+    font-size: 30px;
+    /* các thẻ có tên ID như trên sau khi click sẽ thành màu đỏ và chữ to lên */
+}
+
+.line_3:visited {
+    color: purple;
+    font-size: 30px;
+    /* các thẻ có tên class như trên sau khi click sẽ thành màu tím và chữ to lên */
+}
+
+***chú ý : nếu ta để link đến 1 trang web nào đó trình duyệt sẽ ktra xem trang web đó đã dc mở chưa,
+nếu mở sẵn rồi thì link đó nó tự hiểu là link đã đc truy cập,
+và nó sẽ tự đổi màu

@@ -1,0 +1,59 @@
+/* bài 45: CSS MARGIN COLLAPSE: sự sụp đổ viền css: */
+/* .box {
+    width: 200px;
+    height: 200px;
+    border: 10px solid red;
+}
+
+.box1 {
+    margin-bottom: 50px;
+}
+
+.box2 {
+    margin-top: 70px;
+} */
+/* bài 47: css box-sizing */
+/* .box {
+    width: 100px;
+    height: 150px;
+    padding: 20px;
+    border: 10px solid red;
+    box-sizing: content-box;
+}
+
+.box2 {
+    width: 160px;
+    height: 210px;
+    box-sizing: border-box;
+} */
+
+/* ta thấy ptu trên đang có kich thước content là 100x150, ta chuột phải vào trang+ inspect sẽ xem đc kích thước cả ptu đó là 160x210
+-nên nếu ta muốn chỉnh kích thước 2 ptu bằng nhau thì phải chỉnh chiều rộng box2=160 và chiều cao box2 =210
+-tuy nhiên điểm khác nhau giữa 2 ptu này là ptu trên có phần content to hơn 
+*/
+
+/* bài 51_2: thực hành nút bấm css: */
+a {
+    text-decoration-line: none;
+    /* bỏ gạch chân của đg link đi  */
+    border-radius: 999px;
+    background-color: rgb(219, 136, 151);
+    color: black;
+    display: inline-block;
+    width: 100px;
+    padding: 8px 10px;
+    text-align: center;
+}
+
+/* ta sẽ tạo TH di chuột qua nút đó, ta cho nút đó đổi màu : */
+a:hover {
+    background-color: black;
+    color: rgb(219, 136, 151);
+    /* mẹo để đổi màu nút đẹp: ta sẽ dùng màu nền của nút chưa đổi màu=màu chữ khi di chuột
+    màu chữ của nút = màu nền sau khi đổi màu 
+    */
+}
+
+body {
+    background-image: url(./img/bai45anh1.jpg);
+}

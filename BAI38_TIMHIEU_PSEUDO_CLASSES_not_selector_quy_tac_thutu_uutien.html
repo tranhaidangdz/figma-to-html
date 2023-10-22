@@ -1,0 +1,67 @@
+1/ PSEUDO CLASSES(LỚP GIẢ) P4 lớp giả ":not" dùng để loại trừ các selector ko đc thêm css
+-CÚ PHÁP:
+______________________________________
+element(thẻ, ID,class):not(selector) | trong đó selector là các bộ chọn trc đó ta đã học, nó giúp ctrinh loại trừ những
+_____________________________________| bộ chọn ko đc thêm css
+VD: .demo:not(p) :chọn các thẻ có class="demo", nhưng loại đi thẻ <p></p>
+p:not(#line_2) :chọn các thẻ p , trừ thẻ có ID="line_2"
+<div>
+    <h1 class="top">tuhoc.cc</h1>
+    <p class="top">tự học lập trình</p> ->thẻ p này sẽ bị loại ko chọn
+    <h2 class="top">tự học chấm xê xê</h2>
+</div>
+<!-- ta chọn các ptu có class là "top", trừ thẻ p -->
+.top:not(p) {
+background-color: yellow;
+}
+*** CHÚ Ý: selector có thể là bất cứ bộ chọn nào chúng ta đã học ***
+
+<div>
+    <h1 class="top">tuhoc.cc</h1> ->thẻ con h1 đầu tiên , loại
+    <p class="top">đoạn văn 1</p> ->thẻ con p đầu tiên , loại
+    <p class="top">đoạn văn 2</p>
+    <p class="top">đoạn văn 3</p>
+    <h2 class="top">tự học chấm xê xê</h2> ->thẻ con h2 đầu tiên , loại
+</div>
+
+<!-- ta chọn các ptu có class là "top", trừ các thẻ xuất hiện lần đầu trong khối -->
+.top:not(:first-of-type) {
+background-color : yellow;
+}
+//selector = first-of-type : đây là những thẻ xuất hiện đầu tiên, mà ta cho vào trong :not tức là ta loại đi những thẻ
+xuất hiện lần đầu
+
+2/ THỨ TỰ ƯU TIÊN CSS SELECTOR :
+-mức độ ưu tiên (mạnh->yếu) áp dụng khi có nhiều thuộc tính chồng chéo nhau cùng tác động lên 1 phần từ
+<!-- 1. !important (học sau)
+** về "!important" nếu ta để sau gtri của cái nào trong các cái ở dưới thì nó sẽ đc xếp ưu tiên đầu luôn
+VD:
+* {
+color :red!important;
+} 
+==> theo thứ tự ưu tiên thì bộ chọn "*" sẽ là ưu tiên cuối cùng nhưng nó đc để dấu !important nên nó đc tính là quan trọng nhất 
+-->
+2. inline style(viết thuộc tính css trong file HTML luôn)
+3. ID(#tenid) selector
+4. class(.tenclass) hoặc pseudo-class(:)selector
+5. element selector (các thẻ h,p,div...)
+6. universal selector (dấu *) : bộ chọn chung cả chương trình
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style1.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 class="demo" id="theh1">tự học chấm cc</h1>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+</body>
+
+</html>
+
+*** ta có thể tìm trên chrome "css specificity : spe xi phí xi đì :tính đặc biệt " vào w3school nó có bảng só sánh

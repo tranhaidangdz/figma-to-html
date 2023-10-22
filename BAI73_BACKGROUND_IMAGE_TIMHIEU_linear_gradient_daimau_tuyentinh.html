@@ -1,0 +1,96 @@
+1/ THUỘC TÍNH LINEAR-GRADIENT(DỐC TUYẾN TÍNH): tạo màu nền chuyển sắc
+-CÚ PHÁP
+--------------------------------------------------------------------|
+background-image:linear-gradient(angle/direction,color1,color2...); |
+--------------------------------------------------------------------|
+
+>>angle : góc đổ màu, có thể nhập giá trị độ như 0deg (hướng từ dưới lên), 45deg, 90deg (trái sang phải) ...
+>>direction : hướng đổ màu (nếu không dùng góc thì bạn dùng hướng), đầu tiên các cạnh của hình hộp là top, left, right,
+bottom, bạn có thể xác định hướng là đứng từ tâm hình nhìn về các cạnh bằng cách viết thêm từ khóa to như to top (hướng
+lên ~ 0 độ), to right (hướng sang
+phải ~ 90 độ) ...(nếu ko nhập nó mặc định chuyển từ top->bottom )
+>>phải chọn >= 2 màu thì nó mới chuyển sắc đc
+
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <title>linear-gradient</title>
+    <style>
+        .box {
+            height: 100px;
+            margin-bottom: 10px;
+            border: 2px solid red;
+
+        }
+
+        .box1 {
+            background-image: linear-gradient(160deg, rgb(91, 91, 192) 20%, pink 50%);
+            /* HAY: nhớ phải thêm dấu phẩy "," giữa các màu nếu ko nó sẽ ko hiện
+            .62deg: chọn góc đổ bóng hình tam giác : TA CÓ THỂ CHỌN TỪ 0-360 degree(độ)
+            0deg: góc =0: chuyển sắc từ dưới lên trên
+            90deg: góc=90(chiều thẳng đứng):chuyển sắc từ trái sang phải 
+            .nếu ta truyền các góc <90 thì nó quay sang bên trái, >90 nó quay sang phải 
+            */
+
+            /* ta truyền vào các màu, có thể truyền thêm từ 0%->100%, dây là diện tích màu đó sẽ ko chuyển màu
+            VD: pink 40% : tức là từ 0-40% của màu hồng là giữ nguyên, phần còn lại nó mới chuyển màu 
+            */
+
+        }
+
+        .box2 {
+            background-image: linear-gradient(22deg, rgb(91, 91, 192) 20%, pink 50%);
+        }
+
+        /* ===========================================================================================
+        -ta có thể chọn hướng để đổi màu (góc nhìn từ tâm ptu ra ngoài, có 8 hướng), ta truyền vào đối số đầu tiên:
+        .to top: hướng đến bên trên => chuyển sắc từ dưới lên
+        .to bottom:hướng xuống dưới; ko nhập gì nó cũng mặc định là ntn
+        .to left: sang trái=> hướng từ phải sang trái
+        .to right: sang phải=> hướng từ trái sang phải
+        .to top left: hướng đến góc trên trái (bắt đầu chuyển sắc từ góc dưới phải: góc đối diện)
+        .to top right:hướng đến góc trên phải
+        .to bottom right: hướng đến góc dưới phải
+        .to bottom left: hướng đến góc dưới trái 
+        */
+        .box3 {
+            background-image: linear-gradient(to top left, rgb(91, 91, 192) 20%, pink 50%);
+        }
+
+        .box4 {
+            background-image: linear-gradient(to bottom right, rgb(91, 91, 192) 20%, pink 50%);
+            background: rgb(34, 193, 195);
+            /* màu trên này là màu dự phòng, nếu trình duyệt ko hỗ trợ thuộc tính "linear-gradient" thì khi ko AD đc các màu kia thì nó còn màu này để hiển thị  */
+            background: linear-gradient(122deg, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%);
+        }
+    </style>
+</head>
+
+<body>
+
+    <body>
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+        <div class="box box4"></div>
+    </body>
+
+
+</body>
+
+</html>
+
+<!-- 
+    *** HAY: TRANG WEB GIÚP TẠO MÀU CHUYỂN SẮC:
+    tìm "css gradient" -> vào trang "cssgradient.io"
+    >>ta chọn các màu, chọn mức độ màu đó chiếm bao nhiêu phần trăm (giống như phần GRADIENT CỦA POWerPOINT)
+    >>ta xoay chấm tròn (hình tròn bên dưới) để lựa chọn chiều chuyển sắc
+    >>sau khi tạo dải màu ưng ý ta copy đoạn code bên dưới dán vào đây là đc 
+
+ -->

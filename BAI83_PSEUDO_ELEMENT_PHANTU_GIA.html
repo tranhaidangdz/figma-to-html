@@ -1,0 +1,86 @@
+1/ PSEUDO ELEMENT( sú đồ e leo mừn-t:phần tử giả)
+-ta đã học lớp giả, đặc trưng dấu 2 chấm : , khi ta có tác động vào các hộp, các khối ptu thì ta có thẻ dùng lớp giả
+-còn muốn tác động vào từng ptu nhỏ trong 1 thẻ,1ID, 1 lớp ta dùng phần tử giả, đặc trưng dấu 4 chấm ::
+<!--1 SỐ PHẦN TỬ GIẢ:
+p::first-line (chọn dòng đầu tiên của các thẻ p)
+p::first-letter(chọn chữ cái đầu tiên của thẻ p)
+p::selection(tạo kiểu cho ptu đang đc bôi đen của thẻ p,khi ta bôi đên nó sẽ xuất hiện kiểu ptu )
+li::marker(tạo kiểu cho các điểm đánh dấu của ptu li)
+p::before(thêm ND vào trc thẻ p)
+p::after(thêm ND vào sau thẻ p)
+-->
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSEUDO ELEMENT</title>
+    <style>
+        p::first-line {
+            color: red;
+            /* chọn dong đầu tiên đoạn văn p và tô đỏ .LƯU Ý first-line chỉ AD cho các ptu inline-block và block
+            =>do thẻ p là loại thẻ block.ta sẽ chỉnh các ptu về "block" hoặc "inline-block"
+            */
+            /*CHÚ Ý: ptu giả ::first-line chỉ AD cho các ptu cấp khối và các thuộc tính có thể AD:
+            .phông chữ, màu,nền,kcach ptu,kcach chữ cái,kcach dòng,căn dọc,...
+            */
+        }
+
+        p::first-letter {
+            color: coral;
+            font-size: 30px;
+
+        }
+
+        p::selection {
+            background-color: yellow;
+            /* khi bôi đen vùng nào đó của thẻ p thì nền vùng đó đổi thành màu vàng  */
+        }
+
+        li::marker {
+            font-size: 10px;
+            color: pink;
+            /* tạo kiểu cho các dấu chấm của thẻ ul>li: tô màu hồng và cho nó to lên
+            -ta có thể tạo kiểu cho cả ol>li
+            */
+        }
+
+        p::before {
+            content: "em ở đằng trc nè";
+
+            /* thay vì dùng thẻ p thêm ND bằng html. thì ta có cách thêm ND vào trc và sau ptu bằng CSS */
+        }
+
+        p::after {
+            content: "em ở đằng sau nè";
+            /* ta có thể thêm 1 khối màu bằng css sau thẻ p */
+            content: " ";
+            /* ND ko có gì, 1 khoảng trắng */
+            width: 200px;
+            height: 200px;
+            color: blue;
+            /* làm gì có ND mà tạo màu chữ */
+            display: inline-block;
+            background-color: #dc8e8e;
+            border-radius: 5px;
+            /* thực tế ta dùng cái này để tạo ra các khối ở vị trí bất kì trên trang, or thêm ND vào đâu đó */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam voluptatibus dicta aliquid eaque architecto
+            porro voluptas, ipsa ducimus laborum harum atque, in, inventore quos sit odio iure aperiam vitae adipisci.
+        </p>
+        <ul>
+            <li>item 1</li>
+            <li>item 2</li>
+            <li>item 3</li>
+        </ul>
+    </div>
+</body>
+
+</html>

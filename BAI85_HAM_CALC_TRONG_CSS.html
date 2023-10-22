@@ -1,0 +1,56 @@
+<!-- 1/HÀM CALC() =CALCULATOR(TÍNH TOÁN): cho phép thực hiện các phép toán +,-,*,/ trong css
+-ta có thể sd lên tất cả thuộc tính css về kích thước như: with,
+height,margin,border,padding,top,left,background-position... -->
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAM CALC()</title>
+    <style>
+        .nav {
+            height: 100px;
+            background-color: #e41b1b;
+            /* width: 80%; */
+            /* do thẻ div là thẻ block nên nó sẽ chiếm hết chiều ngang thẻ cha nó(thẻ body),ta tùy chỉnh nó chỉ chiếm 80% thôi */
+            margin: 0 auto;
+            /* cho lề trái+phải là auto để nó tự động căn giữa  */
+            /* BÀI TOÁN: gsu ta muốn khi kéo dãn trang web thì ptu đó sẽ cách lề 50px */
+            width: calc(100% - 100px);
+
+            /* j
+            >>ptu sẽ chiếm 100% chiều rộng thẻ cha, nhưng trừ đi 100px .do ta đang để căn 2 bên nên mỗi bên cách 50px
+            >>lưu ý nên cách giữa dấu trừ và toán hạng,nếu ko sẽ sai 
+            >>ko đc cách sau hàm "calc" và ngoặc "()"
+            */
+
+        }
+
+        .main_content {
+            background-color: rgb(37, 37, 228);
+            height: calc(100vh - 100px);
+        }
+
+        /* TOÁN TỬ NHÂN VÀ CHIA: */
+        .main_content {
+            width: calc(100px * 2);
+            width: calc(2 * 100px);
+            /* CHIỀU RỘNG SẼ GẤP ĐÔI (đổi thứ tự đều đc) */
+        }
+
+        .main_content {
+            height: calc(100px / 2);
+            /* như vậy chiều cao sẽ có 50px */
+            /* lưu ý viết cái có đơn vị ở trc,ko đc chia cho số 0 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav "></div>
+    <div class=" main_content"></div>
+</body>
+
+</html>

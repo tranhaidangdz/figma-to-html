@@ -1,0 +1,69 @@
+1/ ATTRIBUTE SELECTOR (BỘ CHỌN THUỘC TÍNH):
+-attribute là các thuộc tính của 1 thẻ html
+-selector là bộ chọn của css, nó giúp ctrinh tìm thấy vị trí ptu cần gán css
+==>bài trc ta dùng các bộ chọn tổ hợp để gán css, bài này ta dùng thuộc tính html để gán css
+-CÚ PHÁP :
+_________________________________
+
+[ten thuộc tính của thẻ html] {
+<!-- css sẽ gán cho nó -->
+}
+_________________________________
+<!-- 
+VD: [href] {
+color :red;
+}
+==>chọn tất cả các thẻ có thuộc tính "href" để gán css -->
+HOẶC
+<!-- 
+a[href]{
+color:red;
+}
+==> chỉ các thẻ a ,có thuộc tính "href" mói đc chọn  -->
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style2.css">
+    <title>bài 32: bộ chọn thuộc tính</title>
+</head>
+
+<body>
+    <a href="">click vào em đi 1</a> <br>
+    <a href="">click vào em đi 2</a> <br>
+    <a href="">click vào em đi 3</a>
+    <p href>Lorem ipsum dolor sit amet.</p>
+</body>
+
+</html>
+2/ BỘ CHỌN THUỘC TÍNH NHƯNG CÓ "GÁN GTRI "CHO THUỘC TÍNH ĐÓ:
+-CÚ PHÁP :
+____________________________________________
+[ten thuoc tinh ="gtri"] { //chọn tất cả các thuộc tính có chính xác gtri VD: target="_blank"
+<!-- css sẽ gán cho nó -->
+}
+____________________________________________
+vd:
+
+<body>
+    <a href="" target="_blank">click 1</a> //bên tronng gtri của href bỏ trống -> tức là khi bấm vào nó sẽ load lại
+    trang web
+    <a href="" target="_blank">click 2</a> //còn target để "_blank"tức là nó load lại trang web và mở ra 1 trang trắng
+    <a href="" target="_self">click 3</a> //để target="_self" là để nó load lại trang web và load lại lần nữa
+    <p href>Lorem ipsum dolor sit amet consectetur.</p>
+</body>
+### file style.css :
+
+<!-- [target="_blank"] {
+color:red;
+}
+==>chỉ chọn các thẻ có thuộc tính "target" và gtri của target đó bằng "_blank" -->
+
+HOẶC ta truyền cả tên thẻ để nó chỉ định rõ hơn:
+<!-- a[target="_blank"] {
+color:red;
+}
+==>chỉ chọn các thẻ a có thuộc tính "target="_blank" " để gán css -->

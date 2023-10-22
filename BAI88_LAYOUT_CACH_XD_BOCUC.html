@@ -1,0 +1,63 @@
+<!-- 1/PAGE LAYOUT VÀ component layout
+-page layout(bố cục trang): cơ bản là cách ta sắp xếp các khối bố cục con(component layout: bố cục bao gồm) trên website
+-việc sắp xếp các bố cục giúp trang nhìn đẹp, logic, quản lí chỉnh sửa code sau này cũng dễ hơn
+-các component layout là các bố cục con (là các khối chữa text, ảnh, icon...)
+
+2/3 CÁCH XD BỐ CỤC VS CSS:
+2.1 float layout: bố cục trôi nổi
+-float giúp dàn trang theo chiều ngang( xếp các ảnh, thanh điều hướng nav-bar theo chiều ngang )
+-ta có thể tạo ra chữ (tiêu đè) bao quanh hình ảnh -->
+
+<body>
+    <img src="./anhlacay.png" alt="">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, maxime! Similique aliquid facere corrupti
+        quas vitae ipsum consequatur incidunt porro, tenetur quo alias modi cum veniam. Eius corporis adipisci
+        repudiandae.
+    </p>
+</body>
+
+<style>
+    img {
+        width: 200px;
+        float: left;
+        /* ta để layout float:left cho bức ảnh, tức là tát cả các ptu khác trong trang (thẻ p) sẽ nằm về bên phải của bức ảnh.
+        dù ta có kéo dãn trang web thì đoạn văn luôn ở bên trái bức ảnh
+        */
+        float: right;
+        /* hoặc ta có thể để float:right, như vậy đoạn văn sẽ nằm bên trái bức ảnh, bức ảnh sẽ nằm bên phải */
+    }
+</style>
+
+<!-- CHÚ Ý:
+-khi ta sd float:left (VD cho bức ảnh) thì ảnh sẽ bị tách ra 1 luồng mới, các ptu còn lại sẽ bao xung quanh bức ảnh đó
+-VD ta ko muốn ptu nào đó trôi theo bức ảnh, ta sẽ tác động thuộc tính clear vào ptu đó:
+clear:left (xóa gtri float:left)
+clear:right (xóa gtri float:right)
+clear:both(xóa float cả 2 hướng trong TH ta tác động float vào cả trái và phải )
+-->
+j
+
+<body>
+    <img src="./anhlacay.png" alt="">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, maxime! Similique aliquid facere corrupti
+        quas vitae ipsum consequatur incidunt porro, tenetur quo alias modi cum veniam. Eius corporis adipisci
+        repudiandae.
+    </p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, maxime! Similique aliquid facere corrupti
+        quas vitae ipsum consequatur incidunt porro, tenetur quo alias modi cum veniam. Eius corporis adipisci
+        repudiandae.
+    </p>
+    <!-- VD ta có 2 đoạn văn này trôi theo bức ảnh, mà ta chỉ muốn đoạn 1 trôi, đoạn 2 thì ko, ta sẽ để clear:left cho thẻ p thứ 2 -->
+</body>
+
+2.2 ỨNG DỤNG FLOAT LAYOUT(bố cục trôi nổi):
+-ngày xưa khi website đơn giản, ta có thể dùng float layout để chia trang như sau
+.header : để bth, chiếm hết 1 dòng trên
+.sidebar(thanh điều hướng bên trái): ta để float:left để nó nằm về bên trái, các ptu khác nằm về bên phải
+.main content(ND chính): ta để float:right để nó nằm về bên phải, các ptu khác nằm về bên trái nó
+.footer(chân trang): do chịu tác động của cả float left và right nên nó sẽ nằm giữa 2 ptu đó, và để "clear:both" để nó
+thụt ra chiếm hết 1 dòng ở dưới và thành chân trang
+-ngày nay, trang web có rất nhiều thành phần, float trở nên phức tạp và khó dùng. ngta sẽ dùng
+1.flex box
+2.css grid
+3.external framework:bootstrap

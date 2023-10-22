@@ -1,0 +1,36 @@
+1/ CSS RESET (cài lại css):
+-why phải reset :
+.DEFAULT CSS: trình duyệt sẽ tự thêm các thuộc tính mặc định để hiển thi các thẻ HTML, tuy nhiên các trình duyệt khác
+nhau có thể các thuộc tính đc thêm vào sẽ khác nhau
+.các thẻ css mặc định nhiều khi gây khó trong kiểm soát kích thước và tính toán kích cỡ so vs thiết kế
+<!-- ĐỂ KTRA 1 THẺ SẼ ĐC THÊM CSS MẶC ĐỊNH GÌ TA LÊN TRANG "browser default styles:"
+-gõ tên thẻ đó vào, các dòng standard(tiêu chuẩn chung cho mọi trình duyệt), còn nếu khác tức là các trình duyệt khác nhau nó sẽ khác nhau 
+-->
+2/ CÁCH RESET CSS:
+-lên chrome tìm "reset css" vào trang "mayerweb.com", copy toàn bộ đoạn code .
+-tạo 1 file reset.css trong vs code, paste toàn bộ code vào đó . sau đó ta "link:css" cho nó chỉ đến file reset đó nếu
+chúng ta muốn nó reset lại tất cả các css mặc định của các thẻ
+*** LƯU Ý: khi liên kết từ file .html đến file .reset đặt file reset.css ở vị trí trên cùng trc khi sd các css khác để
+tránh file reset sẽ ghi đè, do thứ tự ưu tiên vj trí đặt
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <!-- đg dẫn tương đối: nếu file cần tìm mà cùng thư mục (cùng cấp)vs file ta đang code thì ta chỉ cần nhập tên file chứ ko cần nhập "./" để liên kết đến file đó
+    -file reset luôn đc để trên đầu để khi liên kết vs các file khác nữa thì reset ko bị lỗi 
+    -->
+    <link rel="stylesheet" href="style.css">
+    <!-- bên dưới ta mới để liên kết vs các file khác VD như "style.css" -->
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>đăng đẹp trai</h1>
+    <!-- bth thẻ h1 sẽ là cỡ chữ to nhất và đc in đậm nhưng khi ta trỏ đến file reset.css thì nó sẽ reset lại tất cả thuộc tính css mặc định  -->
+</body>
+
+</html>

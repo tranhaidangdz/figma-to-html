@@ -1,0 +1,91 @@
+1/ PSEUDO CLASSES (sú đồ khờ latss sịt :lớp giả) :
+-lớp giả đc sd để định nghĩa 1 trạng thái đặc biệt của phần tử (1 lớp nữa ở dưới lớp css ban đầu ta định dạng )
+VD:
+-tạo kiểu cho 1 ptu khi ta di chuột qua ptu đó (ta di chuột qua nút đó thì nút chuyển màu)
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* tạo kiểu khi ta di chuột lên đó: màu pink */
+        a:hover {
+            color: hotpink;
+        }
+
+        /* tạo kiểu khi ta bấm vào link: màu xanh dương */
+        a:active {
+            color: blue;
+        }
+    </style>
+</head>
+-tạo kiểu cho các liên kết đã truy cập và chưa truy cập khác nhau
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* link chưa truy cập: tạo kiểu màu xanh */
+        a:link {
+            color: green;
+        }
+
+        /* link đã truy cập: tạo kiểu màu đỏ */
+        a:visited {
+            color: red;
+        }
+    </style>
+</head>
+2/ TÌM HIỂU VỀ CÁC PSEUDO CLASSES (lớp giả):
+-cú pháp trong bộ chọn css:
+______________________________________________
+tên element(các thẻ, ID, class) :tên lớp giả {
+<!-- khối lệnh css -->
+}
+_______________________________________________
+<!-- - pseudo classes luôn có dấu ":" đi liền vs tên
+2.1 lớp giả ":hover" (hâu vờ: bay lượn) : ta sẽ chọn các thẻ ,ID,class đó khi ta di chuột lên (hover là tác dụng khi ta di chuột)
+VD: p:hover{} (ta chọn các thẻ p để gán css khi di chuột lên đấy) -->
+VD2:
+
+<body>
+    <p>có 2 thứ bạn nên tiết kiệm, đó là sức khỏe và lời hứa</p>
+    <p id="line_2">có 2 thứ bạn nên cho đi, đó là tri thức và lòng tốt</p>
+    <p class="line_3">có 2 thứ bạn nên cho đi, đó là tri thức và lòng tốt</p>
+</body>
+
+### file style.css :
+p:hover {
+color:red;
+font-size: 30px;
+}
+<!-- cả 2 thẻ p sẽ đc tô đoạn văn màu đỏ khi ta rê chuột qua -->
+HOẶC TA CÓ THỂ VIẾT BẰNG ID, CLASS:
+#line_2:hover {
+color:blue;
+font-size: 30px;
+}
+<!-- chỉ thẻ nào có tên ID="line_2" mới đc tô xanh khi di chuột qua-->
+.line_3:hover {
+color:pink;
+font-size: 30px;
+}
+<!-- chỉ thẻ nào có tên class="line_3"mới đc tô hồng khi di chuột qua -->
+
+<!-- 2.2 lớp giả ":active" (kích hoạt) ta chọn các thẻ, ID, class đó khi ta nhấn chuột vào link hoặc đoạn văn bản đó(active
+có tác dụng khi nhấn chuột)
+vd: a:active {} ta chọn các thẻ a để gán css khi ta nhấn chuột vào đấy
+VD2: -->
+
+<body>
+    <p>có 2 thứ bạn nên tiết kiệm, đó là sức khỏe và lời hứa</p>
+    <p id="line_2">có 2 thứ bạn nên cho đi, đó là tri thức và lòng tốt</p>
+    <p class="line_3">có 2 thứ bạn nên cho đi, đó là tri thức và lòng tốt</p>
+</body>
+### file style.css :
+.line_3:active {
+color:red;
+font-size: 30px;
+}
+<!-- chỉ thẻ nào có tên class="line_3"mới đc tô hồng khi nhấn chuột vào -->

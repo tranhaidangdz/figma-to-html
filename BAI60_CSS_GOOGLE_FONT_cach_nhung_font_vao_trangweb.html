@@ -1,0 +1,16 @@
+-ta sẽ nhúng font chữ từ bên ngoài vào trang web để dù hiển thị trên trình duyệt, hệ điều hành nào thì nó vẫn cố dịnh là
+font đó(kể cả máy khách hàng ko cài đặt font này)
+-vào trang web "font.google.com" ->tìm "roboto" ->chọn cỡ chữ "regular 400-500-700"
+-copy đoạn code của font đó dán vào file HTML (chú ý dán trc link:css)
+
+### file style.css:
+-muốn tạo kiểu cho cả trang web đều có kiểu chữ như thế, ta sẽ tác động css vào thẻ body(do font có tính chất kế thừa
+nên tác đọng body là tác động toàn trang)
+<!-- 
+body {
+font-family: 'Inter', sans-serif;
+} 
+//kiểu chữ ta chọn là kiểu "inter", nhưng ta để họ kiểu chữ "sans-serif(ko có gach ngang khi kết thúc nét chữ)". khi mà máy ko tải đc font "inter"
+ thì nó sẽ sd các font dự phòng thuộc kiểu "sans-serif" đó 
+ 
+-->

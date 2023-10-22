@@ -1,0 +1,53 @@
+<!-- -SD TRANG WEB : HTTPS://WWW.UIFACES.COM để lấy avatar
+-tích vào các yếu tố như male, female, ...để lọc các tiêu chí -> sau đó "apple selected filters" -->
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>bài 44:</title>
+</head>
+
+<body>
+
+    <!-- .content>img.avatar*3  : tạo ra 3 thẻ img có class là avatar, nằm trong thẻ div(ko ghi gì thì mặc định thẻ div) có class ".content"-->
+    <div class="content">
+        <img src="./img/bai45anh1.jpg" alt="ảnh 1" class="avatar">
+        <img src="./img/bai45anh2.jpg" alt="ảnh 2" class="avatar">
+        <img src="./img/bai45anh3.jpg" alt="ảnh 3" class="avatar">
+    </div>
+</body>
+
+</html>
+/* bài 44: css margin tạo avatar đè nhau */
+/* div {
+width: 200px;
+height: 200px;
+border: 30px solid blue;
+margin-left: -8px; */
+/* ta thấy viền hơi dày, thêm -8px để viền mỏng hơn
+==>đây chính là demo cho "margin âm" */
+/* ta tạo kiểu cho class"avatar" :3 cái ảnh */
+.avatar {
+width: 120px;
+height: 120px;
+/* dùng border-radius để bo góc ảnh cong hơn:truyền 50% để bo ảnh vuông thành tròn */
+border-radius: 50%;
+border: 1px solid gray;
+/* tạo kiểu viền cho ptu ảnh */
+
+/* ta dùng margin-left để lùi các ptu sang bên trái, nhưng xảy ra tình huống cả 3 ảnh cùng lùi->ảnh đầu tiên bị mất góc.
+==>ta chỉ lùi 2 ảnh sau, còn ảnh đầu giữ nguyên
+*/
+margin-left: -37px;
+}
+
+/* ta muốn ptu đầu giữ nguyên ko lùi=> bộ chọn margin-left: 0px;
+--> ta dùng lớp giả :first-child để chỉ tác động lên thẻ đầu tiên có class"avatar"
+*/
+.avatar:first-child {
+margin-left: 0%;
+}

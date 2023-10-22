@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tối ưu hóa ảnh</title>
+    <style>
+        .demo {
+            max-width: 100%;
+            /* chiếm 100% chiều rộng box chứa nó.khi ta phóng to trang thì bức ảnh sẽ to dần đến khi bằng kích thước ban đầu của nó */
+            display: block;
+            margin: 0 auto;
+            /* căn giữa 1 bức ảnh: căn giữa box chứa nó .ĐỂ CĂN GIỮA TA CÓ MẸO LÀ CHUYỂN display sang block*/
+        }
+
+        .box {
+            max-width: 700px;
+            background-color: #28cdff;
+            /* ta thu hẹp box chứa, khi ta thu hẹp trang thì các đoạn text, bức ảnh sẽ thu hẹp theo */
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam officiis, incidunt doloremque eos
+            asperiores
+            autem rem dolorum reiciendis corrupti. Repellendus, iure blanditiis. Deleniti vero mollitia itaque,
+            laboriosam
+            quam labore dolores!</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates eaque sunt qui natus praesentium ducimus,
+            quasi culpa animi repellat dolorem odio dolorum possimus iure rerum distinctio error. Laboriosam,
+            praesentium ut!
+            Soluta veritatis quaerat ea illo ut deserunt molestias ipsa non doloribus maxime minus impedit suscipit
+            alias dolores voluptas nihil laborum reprehenderit, quidem culpa a animi beatae perferendis! Iusto,
+            laboriosam provident?
+            Accusantium fugiat quibusdam dolores aliquam sunt quae unde atque voluptatem. Quidem voluptates porro soluta
+            iusto voluptas quam vitae. Aspernatur veritatis eum id fugit cupiditate doloribus impedit minus aliquam
+            placeat dolores?
+            Delectus repudiandae dolore eligendi facere assumenda aperiam mollitia, ducimus sit pariatur hic, eum
+            aliquam recusandae eos natus placeat dolorum nihil optio ex, debitis molestiae eveniet esse. Placeat
+            molestias repellendus odit!
+            Suscipit ea minima provident vitae nemo repellendus enim architecto id ducimus eveniet vero unde, odio
+            inventore autem sint consequuntur iure, esse ex ipsum repudiandae dolore. Facere ab voluptatem et tempore?
+            Modi placeat ex eum hic optio omnis quod distinctio autem, dignissimos iste non harum fugit? Numquam, esse
+            nisi itaque laudantium iure soluta repellendus, iusto cupiditate ipsum ea saepe, quo ab.
+            Itaque ipsa recusandae dignissimos maiores et, aut nostrum distinctio possimus ab minus error at beatae
+            ipsam facilis accusantium molestias saepe! Ducimus vero repellendus, inventore consequatur sed error sunt
+            dicta tempore!
+            Fuga nihil amet esse? Pariatur harum ea eveniet quisquam temporibus minus nam, asperiores ratione molestiae
+            nisi repudiandae quia et aliquam dolore ipsum esse labore quasi saepe inventore! Aut, ab quisquam?</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam aliquam esse nihil reprehenderit eveniet
+            maiores architecto adipisci iusto repellendus, quas vero? Doloremque consectetur dolorem odit reprehenderit
+            pariatur reiciendis consequatur enim!
+            Repudiandae ipsum perspiciatis eum hic accusamus! Repudiandae reprehenderit soluta sapiente sit fuga totam
+            aliquam culpa similique rerum ratione, quis accusamus maiores eveniet ad provident temporibus quas obcaecati
+            nesciunt. Provident, pariatur?</p>
+        <img loading="lazy" src="./img/bai45anh2.jpg" alt="" class="demo">
+    </div>
+</body>
+
+</html>
+<!-- 
+3/ LAZY LOAD(tải chậm):
+-do mặc định ảnh load từ khi ta tải trang nên sẽ mất thêm tgian
+-sd để tối ưu trang web khi ND trang web dài, việc tải toàn bộ ảnh ngay từ khi truy cập trang là ko cần thiết
+=>lazy load: giúp tải ảnh chỉ khi ng dùng lướt gần đến phàn ảnh(nó sẽ tải văn bản trc, ảnh sau)
+-ta chuột phải->kiểm tra ->chọn vào mũi tên >> (ở cạnh source)
+-chọn network ->chọn img
+-sau đó chuột phải vào trang web, bấm tải lại trang or F5
+==>ta sẽ thấy khi tải lại trang là nó load luôn bức ảnh vào: kích thước ảnh+tgian load
+(nếu có nhiều ảnh thì mất thêm tgian load ảnh, có thẻ làm chậm load ND text)
+
+ -->
+ta thêm thuộc tính loading="lazy" vào trong thẻ img
+=>khi nào đến vị trí bức ảnh thì nó mới hiện ảnh

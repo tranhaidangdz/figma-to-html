@@ -1,0 +1,32 @@
+/* BÀI 28: BỘ CHỌN TỔ HỢP: */
+/* * {
+    color: red;
+    font-size: 24px;
+} */
+
+/* ta dùng cú pháp "*{...}" để tạo css cho tất cả các ptu trong trang -> đây là bộ chọn tổ hợp *(gom tát cả ptu trong trang lại và gán css cho nó )*/
+
+/* bài 29 : bộ chọn tổ hợp dấu phẩy ","  */
+
+/* .demo,
+p {
+    color: red;
+}
+
+ul {
+    color: blue;
+} */
+
+/* bài 31: bộ chọn tổ hợp dấu cộng "+" */
+/* h2+h3 {
+    color: red;
+}
+
+block+h3 {
+    color: red;
+} */
+
+/* bộ chọn tổ hợp dấu ngã ~ */
+h1~h3 {
+    color: red;
+}

@@ -1,0 +1,104 @@
+1/ THUỘC TÍNH OPACITY(ầu pá xi đì:độ mờ đục) :quy định độ mờ đục của các ptu ở trên trang(văn bản, ảnh...)
+-cách viết:
+opacity: 0.0 ->1.0; (từ mở nhất -> rõ nhất)
+opacity: 0% ->100%;
+VD:
+
+<body>
+    <h1>TUỔI TRẺ</h1>
+    <h2>tiền ko có</h2>
+    <h3>quan hệ chưa có</h3>
+    <h3>đến cả tự tin cũng không có</h3>
+    <h3>vậy bạn có cái gì?</h3>
+
+</body>
+<!-- ta sẽ thêm css vào file style.css và dùng cách viết css bên ngoài(css external)  -->
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>TUỔI TRẺ</h1>
+    <h2>tiền ko có</h2>
+    <h3>quan hệ chưa có</h3>
+    <h3>đến cả tự tin cũng không có</h3>
+    <h3>vậy bạn có cái gì?</h3>
+    <img src="../HTML/3.baitap02_html-path/tho-trang.png" alt="ảnh thỏ trắng vs độ mờ 70%" width="250">
+    <!-- chú ý: thẻ a chèn link ảnh or link trang web, còn chèn ảnh vào web luôn ta dùng thẻ img(do thẻ a thì ta ko có thuộc tính"width" để chỉnh cỡ ảnh và ko hiển thi đc hình ảnh) -->
+
+
+    <!-- ***** cách để chèn hình nền vào trang web(sau đó viết chữ lên trên) ******
+    -lên trang unsplash.com tìm"back ground" 
+    -chọn 1 ảnh ưng ý tải về
+    -chuột phải vào ảnh, mở ra, bỏ ảnh đó vào thư mục dễ tìm nào đó
+    -mở VS code, ta muốn lưu nó vào mục chứa thư mục style.css:
+    .chọn thư mục "style.css" -> SHIFT+ALT+R ->để tìm vị trí , chuột phải + tạo thư mục img trong đó và nhét cái ảnh vào 
+    
+    bước 2:
+    -ta muốn thêm hình nền cho tất cả các thẻ trong <body> nên trong file style.css ta viết:
+        body{
+            background-image: url(truyền link ảnh đó vào);
+        }
+    
+    ==>như vậy tất cả các đoạn text ta viết sẽ đc đặt trên nền ảnh đó 
+    -->
+    *** CHÚ Ý: TA CÓ THỂ LÀM MỜ CÁC ĐOẠN VĂN BẢN, HÌNH ẢNH ĐÓ TRÊN GIAO DIỆN WEB(opacity=0.0 ), nhưng bản chất nó vẫn ở
+    đó(vẫn chiếm bộ nhớ) và ta vẫn có thể thao tác với nó
+
+
+</body>
+
+</html>
+
+2/thuộc tính DISPLAY (trưng bày) :
+-nếu thuộc tính display:none ; có nghĩa là nó ẩn ptu khỏi giao diện(và xóa luôn không gian nó đang chiếm)
+<!-- -VD: viết trong file style.css:
+h2{
+display: none;
+}
+==> nếu ta ẩn bằng "display: none; " thì nó sẽ làm mất khỏi giao diện luôn (kiểu như xóa) và ta ko thể tương tác vs nó
+nữa -->
+
+3/ thuộc tính VISIBILITY(vì dí bìu lí đì : hiển thị) : ẩn hoặc hiện element(ptu) tức là ta có thể lựa chọn cho ptu đó ẩn
+luôn(như opacity) hoặc cho nó hiện
+<!-- VD:
+h2{
+visibility: hidden; //ẩn
+visibility: visible; //hiện
+}
+
+-ko nhìn thấy ko gian trên giao diện
+-nhưng vẫn chiếm ko gian(ko mất hẳn như display)
+-ko tương tác đc (giống display) -->
+
+<!-- ==> ta thấy cả 3 thuộc tính đều có chức năng ẩn khỏi giao diện web:
+opacity: 0.0;
+display: none;
+visibility: hidden;
+vậy nó khác nhau ntn? -->
+
+4/SO SÁNH 3 THUỘC TÍNH: v: dấu tích là có, x là ko
+<!-- 
+type                    opacity:0;             display: none;               visibility: hidden;
+ẩn ptu khỏi giao diện        v                       v                          v
+chiếm ko gian                v                       x                          v
+có thể tương tác             v                       x                          x
+ẩn ptu con trong thẻ to luôn v                       v                          v
+tính kế thừa(thẻ con ko      x                       x                          v
+thừa kế từ thẻ to khi bị ta tác động )
+VD: <h3>đến cả <h2> tự tin </h2> cũng không có</h3>
+khi ta tác động thẻ to h3 thì thẻ con h2 ko ảnh hưởng(đối vs opacity và display )
+
+hiển thị ptu con            X                        X                          V
+hỗ trợ animation            V                        X                          V
+(sẽ có 1 chương dạy về animation)
+ -->
+
+bài tập của bài này là file index.html trong thư mục bài 11

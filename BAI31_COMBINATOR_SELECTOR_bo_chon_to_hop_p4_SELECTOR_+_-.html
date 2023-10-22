@@ -1,0 +1,99 @@
+1/ COMBINATOR SELECTOR(BỘ CHỌN TỔ HỢP) P4:
+-hôm nay ta sẽ sd dấu công "+" và dấu ngã "~" trong bộ chọn tổ hợp để gán thuộc tính css
+
+1.1 bộ chọn dấu cộng:
+-CÚ PHÁP :
+__________________________________
+element1 + element2 (ptu1+ptu2){
+...thuộc tính css
+}
+__________________________________
+<!-- vd: div + p: chọn phần tử p đầu tiên ngay sau ptu div (ko có ptu nào ngăn giữa 2ptu) để tác dụng css
+- nếu ko có thẻ p ngay sau thẻ div thì css ko tác dụng
+MẸO CHỌN: ta sẽ chọn thẻ trước (là ptu muốn bôi css), còn thẻ 1 sẽ là ptu ngay trc ptu 2 -->
+
+<h1>tuổi trẻ</h1>
+<!-- dùng emmet gõ tắt "h2.demo" ->tạo thẻ h2 có class là demo  -->
+<h2 class="demo">tiền không có</h2>
+<h3 class="demo demo2">quan hệ chưa có</h3>
+<!-- dùng emmet gõ tắt "h3#dong_4" ->tạo thẻ h3 có ID là dong_4 -->
+<h3 id="dong_4">đến cả tự tin cũng không có</h3>
+<block>
+    <h3>vậy bạn có cái gì?</h3>
+</block>
+
+### file style.css :
+
+h1+h3 { //sai : do giữa 2 thẻ này có thẻ h2 ngăn cách => ko dùng đc bộ chọn dấu +
+color:red;
+}
+h2+h3{ //đúng : 2 thẻ liền kề nhau => có thể dụng bộ chọn dấu cộng chọn thẻ h3
+color:red;
+}
+<!-- ***HAY : ta chọn thẻ h3 sau thẻ h1 để bôi css, nhưng thẻ h3 ko nằm sát h1 mà bị ngăn bỏi h2 => css ko thể tác dụng
+-muốn css tác dụng h3 ta phải chọn vị trí "h2+h3" : tức là thẻ h3 ngay sau h2 (ta chọn vị trí 2 thẻ sát nhau, ko có thẻ ở giữa ngăn cách )
+ -->
+VD2: ta muốn css tác dụng vào thẻ h3 nằm trong block : "block+h3" ta phải chọn block là thẻ to sát ngay h3 là thẻ con
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style4.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>tuổi trẻ</h1>
+    <h2 class="demo">tiền không có</h2>
+    <block>
+        <h3 class="demo demo2">quan hệ chưa có</h3>
+    </block>
+    <h3 id="dong_4">đến cả tự tin cũng không có</h3>
+    <h3>vậy bạn có cái gì?</h3>
+
+</body>
+
+</html>
+
+1.2 bộ chọn dấu ngã "~"
+-CÚ PHÁP :
+__________________________________
+element1 ~ element2 (THẺ 1~ THẺ 2){
+...thuộc tính css
+}
+__________________________________
+VD: div~p : chọn tất cả thẻ "p" nằm sau thẻ "div", p phải cùng cấp vs div (ko cần liền kề nhau như dấu +)
+
+<body>
+    <h1>tuổi trẻ</h1>
+    <h2 class="demo">tiền không có</h2>
+    <block>
+        <h3 class="demo demo2">quan hệ chưa có</h3>
+    </block>
+    <h3 id="dong_4">đến cả tự tin cũng không có</h3>
+    <h3>vậy bạn có cái gì?</h3>
+
+</body>
+
+### file style.css :
+
+h1~ h3{
+color:red;
+}
+<!-- ta sẽ chọn tất cả thẻ h3 nằm sau h1, trừ thẻ h3 nằm trong <block> do nó ko cùng cấp vs các thẻ h3 còn lại và ko cùng cấp vs thẻ h1 -->
+
+*** TÓM TẮT LẠI NHỮNG COMBINATOR SELECTOR(bộ chọn tổ hợp) đã học ***
+1.bộ chọn dấu * : chọn tất cả các thẻ (các element) trong ctrinh để gán css
+2.bộ chọn "element.class" : chọn các thẻ có tên class đc chỉ định để gán css
+3.bộ chọn dấu phẩy "element,element" :chọn nhiều thẻ để gán css, giữa các thẻ ngăn cách bằng dấu phẩy
+4.bộ chọn thẻ có 2 class ".class1.class2" : để chọn thẻ có đồng thời 2 class là 1 và 2(tất nhiên thẻ có 2 class cx có
+thể đc tính khi ta gọi tên 1 trong 2 class của nó)
+5.bộ chọn dấu cách "element1 element2" : chọn tất cả thẻ con 2 nằm bên trong thẻ 1
+6.bộ chọn dấu lớn hơn "element1>element2" : chỉ chọn tát cả các thẻ là con trực tiếp (con cấp 1)của thẻ 1
+7.bộ chọn dấu cộng "element1+element2": chỉ chọn thẻ liền kề đầu tiên ngay sau thẻ đc gọi tên trc, để gán thuộc tính (ko
+có thẻ
+nào chen giữa 2 thẻ)
+8.bộ chọn dấu ngã "element1~element2": chọn tất cả các thẻ element 2 sau thẻ element1 đến hết ctrinh(nhưng thẻ element2
+phải cùng cấp vs thẻ element1)

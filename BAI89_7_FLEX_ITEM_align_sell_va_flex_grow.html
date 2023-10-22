@@ -1,0 +1,50 @@
+1/ ALIGN-SElf(tự sắp xếp): hôm nay ta bắt đầu vào nhóm thuộc tính dành cho các thẻ con nằm trong container.
+.align-item là căn vị trí cho tất cả các hàng của container,còn align-self là căn cho từng thẻ con trong đó
+-các gtri của align-self cũng giống như align-item:
+<!-- 
+ align-self:stretch(s trét-ch:kéo dài) : mặc định của align-self, tức là khi ta tăng kích thước thẻ con trong khối
+"container",thì khối đó sẽ dãn ra theo thẻ con lớn nhất và các khối con khác cũng dãn ra theo thẻ cha
+align-self:flex-start: các ptu sẽ bắt đầu từ lề trên, theo chiều dọc từ trên xuống,ko phụ thuộc vào kích thước ptu lớn nhất 
+align-self:flex-end: các ptu sẽ bắt đầu từ lề dưới, theo chiều dọc từ dưới lên,ko phụ thuộc vào kích thước ptu lớn nhất 
+align-self:center: các ptu nằm giữa ptu cha theo chiều dọc, cách lề trên và dưới,ko phụ thuộc vào kích thước ptu lớn nhất 
+align-self:baseline(bâys-lai: đg cơ sở): các ptu sẽ căn theo chân ptu lớn nhất (nằm trên cùng 1 hàng) 
+
+ -->
+
+2/flex-grow(phát triển linh hoạt): chia tỉ lệ diện tích mà mỗi ptu con đc chiếm trên hàng ngang(or dọc)đó
+-mặc định: flex-grow:0;
+<div class="container">
+    <div class="box box1">block 1</div>
+    <div class="box box2">block 2</div>
+    <div class="box box3">block 3</div>
+</div>
+
+<style>
+    * {
+        font-size: 1.5rem;
+
+    }
+
+    .container {
+        height: 150px;
+        display: flex;
+        background-color: gray;
+
+    }
+
+    .box {
+        background-color: red;
+
+    }
+
+    .box1,
+    .box3 {
+        flex-grow: 1;
+        /* tức là box 1 và 3 chiếm 1 phần trên hàng ngang */
+    }
+
+    .box2 {
+        flex-grow: 2;
+        /* box 2 chiếm 2 phần trên hàng ngang, như vậy ta sẽ chia hàng ngang thành 4 phần và mỗi ptu sẽ chiếm tỉ lệ đã đc đặt */
+    }
+</style>

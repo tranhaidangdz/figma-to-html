@@ -1,0 +1,147 @@
+3/ ATTRIBUTE SELECTOR (BỘ CHỌN THUỘC TÍNH):
+-nay ta sẽ học 1 cú pháp nữa :
+-cú pháp:
+3.1 thuộc tính ngã bằng : ~=
+____________________________________________________
+[tên thuộc tính ~= "1 vài từ trong gtri của nó" ] {
+<!-- css sẽ gán cho nó -->
+}
+_____________________________________________________
+VD: [title ~= "pic"] : chỉ chọn các thẻ title có từ"pic" trong gtri của nó (từ pic này phải đi rời, ko liền số hoặc kí
+tự
+khác)
+VD2:
+
+<body>
+    <a href="" target="_blank" title="abcde">click 1</a>
+    <a href="" target="_blank" title="abcde pic">click 2</a>
+    <a href="" target="_self" title="pic3">click 3</a>
+    <p href="">Lorem ipsum dolor sit amet consectetur.</p>
+</body>
+
+### file style.css :
+a[title~="pic"][title="abcde"] {
+color:orange;
+}
+<!-- 
+    >>nó chỉ chọn những thuộc tính có gtri chứa từ "pic" và "abcde"(cùng lúc)
+    >>còn nếu ta muốn nó chọn các thẻ có từ "pic" HOẶC "abcde" thì ta viết rời 2 cái ra
+    >>lưu ý từ khóa ta chọn phải đi rời, ko đi kèm vs số or 1ptu nào khác: vd pic3 sẽ kp "pic"
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style2.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="" target="_blank" title="abc pic">click 1</a>
+    <a href="" target="_blank" title="abcde pic">click 2</a>
+    <a href="" target="_self" title="pic3">click 3</a>
+    <p href="">Lorem ipsum dolor sit amet consectetur.</p>
+</body>
+
+</html>
+
+3.2 thuộc tính sao bằng *=:
+-CÚ PHÁP:
+____________________________________________________
+[ten thuộc tính *= "1 vài từ trong gtri của nó"] {
+<!-- css sẽ gán cho nó -->
+}
+______________________________________________________
+VD: [title *= "pic"] : tất cả các thuộc tính có từ "pic" trong gtri sẽ đc chọn chứ ko cần từ pic phải đứng riêng
+(pic 123, picabc, picaacc pic 1 2 3 ...đều TM)
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style2.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="" target="_blank" title="abc pic">click 1</a>
+    <a href="" target="_blank" title="abcde pic">click 2</a>
+    <a href="" target="_self" title="pic3">click 3</a>
+    <p href="">Lorem ipsum dolor sit amet consectetur.</p>
+</body>
+
+</html>
+
+### file style.css :
+[title *= "pic"] {
+color:red;
+}
+<!-- ==> cả 3 thẻ đều đc chọn và gán màu đỏ -->
+
+3.3 thuộc tính sược đứng bằng |=:
+-CÚ PHÁP:
+____________________________________________________
+[ten thuộc tính |= "1 vài từ trong gtri của nó"] {
+<!-- css sẽ gán cho nó -->
+}
+______________________________________________________
+VD: [title |= "pic"] : chỉ thuộc tính có từ "pic đứng đầu" trong gtri, nếu có "từ sau pic thì phải nối bằng dấu gạch
+ngang -"
+(pic , pic-abc,pic-3 TM), còn : pic 1 , abcpic, pic so 2... sẽ ko TM
+
+<body>
+    <a href="" target="_blank" title="abc pic">click 1</a>
+    <a href="" target="_blank" title="abcde pic">click 2</a>
+    <a href="" target="_self" title="pic3">click 3</a>
+    <a href="" target="_self" title="pic-3">click 4</a>
+    <a href="" target="_self" title="pic">click 5</a>
+    <p href="">Lorem ipsum dolor sit amet consectetur.</p>
+</body>
+
+### file style.css:
+[title |="pic"] {
+color: blue;
+}
+<!-- 
+    >>chỉ những thuộc tính có gtri mà từ pic đứng đơn lẻ, hoặc từ pic đứng đầu, nối sau có gach ngang thì đc chọn, còn lại loại
+    >> =>chỉ có "click4, click5" đc tô màu blue 
+ -->
+
+3.4 thuộc tính MŨ bằng ^=:
+-CÚ PHÁP:
+____________________________________________________
+[ten thuộc tính ^= "1 vài từ trong gtri của nó"] {
+<!-- css sẽ gán cho nó -->
+}
+______________________________________________________
+VD: [title ^= "pic"] : TẤT CẢ thuộc tính có từ "pic đứng đầu" trong gtri,ko quan tâm phía sau như nào
+(pic , pic-abc,pic3abcde... TM)
+
+3.5 thuộc tính ĐÔ LA bằng ^=:
+-CÚ PHÁP:
+____________________________________________________
+[ten thuộc tính $= "1 vài từ trong gtri của nó"] {
+<!-- css sẽ gán cho nó -->
+}
+______________________________________________________
+VD: [title $= "pic"] : TẤT CẢ thuộc tính kết thúc bằng "pic", ko quan tâm phía trc ntn
+(pic , abcpic,3abcde-pic... TM)
+HOẶC
+[title $= "c"] {} : chọn tất cả các từ kết thúc bằng chữ "c".
+
+**** TÓM TẮT LẠI CÁC ATTRIBUTES SELECTOR (bộ chọn thuộc tính) đã học ***
+1. [ten thuộc tính] {} : chọn tất cả các thẻ có thuộc tính đó đẻ gán css
+2. [ten thuộc tính ="gtri gõ đầy đủ"] {} : chọn tất cả các thẻ có thuộc tính ="gtri thuộc tính" để gán css
+3. [ten thuộc tính ~= "1 vài từ trong gtri"] {} :chỉ lấy các thuộc tính trong gtri có từ đó phải đứng đơn lẻ, ko dính
+liền vs số, kí tự khác, cách các từ khác bằng dấu cách
+4. [ten thuộc tính *= "1 vài từ trong gtri"] {} : lấy tất cả các thuộc tính mà gtri chứa từ đó (ko cần thứ tự, riêng lẻ
+gì hết)
+5. [ten thuộc tính |= "1 vài từ trong gtri"] {} : chỉ lấy các thuộc tính có gtri bắt đầu bằng từ đó,các từ sau phải ngăn
+cách bằng dấu gạch ngang "-"
+6. [ten thuộc tính ^= "1 vài từ trong gtri"] {} : lấy tất cả các thuộc tính có gtri bắt đầu bằng từ đó (ko quan tâm phía
+sau)
+7. [ten thuộc tính $= "1 vài từ trong gtri"] {} : chỉ lấy các thuộc tính kết thúc bằng từ, kí tự đó

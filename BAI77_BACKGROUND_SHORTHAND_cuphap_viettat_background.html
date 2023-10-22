@@ -1,0 +1,105 @@
+1/cách viết tắt các thuộc tính trong background:
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 500px;
+            height: 400px;
+            border: 10px dotted red;
+            padding: 50px;
+            /* các thuộc tính dành cho background đã học  */
+
+            background-color: #3284e28b;
+            background-image: url(./img/bai45anh1.jpg);
+            background-position: top right;
+            /* vị trí bắt đầu đặt hình ảnh: nếu ta để top right thì góc trên phải của ảnh sẽ khớp vs góc trên phải của box chứa nó   */
+            /* ngoài ra còn 8 gtri nữa cần truyền vào: */
+            background-position: top left;
+            background-position: center;
+            background-position: bottom right;
+            background-position: bottom left;
+            background-position: right;
+            background-position: left;
+            background-position: bottom;
+            background-position: top;
+            /* ta có thể tùy chọn vị trí dịch bức ảnh bằng % hoặc px, ta sẽ nhập gtri từ 0->100 để bức ảnh dịch sang phải và dịch xuống dưới (x trc y sau):*/
+            background-position: 0 100%;
+            background-position: 100px 0;
+
+
+            /* background-size: chọn kích cỡ ảnh so vs hộp chứa: khi ta chưa set kích cỡ thì ảnh mặc định vs ô chứa vs kích thước 1:1(dẫn đến ảnh bị vỡ) */
+            background-size: contain;
+            /* giữ nguyên tỉ lệ ảnh, nếu còn khoảng trống ảnh sẽ lặp lại để vừa khít khung hình */
+            background-size: cover;
+            /* giữ nguyên tỉ lệ ảnh, nếu ảnh to hơn khung hình thì nó sẽ cắt bớt 1 phần hình ảnh ,ko bị lặp ảnh  */
+
+            /* BACKGROUND-REPEAT: xem bức ảnh đó có lặp lại hay ko, nếu ko để thì thuộc tính mặc định là lặp lại bức ảnh.  */
+            background-repeat: repeat;
+            /* có lặp lại ảnh: đây là thuộc tính mặc đinh */
+            background-repeat: no-repeat;
+            /* ảnh chỉ xuất hiện 1 lần  */
+
+            /* BACKGROUND-ORIGIN: chọn gốc bức ảnh đặt ở vị trí nào: */
+            background-origin: padding-box;
+            /* mặc định gốc bức ảnh nằm phía trên bên trái của padding */
+            background-origin: border-box;
+            /* gốc nằm ở phần border */
+            background-origin: content-box;
+            /* gốc nằm ở phần content */
+
+            /* BACKGROUND-CLIP:quy định nền bức ảnh sẽ đổ từ phần nào vào(bức ảnh chỉ hiển thị từ phần nào) */
+            background-clip: border-box;
+            /* mặc định: ảnh đổ từ phần border vào */
+            background-clip: padding-box;
+            /* ảnh đổ từ phần padding vào */
+            background-clip: content-box;
+            /* ảnh đổ từ phần content vào */
+
+            /* BACKGROUND-ATTAChMENT: quy định xem bức ảnh nền sẽ đứng yên hay chuyển động theo trang web khi ta kéo trang web: */
+            background-attachment: fixed;
+            /* ảnh cố định trên trang web khi ta kéo */
+            background-attachment: scroll;
+            /* mặc định: ảnh cuộn theo trang khi ta kéo */
+            background-attachment: local;
+            /* ảnh cố định khi ta kéo scroll trong box con, ko bị ảnh hưởng toàn trang */
+
+            /* ***HAY: TOÀN BỘ CÁC THUỘC TÍNH TRÊN TA CÓ THỂ VIẾT TẮT TRÊN 1 DÒNG: */
+            background: bgc bgi bgp/bgs bgr bgo bgcl bga initial|inherit;
+            /* CÚ PHÁP GÕ TẮT:
+            bgc = background-color: #fff;
+            bgi = background-image: url();
+            bgp = background-position: 0 0;
+            bgs = background-size: contain;
+            bgo = background-origin: padding-box;
+            bgcl = background-clip: ;
+            bga = background-attachment: fixed;
+            -ngoài ra còn 2 gtri innitial(in nít trồ:lấy gtri mặc định của trình duyệt) và inherit(in hơ rít:gtri kế thừa từ cái trên)
+
+             */
+            /* VD: */
+            background: red url(./img/bai45anh2.jpg) left/cover repeat padding-box border-box;
+            /*
+             >> đầu tiên là màu nền
+            >>thứ 2 là ảnh nền
+            >>thứ 3 là vị trí bức ảnh trong hộp chứa/(gạch chéo,đi liền cạnh đó) là chọn kích cỡ ảnh
+            >>thứ 4 là chọn trạng thái lặp lại 
+            >>thứ 5 là chọn gốc bức ảnh
+            >>thứ 6 là chọn vị trí ảnh bắt đầu đổ vào 
+            >>thứ 7 là chọn ảnh cố định hay di chuyển trên trang
+            >>thứ 8 là 2 thuộc tính ta có thể chọn or ko
+            */
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>

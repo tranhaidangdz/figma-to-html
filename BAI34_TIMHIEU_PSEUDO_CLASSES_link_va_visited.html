@@ -1,0 +1,33 @@
+<!-- 1/ TÌM HIỂU VỀ PSEUDO CLASSES (lớp giả) :link và :visited
+"element:link" chọn các element (thẻ,ID,Class) mà người dùng chưa click vào
+VD: a:link {} :chọn các thẻ <a></a> có liên kết mà ng dùng chưa bấm vào
+
+"element:visited" chọn các element (thẻ, ID, CLass)mà ng dùng đã bấm vào
+VD: a:visited {} :chọn các thẻ <a></a> có liên kết mà ng dùng đã bấm vào -->
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style2.css">
+    <title>bài 34: pseudo classes :link và :visited</title>
+</head>
+
+<body>
+    <h1>lớp giả :link và lớp giả :visited</h1>
+    <a href="">chương 1</a>
+    <a href="" id="line_2">chương 2</a>
+    <a href="" class="line_3">chương 3</a>
+    <a href="" class="line_3">chương 4</a>
+    <!-- tên ID là duy nhất còn tên class có thể đặt chung cho các thẻ -->
+    <a href="">chương 5</a>
+
+</body>
+
+</html>
+*** ỨNG DỤNG CỦA LỚP GIẢ :link và :visited
+-ta dùng để đánh dấu các link đã vào trong 1 trang web
+VD 1 bạn đang học series 40 bài, mỗi ngày bạn có thể học 1 or nhiều bài ->2 lớp giả này sẽ đánh dấu là ng dùng đã học
+đến bài nào rổi(link sẽ tự đổi màu) , giups tăng trải nghiệm ng dùng

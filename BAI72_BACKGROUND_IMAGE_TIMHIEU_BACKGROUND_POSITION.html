@@ -1,0 +1,45 @@
+1/BACKGROUND-POSITION (pờ sít sừn: vị trí, chức vụ): cho ta chọn vị trí bắt đầu đặt ảnh nền
+1.1 sd các từ khóa có sẵn :
+
+<body>
+    <div class="box"></div>
+</body>
+###file style.css:
+<style>
+    .box {
+        height: 200px;
+        width: 400px;
+        border: 5px dashed red;
+        background-image: url(./img/bai45anh3.jpg);
+        background-position: top right;
+        /* 
+        CÓ 9 VỊ TRÍ ĐẶT ẢNH (8 HƯỚNG + 1 VỊ TRÍ GIỮA):
+        .top: bên trên  bức ảnh
+        .bottom: bên dưới  bức ảnh
+        .left: bên trái bức ảnh
+        .right: bên phải bức ảnh
+        .top left: trên trái bức ảnh
+        .top right: trên phải bức ảnh
+        .bottom left: dưới trái bức ảnh
+        .bottom right: dưới phải bức ảnh
+        .center: ở giữa 
+        => ta chọn vị trí ở đâu thì nó sẽ lấy vị trí bắt đầu đặt bức ảnh ở đó 
+        */
+        background-position: center;
+        background-position: top right;
+    }
+</style>
+
+1.2 ta chỉnh đơn vị % để chọn bất kỳ vị trí nào trên bức ảnh để hiển thị :
+<style>
+    .box {
+        background-position: 0 0;
+        /* ta sẽ truyền vào 2 con số(0->100%): trục x ở trc, trục y ở sau 
+        .nó bắt đầu từ góc trên bên trái, sau khi ta truyền vào x,y thì nó bắt đầu dịch chuyển sang phải và xuống dưới 
+    .background-position:0% 0%;  //điểm bắt đầu :góc trên bên trái
+    .background-position:100% 0%; //x max => góc trên bên phải
+    .background-position:0% 100%; //y max => góc dưới bên trái
+    .background-position:100% 100%; //x max,y max =>góc dưới bên phải 
+    */
+    }
+</style>

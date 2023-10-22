@@ -1,0 +1,50 @@
+1/BACKGROUND-ATTAChMENT (tập tin đính kèm): cho phép ảnh đó đứng yên hay lướt theo trang web
+-khi ta lướt những trang web quá dài thì sẽ có thanh cuốn hiện lên để ta kéo, và ảnh ta chèn vào trang web sẽ ở đó. ta
+có thể chọn các chế độ kéo:
+<div class="box"></div>
+<p>Lorem ipsum dolor, sit amet consectetur adipisicing.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, consequatur! Quod quibusdam enim fugit quia
+    assumenda. Quo commodi, provident odit quam assumenda voluptatibus accusamus est consequatur quae similique
+    veritatis quaerat?
+    Consectetur, error aliquid soluta assumenda dicta, impedit dolor, deleniti delectus alias aperiam voluptatibus ex
+    fugiat fuga quia nesciunt necessitatibus debitis! Labore soluta quasi cum tempore minima quaerat consectetur
+    doloremque necessitatibus?
+    Adipisci voluptas exercitationem ipsa recusandae eligendi optio accusantium. Provident necessitatibus voluptatibus
+    repellat tempora neque maiores tempore sit, nulla, velit animi magnam ex corporis officiis aspernatur vel quae eos
+    dolor est.
+    Quaerat atque quia ullam, nulla neque culpa labore. Suscipit cum facilis odit ea eum, porro ipsa! Reiciendis, ullam,
+    porro veniam accusantium sint facilis illum eligendi, impedit vel unde quae et.
+    Expedita earum sapiente sunt ipsa ad. Maiores, et. Unde omnis numquam consequatur fugiat sunt. Sit sunt, quis optio
+    quidem hic at quas excepturi recusandae maiores eveniet. Magnam ducimus earum animi?
+    Consequatur ipsa maiores ullam molestiae voluptate neque, magni eum sed debitis doloribus laudantium repudiandae
+    dolorem id architecto impedit sunt obcaecati animi. Quod ex maxime numquam porro quisquam nostrum nobis eligendi?
+    Suscipit quibusdam tenetur eos aut velit alias laudantium natus labore earum. Quae id qui ea autem neque iste,
+    voluptatibus iusto debitis delectus. Error, nesciunt magni iusto magnam eos fugit voluptatem?
+    Quam necessitatibus minima accusantium sed repudiandae voluptatem labore odit praesentium aliquid recusandae, eius
+    mollitia distinctio quia consectetur tempora, dolore quidem non molestiae! Laboriosam fugiat aliquam maiores
+    consectetur veritatis cumque sed!
+</p>
+
+<style>
+    body {
+        font-size: 1.5rem;
+        /* rem là font mặc định của trình duyệt =16px =>1.5rem = 24px */
+        margin: 20px;
+    }
+
+    .box {
+        height: 400px;
+        background-image: url(./img/bai45anh3.jpg);
+        background-repeat: no-repeat;
+        /* ảnh chi lặp lại 1 lần */
+        background-size: cover;
+        /* kích thước ảnh sẽ dãn ra để vừa kích thước hộp chứa */
+
+        background-attachment: local;
+        /*ảnh cố định cục bộ trong bố cục con */
+        background-attachment: fixed;
+        /* ảnh cố định dù ta kéo scroll lên xuống */
+        background-attachment: scroll;
+        /* trạng thái mặc định của trình duyệt :ảnh di chuyển theo trình duyệt khi ta kéo lên xuống  */
+    }
+</style>
